@@ -8,7 +8,7 @@ const About = () => {
         { icon: <User size={20} />, label: 'Nombre', value: 'Felipe Cremerius' },
         { icon: <MapPin size={20} />, label: 'Ubicación', value: 'Buenos Aires, Argentina' },
         { icon: <Calendar size={20} />, label: 'Experiencia', value: 'Desarrollador Frontend' },
-        { icon: <Mail size={20} />, label: 'Email', value: 'felipe.cremerius@ejemplo.com' },
+        { icon: <Mail size={20} />, label: 'Email', value: 'felipecremerius1@gmail.com' },
         { icon: <Phone size={20} />, label: 'Teléfono', value: '+54 11 6200 7718' }
       ];
 
