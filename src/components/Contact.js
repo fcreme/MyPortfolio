@@ -11,7 +11,12 @@ const Contact = () => {
     message: ''
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    
+    // Abrir Gmail web directamente (más confiable)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contacto desde Portfolio', '_blank');
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,18 +28,16 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false);
+      alert('¡Mensaje enviado con éxito! Te responderé pronto.');
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-      alert('¡Mensaje enviado con éxito! Te responderé pronto.');
     }, 2000);
   };
 
@@ -43,7 +46,8 @@ const Contact = () => {
           icon: <Mail size={24} />,
           title: 'Email',
           value: 'felipecremerius1@gmail.com',
-          link: 'mailto:felipecremerius1@gmail.com'
+          link: '#',
+          onClick: handleEmailClick
         },
         {
           icon: <Phone size={24} />,
@@ -118,7 +122,13 @@ const Contact = () => {
                   <div className="contact-text">
                     <h4>{info.title}</h4>
                     {info.link ? (
-                      <a href={info.link} className="contact-link">
+                      <a 
+                        href={info.link} 
+                        className="contact-link"
+                        onClick={info.onClick}
+                        target={info.link === '#' ? undefined : '_blank'}
+                        rel={info.link === '#' ? undefined : 'noopener noreferrer'}
+                      >
                         {info.value}
                       </a>
                     ) : (
@@ -206,21 +216,11 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 className="submit-btn"
-                disabled={isSubmitting}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="spinner"></div>
-                    Enviando...
-                  </>
-                ) : (
-                  <>
-                    <Send size={18} />
-                    Enviar Mensaje
-                  </>
-                )}
+                <Send size={18} />
+                Enviar Mensaje
               </motion.button>
             </form>
           </motion.div>

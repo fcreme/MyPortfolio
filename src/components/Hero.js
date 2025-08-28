@@ -13,11 +13,18 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/cv-felipe-cremerius.pdf';
+    link.href = '/Felipe CREMERIUS (3).pdf';
     link.download = 'CV-Felipe-Cremerius.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    
+    // Abrir Gmail web directamente (más confiable)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contacto desde Portfolio', '_blank');
   };
 
   const socialLinks = [
@@ -33,8 +40,9 @@ const Hero = () => {
     },
     {
       icon: <Mail size={20} />,
-      url: 'mailto:felipecremerius1@gmail.com',
-      label: 'Email'
+      url: '#',
+      label: 'Email',
+      onClick: handleEmailClick
     }
   ];
 
@@ -120,6 +128,7 @@ const Hero = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={link.label}
+                  onClick={link.onClick}
                 >
                   {link.icon}
                 </motion.a>

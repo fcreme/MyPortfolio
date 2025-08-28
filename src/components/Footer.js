@@ -6,6 +6,13 @@ import './Footer.css';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    
+    // Abrir Gmail web directamente (más confiable)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contacto desde Portfolio', '_blank');
+  };
+
   const socialLinks = [
     {
       icon: <Github size={20} />,
@@ -19,8 +26,9 @@ const Footer = () => {
     },
     {
       icon: <Mail size={20} />,
-      url: 'mailto:felipecremerius1@gmail.com',
-      label: 'Email'
+      url: '#',
+      label: 'Email',
+      onClick: handleEmailClick
     }
   ];
 
@@ -120,6 +128,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
+                  onClick={social.onClick}
                 >
                   {social.icon}
                 </motion.a>
