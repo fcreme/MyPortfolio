@@ -5,6 +5,8 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
   overflow: hidden;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 .hero::before {
@@ -25,10 +27,18 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 0;
 }
 
 .hero-text {
   color: white;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  min-width: 0;
 }
 
 .hero-title {
@@ -36,6 +46,9 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .highlight {
@@ -50,6 +63,8 @@
   font-weight: 500;
   margin-bottom: 1.5rem;
   opacity: 0.9;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-description {
@@ -58,6 +73,8 @@
   margin-bottom: 2rem;
   opacity: 0.8;
   max-width: 500px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-buttons {
@@ -79,6 +96,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn-primary {
@@ -106,6 +124,7 @@
 .social-links {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .social-link {
@@ -120,6 +139,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  flex-shrink: 0;
 }
 
 .social-link:hover {
@@ -132,6 +152,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .code-window {
@@ -141,6 +163,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 500px;
+  box-sizing: border-box;
 }
 
 .window-header {
@@ -181,10 +204,21 @@
   font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
   font-size: 0.9rem;
   line-height: 1.5;
+  overflow-x: auto;
+  word-wrap: break-word;
 }
 
 .window-content code {
   color: #f8f8f2;
+}
+
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Responsive Design */
@@ -209,8 +243,37 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 15px 0;
+    min-height: auto;
+    display: block;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-text {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-visual {
+    order: 2;
+    width: 100%;
+  }
+
   .hero-title {
     font-size: 2.5rem;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
@@ -219,17 +282,24 @@
 
   .hero-description {
     font-size: 1rem;
+    max-width: 100%;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 
   .btn {
     width: 100%;
     max-width: 250px;
     justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .code-window {
@@ -242,15 +312,91 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+  }
+
   .hero-title {
     font-size: 2rem;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
     font-size: 1.1rem;
   }
 
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    gap: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 360px) {
   .container {
-    padding: 0 15px;
+    padding: 0 8px;
+  }
+
+  .hero-content {
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+
+  .code-window {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .window-content {
+    padding: 1rem;
+  }
+
+  .window-content pre {
+    font-size: 0.7rem;
   }
 } 
