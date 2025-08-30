@@ -5,31 +5,31 @@ import './About.css';
 
 const About = () => {
         const personalInfo = [
-        { icon: <User size={20} />, label: 'Nombre', value: 'Felipe Cremerius' },
-        { icon: <MapPin size={20} />, label: 'Ubicación', value: 'Buenos Aires, Argentina' },
-        { icon: <Calendar size={20} />, label: 'Experiencia', value: 'Desarrollador Frontend' },
+        { icon: <User size={20} />, label: 'Name', value: 'Felipe Cremerius' },
+        { icon: <MapPin size={20} />, label: 'Location', value: 'Buenos Aires, Argentina' },
+        { icon: <Calendar size={20} />, label: 'Experience', value: 'Frontend Developer' },
         { icon: <Mail size={20} />, label: 'Email', value: 'felipecremerius1@gmail.com' },
-        { icon: <Phone size={20} />, label: 'Teléfono', value: '+54 11 6200 7718' }
+        { icon: <Phone size={20} />, label: 'Phone', value: '+54 11 6200 7718' }
       ];
 
         const experience = [
         {
-          year: '2024 - Presente',
-          title: 'Desarrollador Frontend',
+          year: '2024 - Present',
+          title: 'Frontend Developer',
           company: 'Freelance',
-          description: 'Desarrollo de interfaces de usuario modernas y responsivas con React, JavaScript y tecnologías frontend.'
+          description: 'Development of modern and responsive user interfaces with React, JavaScript and frontend technologies.'
         },
         {
           year: '2022 - 2023',
-          title: 'Diplomatura Full Stack',
-          company: 'UTN - Universidad Tecnológica Nacional',
-          description: 'Formación completa en desarrollo web full stack con tecnologías modernas.'
+          title: 'Full Stack Diploma',
+          company: 'UTN - National Technological University',
+          description: 'Complete training in full stack web development with modern technologies.'
         },
         {
           year: '2020 - 2023',
-          title: 'Licenciatura en Diseño de Imagen y Sonido',
-          company: 'Universidad de Palermo',
-          description: 'Carrera en curso diseño multimedia, especialización en diseño digital.'
+          title: 'Bachelor in Image and Sound Design',
+          company: 'University of Palermo',
+          description: 'Degree in progress in multimedia design, specializing in digital design.'
         }
       ];
 
@@ -43,9 +43,9 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Sobre Mí</h2>
+          <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            Conoce más sobre mi experiencia, pasión y trayectoria profesional
+            Learn more about my experience, passion and professional journey
           </p>
         </motion.div>
 
@@ -57,23 +57,23 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-                            <h3>¿Quién soy?</h3>
+                            <h3>Who am I?</h3>
                 <p>
-                  Soy Felipe Cremerius, un desarrollador Frontend y diseñador multimedia
-                  apasionado por crear experiencias digitales únicas y soluciones innovadoras.
-                  Mi formación combina la creatividad del diseño multimedia con la lógica
-                  del desarrollo frontend, lo que me permite crear interfaces de usuario excepcionales.
+                  I'm Felipe Cremerius, a Frontend Developer and Multimedia Designer
+                  passionate about creating unique digital experiences and innovative solutions.
+                  My background combines the creativity of multimedia design with the logic
+                  of frontend development, allowing me to create exceptional user interfaces.
                 </p>
                 <p>
-                  Actualmente estoy estudiando la Licencenciatura en Diseño Multimedia en la Universidad de Palermo, donde desarrollo
-                  mi creatividad y habilidades de diseño digital. Posteriormente, completé
-                  la diplomatura Full Stack en la UTN, donde adquirí sólidos conocimientos
-                  en desarrollo web moderno, especializándome en tecnologías frontend.
+                  I'm currently studying for a Bachelor's degree in Multimedia Design at the University of Palermo, where I develop
+                  my creativity and digital design skills. Subsequently, I completed
+                  the Full Stack diploma at UTN, where I acquired solid knowledge
+                  in modern web development, specializing in frontend technologies.
                 </p>
                 <p>
-                  Mi enfoque se centra en crear interfaces de usuario que no solo funcionen
-                  perfectamente, sino que también ofrezcan experiencias de usuario excepcionales,
-                  combinando mis conocimientos técnicos con mi sensibilidad artística.
+                  My approach focuses on creating user interfaces that not only work
+                  perfectly, but also offer exceptional user experiences,
+                  combining my technical knowledge with my artistic sensibility.
                 </p>
           </motion.div>
 
@@ -84,7 +84,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3>Información Personal</h3>
+            <h3>Personal Information</h3>
             <div className="info-grid">
               {personalInfo.map((info, index) => (
                 <motion.div
@@ -113,7 +113,7 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3>Experiencia Profesional</h3>
+          <h3>Professional Experience</h3>
           <div className="timeline">
             {experience.map((exp, index) => (
               <motion.div

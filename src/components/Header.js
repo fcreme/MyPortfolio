@@ -25,11 +25,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Sobre Mí' },
-    { id: 'skills', label: 'Habilidades' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'contact', label: 'Contacto' }
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' }
   ];
 
   return (

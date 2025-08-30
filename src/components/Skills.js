@@ -31,7 +31,7 @@ const Skills = () => {
     },
     {
       icon: <Database size={24} />,
-      title: 'Bases de Datos',
+      title: 'Databases',
       skills: [
         { name: 'MySQL', level: 95 },
         { name: 'MongoDB', level: 80 },
@@ -42,7 +42,7 @@ const Skills = () => {
     },
     {
       icon: <Palette size={24} />,
-      title: 'Diseño & UI/UX',
+      title: 'Design & UI/UX',
       skills: [
         { name: 'Photoshop', level: 95 },
         { name: 'CSS Grid/Flexbox', level: 90 },
@@ -51,7 +51,7 @@ const Skills = () => {
     },
     {
       icon: <Globe size={24} />,
-      title: 'Herramientas & DevOps',
+      title: 'Tools & DevOps',
             skills: [
         { name: 'Git', level: 90 },
         { name: 'GitHub', level: 90 },
@@ -62,7 +62,7 @@ const Skills = () => {
     },
     {
       icon: <Smartphone size={24} />,
-      title: 'Mobile & Otros',
+      title: 'Mobile & Others',
       skills: [
         { name: 'React Native', level: 75 },
         { name: 'REST APIs', level: 90 }
@@ -80,9 +80,9 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Habilidades & Tecnologías</h2>
+          <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle">
-            Tecnologías y herramientas que utilizo para crear soluciones digitales
+            Technologies and tools I use to create digital solutions
           </p>
         </motion.div>
 
@@ -138,7 +138,7 @@ const Skills = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3>Otras Habilidades</h3>
+          <h3>Other Skills</h3>
           <div className="skills-tags">
             {[
               'FTP', 'Testing', 'Performance', 'SEO', 'Analytics',

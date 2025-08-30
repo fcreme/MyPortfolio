@@ -14,8 +14,8 @@ const Contact = () => {
   const handleEmailClick = (e) => {
     e.preventDefault();
     
-    // Abrir Gmail web directamente (más confiable)
-    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contacto desde Portfolio', '_blank');
+    // Open Gmail web directly (more reliable)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contact from Portfolio', '_blank');
   };
 
   const handleInputChange = (e) => {
@@ -31,7 +31,7 @@ const Contact = () => {
     
     // Simulate form submission
     setTimeout(() => {
-      alert('¡Mensaje enviado con éxito! Te responderé pronto.');
+      alert('Message sent successfully! I will respond soon.');
       setFormData({
         name: '',
         email: '',
@@ -51,13 +51,13 @@ const Contact = () => {
         },
         {
           icon: <Phone size={24} />,
-          title: 'Teléfono',
+          title: 'Phone',
           value: '+54 11 6200 7718',
           link: 'tel:+541162007718'
         },
         {
           icon: <MapPin size={24} />,
-          title: 'Ubicación',
+          title: 'Location',
           value: 'Buenos Aires, Argentina',
           link: null
         }
@@ -88,9 +88,9 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Contáctame</h2>
+          <h2 className="section-title">Contact Me</h2>
           <p className="section-subtitle">
-            ¿Tienes un proyecto en mente? ¡Hablemos sobre cómo puedo ayudarte!
+            Have a project in mind? Let's talk about how I can help you!
           </p>
         </motion.div>
 
@@ -102,10 +102,10 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3>Información de Contacto</h3>
+            <h3>Contact Information</h3>
             <p>
-              Estoy siempre abierto a nuevas oportunidades y proyectos interesantes. 
-              Si tienes alguna pregunta o quieres trabajar juntos, no dudes en contactarme.
+              I'm always open to new opportunities and interesting projects. 
+              If you have any questions or want to work together, don't hesitate to contact me.
             </p>
             
             <div className="contact-details">
@@ -140,7 +140,7 @@ const Contact = () => {
             </div>
 
             <div className="social-links">
-              <h4>Sígueme en redes sociales</h4>
+              <h4>Follow me on social media</h4>
               <div className="social-icons">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -167,7 +167,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3>Envíame un mensaje</h3>
+            <h3>Send me a message</h3>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <input
@@ -175,7 +175,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  placeholder="Tu nombre"
+                  placeholder="Your name"
                   required
                 />
               </div>
@@ -186,7 +186,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="Tu email"
+                  placeholder="Your email"
                   required
                 />
               </div>
@@ -197,7 +197,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  placeholder="Asunto"
+                  placeholder="Subject"
                   required
                 />
               </div>
@@ -207,7 +207,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Tu mensaje"
+                  placeholder="Your message"
                   rows="5"
                   required
                 ></textarea>
@@ -220,7 +220,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Send size={18} />
-                Enviar Mensaje
+                Send Message
               </motion.button>
             </form>
           </motion.div>

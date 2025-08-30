@@ -9,7 +9,7 @@ const Projects = () => {
     {
       id: 1,
       title: 'TIDE Active - Personal Brand',
-      description: 'Sitio web personal de marca para entrenador fitness y estilo de vida. Plataforma completa con diseño moderno, responsive y optimizada para conversión.',
+      description: 'Personal brand website for fitness and lifestyle trainer. Complete platform with modern design, responsive and optimized for conversion.',
       image: '/tomipagina.jpg',
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
       category: 'frontend',
@@ -20,7 +20,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'Vie Wines - E-commerce',
-      description: 'Tienda online premium de vinos con diseño elegante y responsive. Plataforma completa de e-commerce con catálogo de productos, carrito de compras, filtros avanzados y sistema de pagos integrado.',
+      description: 'Premium online wine store with elegant and responsive design. Complete e-commerce platform with product catalog, shopping cart, advanced filters and integrated payment system.',
       image: '/viewinespagina.jpg',
       technologies: ['HTML5', 'SCSS', 'JavaScript', 'Liquid', 'TiendaNube/Nuvemshop', 'FTP'],
       category: 'frontend',
@@ -31,7 +31,7 @@ const Projects = () => {
     {
       id: 3,
       title: 'Espacios en Madera - WordPress',
-      description: 'Sitio web corporativo para empresa de carpintería y muebles de madera. Diseño personalizado con WordPress, optimizado para SEO y experiencia de usuario moderna.',
+      description: 'Corporate website for woodworking and wooden furniture company. Custom design with WordPress, optimized for SEO and modern user experience.',
       image: '/espaciosenmadera.jpg',
       technologies: ['WordPress', 'PHP', 'CSS3', 'JavaScript', 'SEO', 'Responsive Design'],
       category: 'frontend',
@@ -42,7 +42,7 @@ const Projects = () => {
     {
       id: 4,
       title: 'Weather Dashboard',
-      description: 'Dashboard meteorológico con mapas interactivos, pronósticos detallados y widgets personalizables.',
+      description: 'Weather dashboard with interactive maps, detailed forecasts and customizable widgets.',
       image: '/tomipagina.jpg',
       technologies: ['Vue.js', 'OpenWeather API', 'Chart.js', 'PWA'],
       category: 'frontend',
@@ -53,7 +53,7 @@ const Projects = () => {
     {
       id: 5,
       title: 'REST API Service',
-      description: 'API RESTful completa con autenticación JWT, documentación automática y tests unitarios.',
+      description: 'Complete RESTful API with JWT authentication, automatic documentation and unit tests.',
       image: '/viewinespagina.jpg',
       technologies: ['Node.js', 'Express', 'PostgreSQL', 'Jest'],
       category: 'backend',
@@ -64,7 +64,7 @@ const Projects = () => {
     {
       id: 6,
       title: 'Portfolio Website',
-      description: 'Sitio web personal responsive con animaciones, SEO optimizado y diseño moderno.',
+      description: 'Responsive personal website with animations, SEO optimized and modern design.',
       image: '/tomipagina.jpg',
       technologies: ['React', 'Framer Motion', 'CSS Grid', 'SEO'],
       category: 'frontend',
@@ -75,7 +75,7 @@ const Projects = () => {
     {
       id: 7,
       title: 'Chat Application',
-      description: 'Aplicación de chat en tiempo real con salas, mensajes privados y notificaciones push.',
+      description: 'Real-time chat application with rooms, private messages and push notifications.',
       image: '/viewinespagina.jpg',
       technologies: ['React', 'Socket.io', 'MongoDB', 'Redis'],
       category: 'fullstack',
@@ -87,10 +87,10 @@ const Projects = () => {
 
 
 
-  // Solo mostrar proyectos destacados
+  // Only show featured projects
   const featuredProjects = projects.filter(project => project.featured);
 
-  // Función para manejar errores de imagen
+  // Function to handle image errors
   const handleImageError = (e) => {
     e.target.src = '/tomipagina.jpg';
   };
@@ -106,9 +106,9 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Proyectos Destacados</h2>
+          <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">
-            Una muestra de mis trabajos más recientes y proyectos personales
+            A showcase of my most recent work and personal projects
           </p>
         </motion.div>
 
@@ -147,7 +147,7 @@ const Projects = () => {
                         whileTap={{ scale: 0.9 }}
                       >
                         <Eye size={20} />
-                        <span>Ver Demo</span>
+                        <span>View Demo</span>
                       </motion.a>
                       {project.githubUrl && (
                         <motion.a
@@ -159,14 +159,14 @@ const Projects = () => {
                           whileTap={{ scale: 0.9 }}
                         >
                           <Github size={20} />
-                          <span>Código</span>
+                          <span>Code</span>
                         </motion.a>
                       )}
                     </div>
                   </div>
                   {project.featured && (
                     <div className="featured-badge">
-                      <span>Destacado</span>
+                      <span>Featured</span>
                     </div>
                   )}
                 </div>
@@ -195,7 +195,7 @@ const Projects = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p>¿Te gusta lo que ves? ¡Echa un vistazo a más proyectos en mi GitHub!</p>
+          <p>Like what you see? Check out more projects on my GitHub!</p>
           <motion.a
             href="https://github.com/fcreme"
             target="_blank"
@@ -205,7 +205,7 @@ const Projects = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Github size={20} />
-            Ver más en GitHub
+            See more on GitHub
             <ExternalLink size={16} />
           </motion.a>
         </motion.div>

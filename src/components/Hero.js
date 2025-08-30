@@ -23,8 +23,8 @@ const Hero = () => {
   const handleEmailClick = (e) => {
     e.preventDefault();
     
-    // Abrir Gmail web directamente (más confiable)
-    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contacto desde Portfolio', '_blank');
+    // Open Gmail web directly (more reliable)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contact from Portfolio', '_blank');
   };
 
   const socialLinks = [
@@ -62,7 +62,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Hola, soy{' '}
+              Hello, I'm{' '}
               <span className="highlight">Felipe Cremerius</span>
             </motion.h1>
             
@@ -72,7 +72,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Desarrollador Frontend & Diseñador Multimedia
+              Frontend Developer & Multimedia Designer
             </motion.h2>
             
             <motion.p
@@ -81,8 +81,8 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Apasionado por crear experiencias digitales únicas y soluciones innovadoras. 
-              Licencenciatura en Curso de Diseño Multimedia de la Universidad de Palermo y diplomado en Full Stack de la UTN.
+              Passionate about creating unique digital experiences and innovative solutions. 
+              Currently pursuing a Bachelor's degree in Multimedia Design from the University of Palermo and graduated from Full Stack at UTN.
             </motion.p>
 
             <motion.div
@@ -97,7 +97,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('projects')}
               >
-                Ver Proyectos
+                View Projects
                 <ArrowRight size={18} />
               </motion.button>
               
@@ -108,7 +108,7 @@ const Hero = () => {
                 onClick={downloadCV}
               >
                 <Download size={18} />
-                Descargar CV
+                Download CV
               </motion.button>
             </motion.div>
 
@@ -157,13 +157,13 @@ const Hero = () => {
 {`const developer = {
   name: "Felipe Cremerius",
   role: "Frontend Developer & Multimedia Designer",
-  education: ["UTN - Full Stack", "UP - Licenciatura en Diseño Multimedia"],
+  education: ["UTN - Full Stack", "UP - Multimedia Design Degree"],
   skills: ["React", "JavaScript", "Node.js","MySQL"],
   passion: "Creating amazing digital experiences",
   location: "Buenos Aires, Argentina"
 };
 
-console.log("¡Hola Mundo! 👋");`}
+console.log("Hello World! 👋");`}
                   </code>
                 </pre>
               </div>

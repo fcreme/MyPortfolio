@@ -9,8 +9,8 @@ const Footer = () => {
   const handleEmailClick = (e) => {
     e.preventDefault();
     
-    // Abrir Gmail web directamente (más confiable)
-    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contacto desde Portfolio', '_blank');
+    // Open Gmail web directly (more reliable)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=felipecremerius1@gmail.com&su=Contact from Portfolio', '_blank');
   };
 
   const socialLinks = [
@@ -52,8 +52,8 @@ const Footer = () => {
               >
                 <h3 className="footer-title">Felipe Cremerius</h3>
                 <p className="footer-description">
-                  Desarrollador Frontend y Diseñador Multimedia apasionado por crear experiencias digitales únicas
-                  y soluciones innovadoras. Licenciatura en Curso de Diseño Multimedia de la Universidad de Palermo y diplomado en Full Stack de la UTN.
+                  Frontend Developer and Multimedia Designer passionate about creating unique digital experiences
+                  and innovative solutions. Currently pursuing a Bachelor's degree in Multimedia Design from the University of Palermo and graduated from Full Stack at UTN.
                 </p>
               </motion.div>
 
@@ -64,31 +64,31 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="footer-subtitle">Enlaces Rápidos</h4>
+            <h4 className="footer-subtitle">Quick Links</h4>
             <ul className="footer-links">
               <li>
                 <button onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Inicio
+                  Home
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Sobre Mí
+                  About
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Habilidades
+                  Skills
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Proyectos
+                  Projects
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Contacto
+                  Contact
                 </button>
               </li>
             </ul>
@@ -101,7 +101,7 @@ const Footer = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <h4 className="footer-subtitle">Contacto</h4>
+                <h4 className="footer-subtitle">Contact</h4>
                 <div className="footer-contact">
                   <p>felipecremerius1@gmail.com</p>
                   <p>+54 11 6200 7718</p>
@@ -116,7 +116,7 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h4 className="footer-subtitle">Sígueme</h4>
+            <h4 className="footer-subtitle">Follow Me</h4>
             <div className="footer-social">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -146,9 +146,9 @@ const Footer = () => {
         >
           <div className="footer-copyright">
             <p>
-              © {currentYear} Felipe Cremerius. Hecho con{' '}
+              © {currentYear} Felipe Cremerius. Made with{' '}
               <Heart size={16} className="heart-icon" />
-              {' '}y React
+              {' '}and React
             </p>
           </div>
           
@@ -157,7 +157,7 @@ const Footer = () => {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            aria-label="Volver arriba"
+            aria-label="Back to top"
           >
             ↑
           </motion.button>
