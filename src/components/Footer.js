@@ -52,8 +52,8 @@ const Footer = () => {
               >
                 <h3 className="footer-title">Felipe Cremerius</h3>
                 <p className="footer-description">
-                  Frontend Developer and Multimedia Designer passionate about creating unique digital experiences
-                  and innovative solutions. Currently pursuing a Bachelor's degree in Multimedia Design from the University of Palermo and graduated from Full Stack at UTN.
+                  Frontend Developer specialized in React and modern web applications.
+                  Strong focus on performance, responsive and pixel-perfect UI.
                 </p>
               </motion.div>
 

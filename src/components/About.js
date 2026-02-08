@@ -7,29 +7,23 @@ const About = () => {
         const personalInfo = [
         { icon: <User size={20} />, label: 'Name', value: 'Felipe Cremerius' },
         { icon: <MapPin size={20} />, label: 'Location', value: 'Buenos Aires, Argentina' },
-        { icon: <Calendar size={20} />, label: 'Experience', value: 'Frontend Developer' },
+        { icon: <Calendar size={20} />, label: 'Role', value: 'Frontend Developer' },
         { icon: <Mail size={20} />, label: 'Email', value: 'felipecremerius1@gmail.com' },
         { icon: <Phone size={20} />, label: 'Phone', value: '+54 11 6200 7718' }
       ];
 
         const experience = [
         {
-          year: '2024 - Present',
+          year: '2025 - Present',
           title: 'Frontend Developer',
+          company: 'Reino Ceramicos',
+          description: 'Development of modular enterprise dashboards and management tools using React with API integrations, state management, and data visualization. Internal dashboards used by multiple business areas for daily operations. Backend integration with Node.js (NestJS) services.'
+        },
+        {
+          year: '2023 - 2024',
+          title: 'Freelance Web Developer',
           company: 'Freelance',
-          description: 'Development of modern and responsive user interfaces with React, JavaScript and frontend technologies.'
-        },
-        {
-          year: '2022 - 2023',
-          title: 'Full Stack Diploma',
-          company: 'UTN - National Technological University',
-          description: 'Complete training in full stack web development with modern technologies.'
-        },
-        {
-          year: '2020 - 2023',
-          title: 'Bachelor in Image and Sound Design',
-          company: 'University of Palermo',
-          description: 'Degree in progress in multimedia design, specializing in digital design.'
+          description: 'Responsive web interfaces, REST API integrations, Google Sheets automation, and Tienda Nube customization via FTP.'
         }
       ];
 
@@ -59,21 +53,21 @@ const About = () => {
           >
                             <h3>Who am I?</h3>
                 <p>
-                  I'm Felipe Cremerius, a Frontend Developer and Multimedia Designer
-                  passionate about creating unique digital experiences and innovative solutions.
-                  My background combines the creativity of multimedia design with the logic
-                  of frontend development, allowing me to create exceptional user interfaces.
+                  I'm Felipe Cremerius, a Frontend Developer specialized in React and modern
+                  web applications. I have experience building software from scratch by
+                  collaborating with business stakeholders to translate workflows into
+                  scalable applications.
                 </p>
                 <p>
-                  I'm currently studying for a Bachelor's degree in Multimedia Design at the University of Palermo, where I develop
-                  my creativity and digital design skills. Subsequently, I completed
-                  the Full Stack diploma at UTN, where I acquired solid knowledge
-                  in modern web development, specializing in frontend technologies.
+                  Currently working at Reino Ceramicos, developing modular enterprise dashboards
+                  and management tools with React, API integrations, and data visualization.
+                  Previously worked as a freelance developer building responsive interfaces
+                  and automating workflows.
                 </p>
                 <p>
-                  My approach focuses on creating user interfaces that not only work
-                  perfectly, but also offer exceptional user experiences,
-                  combining my technical knowledge with my artistic sensibility.
+                  My approach focuses on performance, responsive and pixel-perfect UI.
+                  I'm currently deepening my skills in Three.js, frontend performance
+                  optimization, testing strategies, and automation with n8n.
                 </p>
           </motion.div>
 

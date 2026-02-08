@@ -13,8 +13,8 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Felipe CREMERIUS (3).pdf';
-    link.download = 'CV-Felipe-Cremerius.pdf';
+    link.href = '/Felipe_Cremerius_Frontend_Developer_CV_final.pdf';
+    link.download = 'Felipe_Cremerius_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -72,17 +72,18 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Frontend Developer & Multimedia Designer
+              Frontend Developer
             </motion.h2>
-            
+
             <motion.p
               className="hero-description"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Passionate about creating unique digital experiences and innovative solutions. 
-              Currently pursuing a Bachelor's degree in Multimedia Design from the University of Palermo and graduated from Full Stack at UTN.
+              Specialized in React and modern web applications. Building software from scratch
+              by collaborating with business stakeholders to translate workflows into scalable applications.
+              Strong focus on performance, responsive and pixel-perfect UI.
             </motion.p>
 
             <motion.div
@@ -156,14 +157,14 @@ const Hero = () => {
                   <code>
 {`const developer = {
   name: "Felipe Cremerius",
-  role: "Frontend Developer & Multimedia Designer",
-  education: ["UTN - Full Stack", "UP - Multimedia Design Degree"],
-  skills: ["React", "JavaScript", "Node.js","MySQL"],
-  passion: "Creating amazing digital experiences",
+  role: "Frontend Developer",
+  stack: ["React", "TypeScript", "Tailwind CSS"],
+  tools: ["Neovim", "Claude Code", "Git"],
+  focus: "Performance & pixel-perfect UI",
   location: "Buenos Aires, Argentina"
 };
 
-console.log("Hello World! 👋");`}
+console.log("Hello World!");`}
                   </code>
                 </pre>
               </div>

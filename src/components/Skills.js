@@ -10,62 +10,61 @@ const Skills = () => {
       title: 'Frontend',
       skills: [
         { name: 'React', level: 90 },
-        { name: 'JavaScript', level: 85 },
+        { name: 'JavaScript', level: 90 },
         { name: 'TypeScript', level: 80 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'WordPress', level: 85 },
-        { name: 'Liquid', level: 85 },
-        { name: 'Vue.js', level: 50 }
+        { name: 'HTML5/CSS3', level: 95 },
+        { name: 'Tailwind CSS', level: 85 },
+        { name: 'Framer Motion', level: 80 },
+        { name: 'Liquid', level: 75 }
       ]
     },
     {
       icon: <Server size={24} />,
-      title: 'Backend',
+      title: 'Backend & APIs',
       skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 80 },
-        
-        
-       
+        { name: 'Node.js (NestJS)', level: 80 },
+        { name: 'REST APIs', level: 90 },
+        { name: 'Socket.io', level: 75 },
+        { name: 'Google Apps Script', level: 80 }
       ]
     },
     {
       icon: <Database size={24} />,
-      title: 'Databases',
+      title: 'State & Data',
       skills: [
-        { name: 'MySQL', level: 95 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'PostgreSQL', level: 75 },
-        
-        
+        { name: 'MySQL', level: 90 },
+        { name: 'Zustand', level: 85 },
+        { name: 'TanStack Query', level: 85 },
+        { name: 'Axios', level: 90 }
       ]
     },
     {
       icon: <Palette size={24} />,
-      title: 'Design & UI/UX',
+      title: 'Architecture & Performance',
       skills: [
-        { name: 'Photoshop', level: 95 },
-        { name: 'CSS Grid/Flexbox', level: 90 },
-        { name: 'Responsive Design', level: 90 }
+        { name: 'Component-based Architecture', level: 90 },
+        { name: 'Design Systems', level: 85 },
+        { name: 'Code Splitting / Lazy Loading', level: 85 },
+        { name: 'Caching Strategies', level: 80 }
       ]
     },
     {
       icon: <Globe size={24} />,
-      title: 'Tools & DevOps',
-            skills: [
-        { name: 'Git', level: 90 },
-        { name: 'GitHub', level: 90 },
-        
-        
-        
+      title: 'Data Visualization & Testing',
+      skills: [
+        { name: 'ECharts', level: 85 },
+        { name: 'Recharts', level: 80 },
+        { name: 'Jest / Vitest', level: 75 }
       ]
     },
     {
       icon: <Smartphone size={24} />,
-      title: 'Mobile & Others',
+      title: 'Tools',
       skills: [
-        { name: 'React Native', level: 75 },
-        { name: 'REST APIs', level: 90 }
+        { name: 'Git / GitHub', level: 90 },
+        { name: 'Neovim / VS Code', level: 90 },
+        { name: 'Claude Code', level: 85 },
+        { name: 'Postman / Bruno', level: 85 }
       ]
     }
   ];
@@ -141,10 +140,9 @@ const Skills = () => {
           <h3>Other Skills</h3>
           <div className="skills-tags">
             {[
-              'FTP', 'Testing', 'Performance', 'SEO', 'Analytics',
-              'WordPress', 'Shopify', 'Stripe', 'PayPal', 'OAuth',
-              'Webpack', 'Prettier', 'Jest',
-              'Sass/SCSS', 'Tailwind CSS', 'Bootstrap', 'Ant Design'
+              'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Screaming Architecture',
+              'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
+              'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization'
             ].map((skill, index) => (
               <motion.span
                 key={index}
