@@ -19,28 +19,17 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Vie Wines - E-commerce',
-      description: 'Premium online wine store with elegant and responsive design. Complete e-commerce platform with product catalog, shopping cart, advanced filters and integrated payment system.',
-      image: '/viewinespagina.jpg',
-      technologies: ['HTML5', 'SCSS', 'JavaScript', 'Liquid', 'TiendaNube/Nuvemshop', 'FTP'],
-      category: 'frontend',
-      liveUrl: 'https://viewines.com.ar/',
-      githubUrl: 'https://github.com/fcreme/Vie-Wines---E-commerce',
+      title: 'ClientDash - Project Management',
+      description: 'Full-stack project management dashboard with Kanban board, drag-and-drop tasks, real-time stats, authentication (email + Google OAuth), dark mode, and aurora animated backgrounds.',
+      image: '/clientdash.jpg',
+      technologies: ['React', 'Express', 'Prisma', 'Tailwind CSS', 'Framer Motion', 'SQLite'],
+      category: 'fullstack',
+      liveUrl: 'https://github.com/fcreme/client-dashboard',
+      githubUrl: 'https://github.com/fcreme/client-dashboard',
       featured: true
     },
     {
       id: 3,
-      title: 'Espacios en Madera - WordPress',
-      description: 'Corporate website for woodworking and wooden furniture company. Custom design with WordPress, optimized for SEO and modern user experience.',
-      image: '/espaciosenmadera.jpg',
-      technologies: ['WordPress', 'PHP', 'CSS3', 'JavaScript', 'SEO', 'Responsive Design'],
-      category: 'frontend',
-      liveUrl: 'https://espaciosenmadera.com.ar/',
-      githubUrl: null,
-      featured: true
-    },
-    {
-      id: 4,
       title: 'Weather Dashboard',
       description: 'Weather dashboard with interactive maps, detailed forecasts and customizable widgets.',
       image: '/tomipagina.jpg',
@@ -51,7 +40,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 5,
+      id: 4,
       title: 'REST API Service',
       description: 'Complete RESTful API with JWT authentication, automatic documentation and unit tests.',
       image: '/viewinespagina.jpg',
@@ -62,7 +51,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 6,
+      id: 5,
       title: 'Portfolio Website',
       description: 'Responsive personal website with animations, SEO optimized and modern design.',
       image: '/tomipagina.jpg',
@@ -73,7 +62,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 7,
+      id: 6,
       title: 'Chat Application',
       description: 'Real-time chat application with rooms, private messages and push notifications.',
       image: '/viewinespagina.jpg',

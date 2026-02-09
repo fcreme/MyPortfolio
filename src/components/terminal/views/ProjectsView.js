@@ -10,6 +10,13 @@ const ProjectsView = () => {
       liveUrl: 'https://tideactive.com/',
       githubUrl: 'https://github.com/fcreme/tideactive-personal-brand',
     },
+    {
+      title: 'ClientDash - Project Management',
+      description: 'Full-stack project management dashboard with Kanban board, drag-and-drop tasks, real-time stats, authentication (email + Google OAuth), dark mode, and aurora animated backgrounds.',
+      technologies: ['React', 'Express', 'Prisma', 'Tailwind CSS', 'Framer Motion', 'SQLite'],
+      liveUrl: 'https://github.com/fcreme/client-dashboard',
+      githubUrl: 'https://github.com/fcreme/client-dashboard',
+    },
   ];
 
   let n = 0;
