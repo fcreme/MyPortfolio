@@ -29,6 +29,17 @@ const Projects = () => {
       featured: true
     },
     {
+      id: 7,
+      title: 'OnChain - DeFi Interface',
+      description: 'Modern DeFi interface for interacting with ERC20 tokens on Ethereum Sepolia testnet. Multi-wallet connectivity, real-time balances, token transfers, approvals and minting with glassmorphism UI.',
+      image: '/onchain.jpg',
+      technologies: ['React', 'TypeScript', 'Wagmi', 'RainbowKit', 'Material-UI', 'Zustand'],
+      category: 'fullstack',
+      liveUrl: 'https://tokenflow-app.vercel.app/',
+      githubUrl: 'https://github.com/fcreme/OnChainApp',
+      featured: true
+    },
+    {
       id: 3,
       title: 'Weather Dashboard',
       description: 'Weather dashboard with interactive maps, detailed forecasts and customizable widgets.',

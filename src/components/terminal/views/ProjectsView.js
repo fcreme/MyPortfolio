@@ -17,6 +17,13 @@ const ProjectsView = () => {
       liveUrl: 'https://github.com/fcreme/client-dashboard',
       githubUrl: 'https://github.com/fcreme/client-dashboard',
     },
+    {
+      title: 'OnChain - DeFi Interface',
+      description: 'Modern DeFi interface for interacting with ERC20 tokens on Ethereum Sepolia testnet. Multi-wallet connectivity, real-time balances, token transfers, approvals and minting with glassmorphism UI.',
+      technologies: ['React', 'TypeScript', 'Wagmi', 'RainbowKit', 'Material-UI', 'Zustand'],
+      liveUrl: 'https://tokenflow-app.vercel.app/',
+      githubUrl: 'https://github.com/fcreme/OnChainApp',
+    },
   ];
 
   let n = 0;
