@@ -67,7 +67,7 @@ const ExperienceView = () => {
       <Line n={22}>
         <span className="syn-bold">Freelance</span>
         <span className="syn-comment"> | </span>
-        <span className="syn-italic">2023 - 2024</span>
+        <span className="syn-italic">2022 - Present</span>
       </Line>
       <Empty n={23} />
       <Line n={24}>
