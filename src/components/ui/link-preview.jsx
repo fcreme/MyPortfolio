@@ -64,7 +64,7 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <div className="hidden">
-          <img src={src} width={width} height={height} alt="hidden image" />
+          <img src={src} width={width} height={height} alt="preload" />
         </div>
       ) : null}
       <HoverCardPrimitive.Root
@@ -112,7 +112,7 @@ export const LinkPreview = ({
                     width={width}
                     height={height}
                     className="rounded-lg"
-                    alt="preview image" />
+                    alt="preview" />
                 </div>
               </motion.div>
             )}
