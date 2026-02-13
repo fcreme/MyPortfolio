@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#0a0a0a" rx="8"/>
+
+  <!-- Terminal window -->
+  <rect x="8" y="8" width="48" height="48" fill="#1a1a1a" rx="4" stroke="#22d3ee" stroke-width="1.5"/>
+
+  <!-- Command prompt ">" -->
+  <path d="M16 24 L24 30 L16 36" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Cursor "_" -->
+  <rect x="28" y="34" width="12" height="3" fill="#22d3ee" rx="1">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

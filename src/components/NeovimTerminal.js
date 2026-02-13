@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import emailjs from 'emailjs-com';
 import TitleBar from './terminal/TitleBar';
 import FileTree from './terminal/FileTree';
 import StatusLine from './terminal/StatusLine';
@@ -243,12 +244,34 @@ const NeovimTerminal = () => {
 
   const handleFormSubmit = useCallback(() => {
     if (!contactForm.name || !contactForm.email || !contactForm.message) return;
+
     setFormStatus('sending');
-    setTimeout(() => {
-      setFormStatus('sent');
-      setContactForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setFormStatus('idle'), 4000);
-    }, 1500);
+
+    // EmailJS configuration - replace these with your actual values
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+    const userID = process.env.REACT_APP_EMAILJS_USER_ID || 'YOUR_USER_ID';
+
+    const templateParams = {
+      from_name: contactForm.name,
+      from_email: contactForm.email,
+      subject: contactForm.subject || 'No subject',
+      message: contactForm.message,
+      to_name: 'Felipe Cremerius',
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, userID)
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        setFormStatus('sent');
+        setContactForm({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setFormStatus('idle'), 4000);
+      })
+      .catch((error) => {
+        console.error('Failed to send email:', error);
+        setFormStatus('error');
+        setTimeout(() => setFormStatus('idle'), 4000);
+      });
   }, [contactForm]);
 
   const handleLoadingComplete = useCallback(() => {
