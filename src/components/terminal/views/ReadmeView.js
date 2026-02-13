@@ -115,8 +115,13 @@ const ReadmeView = ({ onNavigate }) => {
         <span className="syn-bold">Email: </span>
         <a className="syn-link" href="mailto:felipecremerius1@gmail.com">felipecremerius1@gmail.com</a>
       </Line>
-      <Empty n={31} />
-      <Line n={32}>
+      <Line n={31}>
+        <span className="syn-list-marker">- </span>
+        <span className="syn-bold">Resume: </span>
+        <a className="syn-link" href="/Felipe_Cremerius_Frontend_Developer_CV_final.pdf" download>Download CV (PDF)</a>
+      </Line>
+      <Empty n={32} />
+      <Line n={33}>
         <span className="syn-comment">{'<!-- Built with React • Styled as Neovim -->'}</span>
       </Line>
     </div>

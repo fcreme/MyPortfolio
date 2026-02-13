@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Page Not Found | Felipe Cremerius</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4d4d4;
+      padding: 20px;
+    }
+
+    .terminal {
+      width: 100%;
+      max-width: 800px;
+      background: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .terminal-header {
+      background: #2d2d2d;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #3d3d3d;
+    }
+
+    .terminal-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .terminal-buttons span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .btn-close { background: #ff5f56; }
+    .btn-minimize { background: #ffbd2e; }
+    .btn-maximize { background: #27c93f; }
+
+    .terminal-title {
+      color: #a0a0a0;
+      font-size: 13px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .terminal-body {
+      padding: 40px;
+      min-height: 500px;
+    }
+
+    .error-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .ascii-art {
+      color: #22d3ee;
+      font-size: 14px;
+      line-height: 1.2;
+      margin: 0 0 20px 0;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .error-line {
+      margin: 8px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .error-type {
+      color: #f87171;
+      font-weight: 600;
+    }
+
+    .error-prefix {
+      color: #22d3ee;
+      margin-right: 8px;
+    }
+
+    .error-comment {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .command-section {
+      background: #252525;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 3px solid #22d3ee;
+    }
+
+    .command-line {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .prompt {
+      color: #22d3ee;
+      margin-right: 4px;
+    }
+
+    .command-text {
+      color: #d4d4d4;
+      font-weight: 600;
+    }
+
+    .key-hint {
+      color: #fbbf24;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    .command-desc {
+      color: #9ca3af;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .vim-button {
+      background: #2d2d2d;
+      border: 2px solid #22d3ee;
+      color: #22d3ee;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .vim-button:hover {
+      background: #22d3ee;
+      color: #1e1e1e;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
+    }
+
+    .status-line {
+      background: #2d2d2d;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .status-left {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .status-mode {
+      background: #22d3ee;
+      color: #1e1e1e;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .status-file { color: #9ca3af; }
+    .status-modified { color: #f87171; }
+
+    .status-right {
+      display: flex;
+      gap: 12px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 768px) {
+      .terminal-body {
+        padding: 20px;
+        min-height: 400px;
+      }
+
+      .ascii-art {
+        font-size: 10px;
+      }
+
+      .error-line,
+      .command-line {
+        font-size: 12px;
+      }
+
+      .vim-button {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <span class="btn-close"></span>
+        <span class="btn-minimize"></span>
+        <span class="btn-maximize"></span>
+      </div>
+      <div class="terminal-title">nvim — 404.txt</div>
+    </div>
+
+    <div class="terminal-body">
+      <div class="error-content">
+        <pre class="ascii-art">
+ _  _    ___  _  _
+| || |  / _ \| || |
+| || |_| | | | || |_
+|__   _| | | |__   _|
+   | | | |_| |  | |
+   |_|  \___/   |_|
+        </pre>
+
+        <div class="error-message">
+          <p class="error-line">
+            <span class="error-type">E404:</span>
+            <span class="error-text"> Page not found</span>
+          </p>
+          <p class="error-line">
+            <span class="error-prefix">~</span>
+          </p>
+          <p class="error-line">
+            <span class="error-comment">-- The requested path does not exist --</span>
+          </p>
+          <p class="error-line">
+            <span class="error-prefix">~</span>
+          </p>
+        </div>
+
+        <div class="command-section">
+          <p class="command-line">
+            <span class="prompt">:</span>
+            <span class="command-text">Available commands:</span>
+          </p>
+          <p class="command-line">
+            <span class="key-hint">:q</span>
+            <span class="command-desc"> - Return to homepage</span>
+          </p>
+          <p class="command-line">
+            <span class="key-hint">:help</span>
+            <span class="command-desc"> - View navigation help</span>
+          </p>
+        </div>
+
+        <div class="navigation-buttons">
+          <a href="/" class="vim-button">
+            <span>:</span>
+            <span>q </span>
+            <span>Return Home</span>
+          </a>
+        </div>
+
+        <div class="status-line">
+          <div class="status-left">
+            <span class="status-mode">NORMAL</span>
+            <span class="status-file">404.txt</span>
+            <span class="status-modified">[Error]</span>
+          </div>
+          <div class="status-right">
+            <span>utf-8</span>
+            <span>1/1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

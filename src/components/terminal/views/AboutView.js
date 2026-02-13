@@ -140,8 +140,15 @@ const AboutView = () => {
         <span className="syn-table-value">+54 11 6200 7718</span>
         <span className="syn-table-border">              |</span>
       </Line>
-      <Empty n={34} />
-      <Line n={35}>
+      <Line n={34}>
+        <span className="syn-table-border">| </span>
+        <span className="syn-table-key">Resume</span>
+        <span className="syn-table-border">   | </span>
+        <a className="syn-link" href="/Felipe_Cremerius_Frontend_Developer_CV_final.pdf" download>Download CV</a>
+        <span className="syn-table-border">                |</span>
+      </Line>
+      <Empty n={35} />
+      <Line n={36}>
         <span className="syn-comment">{'<!-- Learn more about my experience in experience.md -->'}</span>
       </Line>
     </div>

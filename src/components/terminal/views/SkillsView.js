@@ -47,19 +47,11 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        ['React', 90], ['JavaScript', 90], ['TypeScript', 80],
-        ['HTML5/CSS3', 95], ['Tailwind CSS', 85], ['Framer Motion', 80], ['Liquid', 75]
-      ].map(([name, level], i) => (
+        'React', 'JavaScript', 'TypeScript',
+        'HTML5/CSS3', 'Tailwind CSS', 'Framer Motion', 'Liquid'
+      ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-punctuation">{'      { '}</span>
-          <span className="syn-property">name</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-string">"{name}"</span>
-          <span className="syn-punctuation">, </span>
-          <span className="syn-property">level</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-number">{level}</span>
-          <span className="syn-punctuation">{' },'}</span>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
         </Line>
       ))}
       <Line n={l()}>
@@ -85,18 +77,10 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        ['Node.js (NestJS)', 80], ['REST APIs', 90], ['Socket.io', 75], ['Google Apps Script', 80]
-      ].map(([name, level], i) => (
+        'Node.js (NestJS)', 'REST APIs', 'Socket.io', 'Google Apps Script'
+      ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-punctuation">{'      { '}</span>
-          <span className="syn-property">name</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-string">"{name}"</span>
-          <span className="syn-punctuation">, </span>
-          <span className="syn-property">level</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-number">{level}</span>
-          <span className="syn-punctuation">{' },'}</span>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
         </Line>
       ))}
       <Line n={l()}>
@@ -122,18 +106,10 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        ['MySQL', 90], ['Zustand', 85], ['TanStack Query', 85], ['Axios', 90]
-      ].map(([name, level], i) => (
+        'MySQL', 'Zustand', 'TanStack Query', 'Axios'
+      ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-punctuation">{'      { '}</span>
-          <span className="syn-property">name</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-string">"{name}"</span>
-          <span className="syn-punctuation">, </span>
-          <span className="syn-property">level</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-number">{level}</span>
-          <span className="syn-punctuation">{' },'}</span>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
         </Line>
       ))}
       <Line n={l()}>
@@ -159,19 +135,11 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        ['Component-based Architecture', 90], ['Design Systems', 85],
-        ['Code Splitting / Lazy Loading', 85], ['Caching Strategies', 80]
-      ].map(([name, level], i) => (
+        'Component-based Architecture', 'Design Systems',
+        'Code Splitting / Lazy Loading', 'Caching Strategies'
+      ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-punctuation">{'      { '}</span>
-          <span className="syn-property">name</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-string">"{name}"</span>
-          <span className="syn-punctuation">, </span>
-          <span className="syn-property">level</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-number">{level}</span>
-          <span className="syn-punctuation">{' },'}</span>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
         </Line>
       ))}
       <Line n={l()}>
@@ -197,18 +165,10 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        ['ECharts', 85], ['Recharts', 80], ['Jest / Vitest', 75]
-      ].map(([name, level], i) => (
+        'ECharts', 'Recharts', 'Jest / Vitest'
+      ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-punctuation">{'      { '}</span>
-          <span className="syn-property">name</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-string">"{name}"</span>
-          <span className="syn-punctuation">, </span>
-          <span className="syn-property">level</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-number">{level}</span>
-          <span className="syn-punctuation">{' },'}</span>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
         </Line>
       ))}
       <Line n={l()}>
@@ -234,19 +194,11 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        ['Git / GitHub', 90], ['Neovim / VS Code', 90],
-        ['Claude Code', 85], ['Postman / Bruno', 85]
-      ].map(([name, level], i) => (
+        'Git / GitHub', 'Neovim / VS Code',
+        'Claude Code', 'Postman / Bruno'
+      ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-punctuation">{'      { '}</span>
-          <span className="syn-property">name</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-string">"{name}"</span>
-          <span className="syn-punctuation">, </span>
-          <span className="syn-property">level</span>
-          <span className="syn-operator">: </span>
-          <span className="syn-number">{level}</span>
-          <span className="syn-punctuation">{' },'}</span>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
         </Line>
       ))}
       <Line n={l()}>

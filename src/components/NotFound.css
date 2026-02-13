@@ -1,0 +1,247 @@
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.notfound-terminal {
+  width: 100%;
+  max-width: 800px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+  background: #2d2d2d;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn-close {
+  background: #ff5f56;
+}
+
+.btn-minimize {
+  background: #ffbd2e;
+}
+
+.btn-maximize {
+  background: #27c93f;
+}
+
+.terminal-title {
+  color: #a0a0a0;
+  font-size: 13px;
+  flex: 1;
+  text-align: center;
+}
+
+.terminal-body {
+  background: #1e1e1e;
+  padding: 40px;
+  min-height: 500px;
+  color: #d4d4d4;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ascii-art {
+  color: #22d3ee;
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.error-line {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.error-type {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.error-text {
+  color: #d4d4d4;
+}
+
+.error-prefix {
+  color: #22d3ee;
+  margin-right: 8px;
+}
+
+.error-comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.command-section {
+  background: #252525;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid #22d3ee;
+}
+
+.command-line {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.prompt {
+  color: #22d3ee;
+  margin-right: 4px;
+}
+
+.command-text {
+  color: #d4d4d4;
+  font-weight: 600;
+}
+
+.key-hint {
+  color: #fbbf24;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.command-desc {
+  color: #9ca3af;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.vim-button {
+  background: #2d2d2d;
+  border: 2px solid #22d3ee;
+  color: #22d3ee;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vim-button:hover {
+  background: #22d3ee;
+  color: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
+}
+
+.vim-button:active {
+  transform: translateY(0);
+}
+
+.button-prefix {
+  font-weight: 700;
+}
+
+.button-desc {
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
+.status-line {
+  background: #2d2d2d;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.status-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.status-mode {
+  background: #22d3ee;
+  color: #1e1e1e;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.status-file {
+  color: #9ca3af;
+}
+
+.status-modified {
+  color: #f87171;
+}
+
+.status-right {
+  display: flex;
+  gap: 12px;
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .notfound-container {
+    padding: 10px;
+  }
+
+  .terminal-body {
+    padding: 20px;
+    min-height: 400px;
+  }
+
+  .ascii-art {
+    font-size: 10px;
+  }
+
+  .error-line,
+  .command-line {
+    font-size: 12px;
+  }
+
+  .vim-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
