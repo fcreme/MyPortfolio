@@ -14,21 +14,23 @@ import SkillsView from './terminal/views/SkillsView';
 import ProjectsView from './terminal/views/ProjectsView';
 import ContactView from './terminal/views/ContactView';
 import PackageJsonView from './terminal/views/PackageJsonView';
+import DitherDemoView from './terminal/views/DitherDemoView';
 import './NeovimTerminal.css';
 
 const lineCountMap = {
   'README.md': 32,
-  'about.md': 31,
+  'about.md': 35,
   'experience.md': 30,
   'skills.tsx': 65,
   'projects.tsx': 24,
   'contact.sh': 22,
   'package.json': 24,
+  'dither-demo.jsx': 45,
 };
 
 const allFiles = [
   'README.md', 'about.md', 'experience.md',
-  'skills.tsx', 'projects.tsx', 'contact.sh', 'package.json',
+  'skills.tsx', 'projects.tsx', 'contact.sh', 'package.json', 'dither-demo.jsx',
 ];
 
 const TildeFiller = () => {
@@ -300,6 +302,8 @@ const NeovimTerminal = () => {
         );
       case 'package.json':
         return <PackageJsonView />;
+      case 'dither-demo.jsx':
+        return <DitherDemoView />;
       default:
         return <ReadmeView {...props} />;
     }

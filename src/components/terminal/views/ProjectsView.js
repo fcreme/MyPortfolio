@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line, Empty } from '../Line';
+import { LinkPreview } from '../../ui/link-preview';
 
 const ProjectsView = () => {
   const projects = [
@@ -23,6 +24,13 @@ const ProjectsView = () => {
       technologies: ['React', 'TypeScript', 'Wagmi', 'RainbowKit', 'Material-UI', 'Zustand'],
       liveUrl: 'https://tokenflow-app.vercel.app/',
       githubUrl: 'https://github.com/fcreme/OnChainApp',
+    },
+    {
+      title: 'Strudel Live Coding [Experimental]',
+      description: 'Experimental explorations in algorithmic music composition through live coding. Features multi-layered drum patterns, synthesizers, and real-time performance with Strudel and TidalCycles.',
+      technologies: ['Strudel', 'TidalCycles', 'JavaScript', 'Web Audio API'],
+      liveUrl: 'https://strudel.cc/',
+      githubUrl: 'https://github.com/fcreme/strudel-livecoding',
     },
   ];
 
@@ -100,7 +108,23 @@ const ProjectsView = () => {
           <Line n={l()}>
             <span className="syn-property">    description</span>
             <span className="syn-operator">: </span>
-            <span className="syn-string">"{project.description}"</span>
+            <span className="syn-string">"
+              {idx === 0 ? (
+                <>
+                  <LinkPreview url="https://tideactive.com/" isStatic={true} imageSrc="/tide2.png" className="text-cyan-400 hover:text-cyan-300 cursor-pointer">Personal brand website</LinkPreview> for fitness and lifestyle trainer. Complete platform with modern design, responsive and optimized for conversion.
+                </>
+              ) : idx === 2 ? (
+                <>
+                  <LinkPreview url="#" isStatic={true} imageSrc="/img.png" className="text-cyan-400 hover:text-cyan-300 cursor-pointer">Modern DeFi interface</LinkPreview> for interacting with ERC20 tokens on Ethereum Sepolia testnet. Multi-wallet connectivity, real-time balances, token transfers, approvals and minting with glassmorphism UI.
+                </>
+              ) : idx === 3 ? (
+                <>
+                  Experimental explorations in <LinkPreview url="#" isStatic={true} imageSrc="/strudel.png" className="text-cyan-400 hover:text-cyan-300 cursor-pointer">algorithmic music composition</LinkPreview> through live coding. Features multi-layered drum patterns, synthesizers, and real-time performance with Strudel and TidalCycles.
+                </>
+              ) : (
+                project.description
+              )}
+            "</span>
             <span className="syn-punctuation">,</span>
           </Line>
           <Line n={l()}>
