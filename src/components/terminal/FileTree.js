@@ -12,7 +12,6 @@ const netrwFiles = [
 const srcFiles = [
   { type: 'file', name: 'skills.tsx' },
   { type: 'file', name: 'projects.tsx' },
-  { type: 'file', name: 'dither-demo.jsx' },
 ];
 
 const FileTree = ({ activeFile, expandedDirs, onToggleDir, onSelectFile, sidebarOpen }) => {
