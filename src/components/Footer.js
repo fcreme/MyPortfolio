@@ -21,7 +21,7 @@ const Footer = () => {
     },
     {
       icon: <Linkedin size={20} />,
-      url: 'https://www.linkedin.com/in/felipe-cremerius-6b6389208/',
+      url: 'https://www.linkedin.com/in/felipecremerius',
       label: 'LinkedIn'
     },
     {

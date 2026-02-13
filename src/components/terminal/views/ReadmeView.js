@@ -108,7 +108,7 @@ const ReadmeView = ({ onNavigate }) => {
       <Line n={29}>
         <span className="syn-list-marker">- </span>
         <span className="syn-bold">LinkedIn: </span>
-        <a className="syn-link" href="https://www.linkedin.com/in/felipe-cremerius-6b6389208/" target="_blank" rel="noopener noreferrer">linkedin.com/in/felipe-cremerius</a>
+        <a className="syn-link" href="https://www.linkedin.com/in/felipecremerius" target="_blank" rel="noopener noreferrer">linkedin.com/in/felipecremerius</a>
       </Line>
       <Line n={30}>
         <span className="syn-list-marker">- </span>

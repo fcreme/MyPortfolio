@@ -98,7 +98,7 @@ const PackageJsonView = () => {
         <span className="syn-json-key">    "linkedin"</span>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
-        <a className="syn-link" href="https://www.linkedin.com/in/felipe-cremerius-6b6389208/" target="_blank" rel="noopener noreferrer">https://linkedin.com/in/felipe-cremerius</a>
+        <a className="syn-link" href="https://www.linkedin.com/in/felipecremerius" target="_blank" rel="noopener noreferrer">https://linkedin.com/in/felipecremerius</a>
         <span className="syn-json-string">"</span>
         <span className="syn-punctuation">,</span>
       </Line>
