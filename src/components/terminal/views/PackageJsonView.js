@@ -114,7 +114,7 @@ const PackageJsonView = () => {
         <span className="syn-json-key">    "resume"</span>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
-        <a className="syn-link" href="/Felipe_Cremerius_Frontend_Developer_CV_final.pdf" download>Download CV (PDF)</a>
+        <a className="syn-link" href="/Felipe_Cremerius_CV.pdf" download>Download CV (PDF)</a>
         <span className="syn-json-string">"</span>
       </Line>
       <Line n={18}>

@@ -4,7 +4,7 @@ import { Line, Empty } from '../Line';
 const ReadmeView = ({ onNavigate }) => {
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Felipe_Cremerius_Frontend_Developer_CV_final.pdf';
+    link.href = '/Felipe_Cremerius_CV.pdf';
     link.download = 'Felipe_Cremerius_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -118,7 +118,7 @@ const ReadmeView = ({ onNavigate }) => {
       <Line n={31}>
         <span className="syn-list-marker">- </span>
         <span className="syn-bold">Resume: </span>
-        <a className="syn-link" href="/Felipe_Cremerius_Frontend_Developer_CV_final.pdf" download>Download CV (PDF)</a>
+        <a className="syn-link" href="/Felipe_Cremerius_CV.pdf" download>Download CV (PDF)</a>
       </Line>
       <Empty n={32} />
       <Line n={33}>

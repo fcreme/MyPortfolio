@@ -144,7 +144,7 @@ const AboutView = () => {
         <span className="syn-table-border">| </span>
         <span className="syn-table-key">Resume</span>
         <span className="syn-table-border">   | </span>
-        <a className="syn-link" href="/Felipe_Cremerius_Frontend_Developer_CV_final.pdf" download>Download CV</a>
+        <a className="syn-link" href="/Felipe_Cremerius_CV.pdf" download>Download CV</a>
         <span className="syn-table-border">                |</span>
       </Line>
       <Empty n={35} />

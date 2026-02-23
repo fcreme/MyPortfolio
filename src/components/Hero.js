@@ -13,7 +13,7 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Felipe_Cremerius_Frontend_Developer_CV_final.pdf';
+    link.href = '/Felipe_Cremerius_CV.pdf';
     link.download = 'Felipe_Cremerius_CV.pdf';
     document.body.appendChild(link);
     link.click();
