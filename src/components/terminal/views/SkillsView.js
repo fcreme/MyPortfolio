@@ -47,8 +47,8 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'React', 'JavaScript', 'TypeScript',
-        'HTML5/CSS3', 'Tailwind CSS', 'Framer Motion', 'Liquid'
+        'React', 'Next.js', 'JavaScript', 'TypeScript',
+        'HTML5/CSS3', 'Tailwind CSS', 'Framer Motion', 'Material-UI', 'Liquid'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -77,7 +77,8 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'Node.js (NestJS)', 'REST APIs', 'Socket.io', 'Google Apps Script'
+        'Node.js', 'NestJS', 'Golang', 'Prisma',
+        'REST APIs', 'Socket.io', 'Google Apps Script'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -106,7 +107,7 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'MySQL', 'Zustand', 'TanStack Query', 'Axios'
+        'MySQL', 'SQLite', 'Zustand', 'TanStack Query', 'Axios'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -194,8 +195,38 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'Git / GitHub', 'Neovim / VS Code',
-        'Claude Code', 'Postman / Bruno'
+        'Git / GitHub', 'Docker', 'Neovim / VS Code',
+        'Linux / WSL', 'Claude Code', 'LLMs',
+        'Model Context Protocol', 'Vercel', 'Postman / Bruno'
+      ].map((name, i) => (
+        <Line key={i} n={l()}>
+          <span className="syn-string">{'      "'}{name}{'",'}</span>
+        </Line>
+      ))}
+      <Line n={l()}>
+        <span className="syn-punctuation">{'    ]'}</span>
+      </Line>
+      <Line n={l()}>
+        <span className="syn-punctuation">{'  },'}</span>
+      </Line>
+
+      {/* Web3 / Blockchain */}
+      <Line n={l()}>
+        <span className="syn-punctuation">{'  {'}</span>
+      </Line>
+      <Line n={l()}>
+        <span className="syn-property">    title</span>
+        <span className="syn-operator">: </span>
+        <span className="syn-string">"Web3 / Blockchain"</span>
+        <span className="syn-punctuation">,</span>
+      </Line>
+      <Line n={l()}>
+        <span className="syn-property">    skills</span>
+        <span className="syn-operator">: </span>
+        <span className="syn-punctuation">[</span>
+      </Line>
+      {[
+        'Wagmi', 'RainbowKit', 'Ethers.js'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -229,7 +260,8 @@ const SkillsView = () => {
       {[
         'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Screaming Architecture',
         'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
-        'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization'
+        'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization',
+        'CI/CD', 'Web3 / Blockchain', 'SSR / SSG'
       ].map((skill, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">  "{skill}"</span>

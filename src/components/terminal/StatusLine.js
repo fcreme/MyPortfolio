@@ -4,7 +4,7 @@ const lineCountMap = {
   'README.md': 32,
   'about.md': 31,
   'experience.md': 30,
-  'skills.tsx': 65,
+  'skills.tsx': 100,
   'projects.tsx': 24,
   'contact.sh': 22,
   'package.json': 24,

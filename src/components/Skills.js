@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Palette, Globe, Smartphone, Server } from 'lucide-react';
+import { Code, Database, Palette, Globe, Smartphone, Server, Link } from 'lucide-react';
 import './Skills.css';
 
 const Skills = () => {
@@ -10,11 +10,13 @@ const Skills = () => {
       title: 'Frontend',
       skills: [
         { name: 'React', level: 90 },
+        { name: 'Next.js', level: 80 },
         { name: 'JavaScript', level: 90 },
         { name: 'TypeScript', level: 80 },
         { name: 'HTML5/CSS3', level: 95 },
         { name: 'Tailwind CSS', level: 85 },
         { name: 'Framer Motion', level: 80 },
+        { name: 'Material-UI', level: 75 },
         { name: 'Liquid', level: 75 }
       ]
     },
@@ -22,7 +24,10 @@ const Skills = () => {
       icon: <Server size={24} />,
       title: 'Backend & APIs',
       skills: [
-        { name: 'Node.js (NestJS)', level: 80 },
+        { name: 'Node.js', level: 80 },
+        { name: 'NestJS', level: 80 },
+        { name: 'Golang', level: 60 },
+        { name: 'Prisma', level: 75 },
         { name: 'REST APIs', level: 90 },
         { name: 'Socket.io', level: 75 },
         { name: 'Google Apps Script', level: 80 }
@@ -33,6 +38,7 @@ const Skills = () => {
       title: 'State & Data',
       skills: [
         { name: 'MySQL', level: 90 },
+        { name: 'SQLite', level: 75 },
         { name: 'Zustand', level: 85 },
         { name: 'TanStack Query', level: 85 },
         { name: 'Axios', level: 90 }
@@ -62,9 +68,23 @@ const Skills = () => {
       title: 'Tools',
       skills: [
         { name: 'Git / GitHub', level: 90 },
+        { name: 'Docker', level: 70 },
         { name: 'Neovim / VS Code', level: 90 },
+        { name: 'Linux / WSL', level: 80 },
         { name: 'Claude Code', level: 85 },
+        { name: 'LLMs', level: 80 },
+        { name: 'Model Context Protocol', level: 75 },
+        { name: 'Vercel', level: 80 },
         { name: 'Postman / Bruno', level: 85 }
+      ]
+    },
+    {
+      icon: <Link size={24} />,
+      title: 'Web3 / Blockchain',
+      skills: [
+        { name: 'Wagmi', level: 70 },
+        { name: 'RainbowKit', level: 70 },
+        { name: 'Ethers.js', level: 70 }
       ]
     }
   ];
@@ -112,16 +132,6 @@ const Skills = () => {
                   >
                     <div className="skill-info">
                       <span className="skill-name">{skill.name}</span>
-                      <span className="skill-level">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-progress"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: (categoryIndex * 0.1) + (skillIndex * 0.05) + 0.3 }}
-                        viewport={{ once: true }}
-                      />
                     </div>
                   </motion.div>
                 ))}
@@ -142,7 +152,8 @@ const Skills = () => {
             {[
               'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Screaming Architecture',
               'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
-              'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization'
+              'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization',
+              'CI/CD', 'Web3 / Blockchain', 'SSR / SSG'
             ].map((skill, index) => (
               <motion.span
                 key={index}
