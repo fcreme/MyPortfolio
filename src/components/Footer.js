@@ -52,8 +52,8 @@ const Footer = () => {
               >
                 <h3 className="footer-title">Felipe Cremerius</h3>
                 <p className="footer-description">
-                  Frontend Developer specialized in React and modern web applications.
-                  Strong focus on performance, responsive and pixel-perfect UI.
+                  Full Stack Developer specialized in React, Node.js, and modern web applications.
+                  Strong focus on performance, clean architecture, and pixel-perfect UI.
                 </p>
               </motion.div>
 

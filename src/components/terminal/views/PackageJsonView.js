@@ -22,7 +22,7 @@ const PackageJsonView = () => {
       <Line n={4}>
         <span className="syn-json-key">  "description"</span>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"Frontend Developer portfolio — neovim edition"</span>
+        <span className="syn-json-string">"Full Stack Developer portfolio — neovim edition"</span>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={5}>
@@ -75,7 +75,7 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">, </span>
         <span className="syn-json-string">"portfolio"</span>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"frontend"</span>
+        <span className="syn-json-string">"fullstack"</span>
         <span className="syn-punctuation">, </span>
         <span className="syn-json-string">"neovim"</span>
         <span className="syn-json-brace">]</span>
@@ -152,6 +152,8 @@ const PackageJsonView = () => {
         <span className="syn-json-string">"Tailwind CSS"</span>
         <span className="syn-punctuation">, </span>
         <span className="syn-json-string">"Node.js"</span>
+        <span className="syn-punctuation">, </span>
+        <span className="syn-json-string">"Jest"</span>
         <span className="syn-json-brace">]</span>
         <span className="syn-punctuation">,</span>
       </Line>

@@ -72,7 +72,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Frontend Developer
+              Full Stack Developer
             </motion.h2>
 
             <motion.p
@@ -81,9 +81,10 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Specialized in React and modern web applications. Building software from scratch
-              by collaborating with business stakeholders to translate workflows into scalable applications.
-              Strong focus on performance, responsive and pixel-perfect UI.
+              Full Stack Developer specialized in React, Node.js, and modern web applications.
+              Building end-to-end solutions from frontend interfaces to backend APIs,
+              collaborating with business stakeholders to translate workflows into scalable applications.
+              Strong focus on performance, clean architecture, and pixel-perfect UI.
             </motion.p>
 
             <motion.div
@@ -157,9 +158,9 @@ const Hero = () => {
                   <code>
 {`const developer = {
   name: "Felipe Cremerius",
-  role: "Frontend Developer",
-  stack: ["React", "TypeScript", "Tailwind CSS"],
-  tools: ["Neovim", "Claude Code", "Git"],
+  role: "Full Stack Developer",
+  stack: ["React", "TypeScript", "Node.js", "Tailwind CSS"],
+  tools: ["Neovim", "Claude Code", "LazyGit", "LLMs"],
   focus: "Performance & pixel-perfect UI",
   location: "Buenos Aires, Argentina"
 };

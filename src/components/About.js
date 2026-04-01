@@ -7,7 +7,7 @@ const About = () => {
         const personalInfo = [
         { icon: <User size={20} />, label: 'Name', value: 'Felipe Cremerius' },
         { icon: <MapPin size={20} />, label: 'Location', value: 'Buenos Aires, Argentina' },
-        { icon: <Calendar size={20} />, label: 'Role', value: 'Frontend Developer' },
+        { icon: <Calendar size={20} />, label: 'Role', value: 'Full Stack Developer' },
         { icon: <Mail size={20} />, label: 'Email', value: 'felipecremerius1@gmail.com' },
         { icon: <Phone size={20} />, label: 'Phone', value: '+54 11 6200 7718' }
       ];
@@ -15,7 +15,7 @@ const About = () => {
         const experience = [
         {
           year: '2025 - Present',
-          title: 'Frontend Developer',
+          title: 'Full Stack Developer',
           company: 'Reino Ceramicos',
           description: 'Development of modular enterprise dashboards and management tools using React with API integrations, state management, and data visualization. Internal dashboards used by multiple business areas for daily operations. Backend integration with Node.js (NestJS) services.'
         },
@@ -53,10 +53,10 @@ const About = () => {
           >
                             <h3>Who am I?</h3>
                 <p>
-                  I'm Felipe Cremerius, a Frontend Developer specialized in React and modern
-                  web applications. I have experience building software from scratch by
-                  collaborating with business stakeholders to translate workflows into
-                  scalable applications.
+                  I'm Felipe Cremerius, a Full Stack Developer specialized in React, Node.js,
+                  and modern web applications. I build end-to-end solutions from frontend
+                  interfaces to backend APIs, collaborating with business stakeholders to
+                  translate workflows into scalable applications.
                 </p>
                 <p>
                   Currently working at Reino Ceramicos, developing modular enterprise dashboards

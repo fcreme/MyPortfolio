@@ -14,7 +14,10 @@ const Skills = () => {
         { name: 'TypeScript', level: 80 },
         { name: 'HTML5/CSS3', level: 95 },
         { name: 'Tailwind CSS', level: 85 },
+        { name: 'Next.js', level: 80 },
         { name: 'Framer Motion', level: 80 },
+        { name: 'Shadcn/ui', level: 80 },
+        { name: 'Wagmi / RainbowKit', level: 75 },
         { name: 'Liquid', level: 75 }
       ]
     },
@@ -23,6 +26,7 @@ const Skills = () => {
       title: 'Backend & APIs',
       skills: [
         { name: 'Node.js (NestJS)', level: 80 },
+        { name: 'Express', level: 80 },
         { name: 'REST APIs', level: 90 },
         { name: 'Socket.io', level: 75 },
         { name: 'Google Apps Script', level: 80 }
@@ -32,7 +36,8 @@ const Skills = () => {
       icon: <Database size={24} />,
       title: 'State & Data',
       skills: [
-        { name: 'MySQL', level: 90 },
+        { name: 'MySQL / Prisma', level: 90 },
+        { name: 'SQLite', level: 80 },
         { name: 'Zustand', level: 85 },
         { name: 'TanStack Query', level: 85 },
         { name: 'Axios', level: 90 }
@@ -61,9 +66,9 @@ const Skills = () => {
       icon: <Smartphone size={24} />,
       title: 'Tools',
       skills: [
-        { name: 'Git / GitHub', level: 90 },
+        { name: 'Git / GitHub / LazyGit', level: 90 },
         { name: 'Neovim / VS Code', level: 90 },
-        { name: 'Claude Code', level: 85 },
+        { name: 'LLM Tools (Claude Code, Codex, ChatGPT)', level: 85 },
         { name: 'Postman / Bruno', level: 85 }
       ]
     }
@@ -140,7 +145,8 @@ const Skills = () => {
           <h3>Other Skills</h3>
           <div className="skills-tags">
             {[
-              'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Screaming Architecture',
+              'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Database Design',
+              'WebSocket Integration', 'Screaming Architecture',
               'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
               'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization'
             ].map((skill, index) => (

@@ -15,7 +15,7 @@ const ExperienceView = () => {
       <Empty n={4} />
       <Line n={5}>
         <span className="syn-heading-marker">## </span>
-        <span className="syn-heading">Frontend Developer</span>
+        <span className="syn-heading">Full Stack Developer</span>
       </Line>
       <Line n={6}>
         <span className="syn-bold">Reino Ceramicos</span>
@@ -92,6 +92,39 @@ const ExperienceView = () => {
       <Line n={30}>
         <span className="syn-list-marker">- </span>
         Tienda Nube / Nuvemshop customization via FTP
+      </Line>
+      <Empty n={31} />
+      <Line n={32}>
+        <span className="syn-hr">---</span>
+      </Line>
+      <Empty n={33} />
+      <Line n={34}>
+        <span className="syn-heading-marker"># </span>
+        <span className="syn-heading">Education</span>
+      </Line>
+      <Empty n={35} />
+      <Line n={36}>
+        <span className="syn-heading-marker">## </span>
+        <span className="syn-heading">Audiovisual Design Degree</span>
+      </Line>
+      <Line n={37}>
+        <span className="syn-bold">Universidad de Palermo</span>
+      </Line>
+      <Empty n={38} />
+      <Line n={39}>
+        <span className="syn-heading-marker">## </span>
+        <span className="syn-heading">Full Stack Developer Diploma</span>
+      </Line>
+      <Line n={40}>
+        <span className="syn-bold">Universidad Tecnológica de Buenos Aires (UTN)</span>
+      </Line>
+      <Empty n={41} />
+      <Line n={42}>
+        <span className="syn-heading-marker">## </span>
+        <span className="syn-heading">Data Mining</span>
+      </Line>
+      <Line n={43}>
+        <span className="syn-bold">CoderHouse</span>
       </Line>
     </div>
   );

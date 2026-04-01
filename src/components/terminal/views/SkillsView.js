@@ -48,7 +48,8 @@ const SkillsView = () => {
       </Line>
       {[
         'React', 'JavaScript', 'TypeScript',
-        'HTML5/CSS3', 'Tailwind CSS', 'Framer Motion', 'Liquid'
+        'HTML5/CSS3', 'Tailwind CSS', 'Next.js',
+        'Framer Motion', 'Shadcn/ui', 'Wagmi / RainbowKit', 'Liquid'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -77,7 +78,7 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'Node.js (NestJS)', 'REST APIs', 'Socket.io', 'Google Apps Script'
+        'Node.js (NestJS)', 'Express', 'REST APIs', 'Socket.io', 'Google Apps Script'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -106,7 +107,7 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'MySQL', 'Zustand', 'TanStack Query', 'Axios'
+        'MySQL / Prisma', 'SQLite', 'Zustand', 'TanStack Query', 'Axios'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -194,8 +195,8 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'Git / GitHub', 'Neovim / VS Code',
-        'Claude Code', 'Postman / Bruno'
+        'Git / GitHub / LazyGit', 'Neovim / VS Code',
+        'LLM Tools (Claude Code, Codex, ChatGPT)', 'Postman / Bruno'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">{'      "'}{name}{'",'}</span>
@@ -227,7 +228,8 @@ const SkillsView = () => {
         <span className="syn-punctuation">[</span>
       </Line>
       {[
-        'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Screaming Architecture',
+        'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Database Design',
+        'WebSocket Integration', 'Screaming Architecture',
         'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
         'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization'
       ].map((skill, i) => (

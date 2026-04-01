@@ -51,16 +51,16 @@ const AboutView = () => {
       </Line>
       <Empty n={8} />
       <Line n={9}>
-        I'm Felipe Cremerius, a Frontend Developer specialized in React and
+        I'm Felipe Cremerius, a Full Stack Developer specialized in React,
       </Line>
       <Line n={10}>
-        modern web applications. I have experience building software from
+        Node.js, and modern web applications. I build end-to-end solutions
       </Line>
       <Line n={11}>
-        scratch by collaborating with business stakeholders to translate
+        from frontend interfaces to backend APIs, collaborating with business
       </Line>
       <Line n={12}>
-        workflows into scalable applications.
+        stakeholders to translate workflows into scalable applications.
       </Line>
       <Empty n={13} />
       <Line n={14}>
@@ -123,7 +123,7 @@ const AboutView = () => {
         <span className="syn-table-border">| </span>
         <span className="syn-table-key">Role</span>
         <span className="syn-table-border">     | </span>
-        <span className="syn-table-value">Frontend Developer</span>
+        <span className="syn-table-value">Full Stack Developer</span>
         <span className="syn-table-border">            |</span>
       </Line>
       <Line n={32}>

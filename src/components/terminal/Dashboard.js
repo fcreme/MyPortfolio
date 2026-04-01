@@ -54,7 +54,7 @@ const Dashboard = ({ onSelectFile }) => {
           ))}
         </div>
 
-        <div className="dashboard-subtitle">Frontend Developer</div>
+        <div className="dashboard-subtitle">Full Stack Developer</div>
 
         <div className="dashboard-actions">
           {ACTIONS.map((action) => (
