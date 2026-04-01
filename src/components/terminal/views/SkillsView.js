@@ -231,7 +231,8 @@ const SkillsView = () => {
         'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Database Design',
         'WebSocket Integration', 'Screaming Architecture',
         'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
-        'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization'
+        'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization',
+        'CI/CD', 'Web3 / Blockchain', 'SSR / SSG'
       ].map((skill, i) => (
         <Line key={i} n={l()}>
           <span className="syn-string">  "{skill}"</span>
