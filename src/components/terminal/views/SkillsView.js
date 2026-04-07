@@ -1,31 +1,34 @@
 import React from 'react';
 import { Line, Empty } from '../Line';
+import { SpecialText } from '../../ui/special-text';
 
 const SkillsView = () => {
   let n = 0;
   const l = () => ++n;
+  let d = 0;
+  const next = (step = 0.03) => { d += step; return d; };
 
   return (
     <div className="content-view">
       <Line n={l()}>
-        <span className="syn-comment">{'// skills.tsx — Skills & Technologies'}</span>
+        <SpecialText speed={5} delay={next()} className="syn-comment">{'// skills.tsx — Skills & Technologies'}</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <span className="syn-keyword">import </span>
+        <SpecialText speed={5} delay={next()} className="syn-keyword">{'import '}</SpecialText>
         <span className="syn-punctuation">{'{ '}</span>
-        <span className="syn-type">SkillCategory</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-type">SkillCategory</SpecialText>
         <span className="syn-punctuation">{' } '}</span>
-        <span className="syn-keyword">from </span>
-        <span className="syn-string">'@/types'</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-keyword">{'from '}</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-string">{"'@/types'"}</SpecialText>
         <span className="syn-punctuation">;</span>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <span className="syn-keyword">const </span>
-        <span className="syn-variable">skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-keyword">{'const '}</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-variable">skills</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-type">SkillCategory</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-type">SkillCategory</SpecialText>
         <span className="syn-punctuation">[]</span>
         <span className="syn-operator"> = </span>
         <span className="syn-punctuation">[</span>
@@ -36,13 +39,13 @@ const SkillsView = () => {
         <span className="syn-punctuation">{'  {'}</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    title</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-string">"Frontend"</span>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Frontend"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
         <span className="syn-operator">: </span>
         <span className="syn-punctuation">[</span>
       </Line>
@@ -52,7 +55,10 @@ const SkillsView = () => {
         'Framer Motion', 'Shadcn/ui', 'Wagmi / RainbowKit', 'Liquid'
       ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">{'      "'}{name}{'",'}</span>
+          <span className="syn-string">{'      "'}</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{name}</SpecialText>
+          <span className="syn-string">{'",'}
+          </span>
         </Line>
       ))}
       <Line n={l()}>
@@ -67,13 +73,13 @@ const SkillsView = () => {
         <span className="syn-punctuation">{'  {'}</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    title</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-string">"Backend & APIs"</span>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Backend & APIs"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
         <span className="syn-operator">: </span>
         <span className="syn-punctuation">[</span>
       </Line>
@@ -81,7 +87,10 @@ const SkillsView = () => {
         'Node.js (NestJS)', 'Express', 'REST APIs', 'Socket.io', 'Google Apps Script'
       ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">{'      "'}{name}{'",'}</span>
+          <span className="syn-string">{'      "'}</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{name}</SpecialText>
+          <span className="syn-string">{'",'}
+          </span>
         </Line>
       ))}
       <Line n={l()}>
@@ -96,13 +105,13 @@ const SkillsView = () => {
         <span className="syn-punctuation">{'  {'}</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    title</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-string">"State & Data"</span>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"State & Data"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
         <span className="syn-operator">: </span>
         <span className="syn-punctuation">[</span>
       </Line>
@@ -110,7 +119,10 @@ const SkillsView = () => {
         'MySQL / Prisma', 'SQLite', 'Zustand', 'TanStack Query', 'Axios'
       ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">{'      "'}{name}{'",'}</span>
+          <span className="syn-string">{'      "'}</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{name}</SpecialText>
+          <span className="syn-string">{'",'}
+          </span>
         </Line>
       ))}
       <Line n={l()}>
@@ -125,13 +137,13 @@ const SkillsView = () => {
         <span className="syn-punctuation">{'  {'}</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    title</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-string">"Architecture & Performance"</span>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Architecture & Performance"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
         <span className="syn-operator">: </span>
         <span className="syn-punctuation">[</span>
       </Line>
@@ -140,7 +152,10 @@ const SkillsView = () => {
         'Code Splitting / Lazy Loading', 'Caching Strategies'
       ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">{'      "'}{name}{'",'}</span>
+          <span className="syn-string">{'      "'}</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{name}</SpecialText>
+          <span className="syn-string">{'",'}
+          </span>
         </Line>
       ))}
       <Line n={l()}>
@@ -155,13 +170,13 @@ const SkillsView = () => {
         <span className="syn-punctuation">{'  {'}</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    title</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-string">"Data Visualization & Testing"</span>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Data Visualization & Testing"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
         <span className="syn-operator">: </span>
         <span className="syn-punctuation">[</span>
       </Line>
@@ -169,7 +184,10 @@ const SkillsView = () => {
         'ECharts', 'Recharts', 'Jest / Vitest'
       ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">{'      "'}{name}{'",'}</span>
+          <span className="syn-string">{'      "'}</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{name}</SpecialText>
+          <span className="syn-string">{'",'}
+          </span>
         </Line>
       ))}
       <Line n={l()}>
@@ -184,13 +202,13 @@ const SkillsView = () => {
         <span className="syn-punctuation">{'  {'}</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    title</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-string">"Tools"</span>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Tools"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={l()}>
-        <span className="syn-property">    skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
         <span className="syn-operator">: </span>
         <span className="syn-punctuation">[</span>
       </Line>
@@ -199,7 +217,10 @@ const SkillsView = () => {
         'LLM Tools (Claude Code, Codex, ChatGPT)', 'Postman / Bruno'
       ].map((name, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">{'      "'}{name}{'",'}</span>
+          <span className="syn-string">{'      "'}</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{name}</SpecialText>
+          <span className="syn-string">{'",'}
+          </span>
         </Line>
       ))}
       <Line n={l()}>
@@ -216,13 +237,13 @@ const SkillsView = () => {
 
       {/* Other skills */}
       <Line n={l()}>
-        <span className="syn-comment">{'// Other skills & interests'}</span>
+        <SpecialText speed={5} delay={next()} className="syn-comment">{'// Other skills & interests'}</SpecialText>
       </Line>
       <Line n={l()}>
-        <span className="syn-keyword">const </span>
-        <span className="syn-variable">otherSkills</span>
+        <SpecialText speed={5} delay={next()} className="syn-keyword">{'const '}</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-variable">otherSkills</SpecialText>
         <span className="syn-operator">: </span>
-        <span className="syn-type">string</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-type">string</SpecialText>
         <span className="syn-punctuation">[]</span>
         <span className="syn-operator"> = </span>
         <span className="syn-punctuation">[</span>
@@ -235,7 +256,9 @@ const SkillsView = () => {
         'CI/CD', 'Web3 / Blockchain', 'SSR / SSG'
       ].map((skill, i) => (
         <Line key={i} n={l()}>
-          <span className="syn-string">  "{skill}"</span>
+          <span className="syn-string">  "</span>
+          <SpecialText speed={6} delay={next(0.02)} className="syn-string">{skill}</SpecialText>
+          <span className="syn-string">"</span>
           <span className="syn-punctuation">,</span>
         </Line>
       ))}
@@ -244,8 +267,8 @@ const SkillsView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <span className="syn-keyword">export default </span>
-        <span className="syn-variable">skills</span>
+        <SpecialText speed={5} delay={next()} className="syn-keyword">{'export default '}</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-variable">skills</SpecialText>
         <span className="syn-punctuation">;</span>
       </Line>
     </div>

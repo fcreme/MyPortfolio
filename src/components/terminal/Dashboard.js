@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import { SpecialText } from '../ui/special-text';
 
 const ASCII_ART = [
   '███████╗███████╗██╗     ██╗██████╗ ███████╗',
@@ -54,7 +55,9 @@ const Dashboard = ({ onSelectFile }) => {
           ))}
         </div>
 
-        <div className="dashboard-subtitle">Full Stack Developer</div>
+        <div className="dashboard-subtitle">
+          <SpecialText speed={12} delay={0.2} className="text-inherit">Full Stack Developer</SpecialText>
+        </div>
 
         <div className="dashboard-actions">
           {ACTIONS.map((action) => (
@@ -78,7 +81,7 @@ const Dashboard = ({ onSelectFile }) => {
         </div>
 
         <div className="dashboard-footer">
-          felipe-portfolio v2.0 — neovim edition
+          <SpecialText speed={8} delay={0.5} className="text-inherit">felipe-portfolio v2.0 — neovim edition</SpecialText>
         </div>
       </div>
     </div>

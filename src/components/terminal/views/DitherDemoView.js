@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Line, Empty } from '../Line';
 import { DitherShader } from '../../ui/dither-shader';
+import { SpecialText } from '../../ui/special-text';
 
 const DitherDemoView = () => {
   const [ditherMode, setDitherMode] = useState('bayer');
@@ -11,16 +12,16 @@ const DitherDemoView = () => {
     <div className="content-view">
       <Line n={1}>
         <span className="syn-heading-marker"># </span>
-        <span className="syn-heading">Dither Shader Demo</span>
+        <SpecialText speed={10} delay={0.05} className="syn-heading">Dither Shader Demo</SpecialText>
       </Line>
       <Empty n={2} />
       <Line n={3}>
-        <span className="syn-comment">{'// Interactive dithering effect showcase'}</span>
+        <SpecialText speed={5} delay={0.1} className="syn-comment">{'// Interactive dithering effect showcase'}</SpecialText>
       </Line>
       <Empty n={4} />
 
       {/* Main Dither Display */}
-      <div style={{
+      <div className="image-glitch-reveal" style={{
         width: '100%',
         maxWidth: '600px',
         height: '400px',
@@ -53,7 +54,7 @@ const DitherDemoView = () => {
       }}>
         <Line n={6}>
           <span className="syn-heading-marker">## </span>
-          <span className="syn-heading">Controls</span>
+          <SpecialText speed={10} delay={0.18} className="syn-heading">Controls</SpecialText>
         </Line>
         <Empty n={7} />
 
@@ -65,7 +66,7 @@ const DitherDemoView = () => {
               marginRight: '10px',
               fontSize: '14px'
             }}>
-              Dither Mode:
+              <SpecialText speed={5} delay={0.22}>Dither Mode:</SpecialText>
             </label>
             <select
               value={ditherMode}
@@ -93,7 +94,7 @@ const DitherDemoView = () => {
               marginRight: '10px',
               fontSize: '14px'
             }}>
-              Color Mode:
+              <SpecialText speed={5} delay={0.25}>Color Mode:</SpecialText>
             </label>
             <select
               value={colorMode}
@@ -120,7 +121,7 @@ const DitherDemoView = () => {
               marginRight: '10px',
               fontSize: '14px'
             }}>
-              Grid Size: {gridSize}
+              <SpecialText speed={5} delay={0.28}>{'Grid Size: '}</SpecialText>{gridSize}
             </label>
             <input
               type="range"
@@ -139,7 +140,7 @@ const DitherDemoView = () => {
 
       <Empty n={8} />
       <Line n={9}>
-        <span className="syn-comment">{'<!-- Try different combinations to see the dithering effects! -->'}</span>
+        <SpecialText speed={5} delay={0.32} className="syn-comment">{'<!-- Try different combinations to see the dithering effects! -->'}</SpecialText>
       </Line>
     </div>
   );

@@ -1,44 +1,48 @@
 import React from 'react';
 import { Line } from '../Line';
+import { SpecialText } from '../../ui/special-text';
 
 const PackageJsonView = () => {
+  let d = 0;
+  const next = (step = 0.03) => { d += step; return d; };
+
   return (
     <div className="content-view">
       <Line n={1}>
         <span className="syn-json-brace">{'{'}</span>
       </Line>
       <Line n={2}>
-        <span className="syn-json-key">  "name"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "name"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"felipe-portfolio"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"felipe-portfolio"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={3}>
-        <span className="syn-json-key">  "version"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "version"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"2.0.0"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"2.0.0"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={4}>
-        <span className="syn-json-key">  "description"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "description"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"Full Stack Developer portfolio — neovim edition"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">{"\"Full Stack Developer portfolio — neovim edition\""}</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={5}>
-        <span className="syn-json-key">  "author"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "author"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"Felipe Cremerius"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"Felipe Cremerius"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={6}>
-        <span className="syn-json-key">  "license"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "license"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"MIT"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"MIT"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={7}>
-        <span className="syn-json-key">  "homepage"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "homepage"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
         <a className="syn-link" href="https://github.com/fcreme" target="_blank" rel="noopener noreferrer">https://github.com/fcreme</a>
@@ -46,18 +50,18 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={8}>
-        <span className="syn-json-key">  "repository"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "repository"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-brace">{'{'}</span>
       </Line>
       <Line n={9}>
-        <span className="syn-json-key">    "type"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "type"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"git"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"git"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={10}>
-        <span className="syn-json-key">    "url"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "url"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
         <a className="syn-link" href="https://github.com/fcreme" target="_blank" rel="noopener noreferrer">https://github.com/fcreme</a>
@@ -68,26 +72,26 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={12}>
-        <span className="syn-json-key">  "keywords"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "keywords"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-brace">[</span>
-        <span className="syn-json-string">"react"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"react"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"portfolio"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"portfolio"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"fullstack"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"fullstack"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"neovim"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"neovim"</SpecialText>
         <span className="syn-json-brace">]</span>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={13}>
-        <span className="syn-json-key">  "socials"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "socials"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-brace">{'{'}</span>
       </Line>
       <Line n={14}>
-        <span className="syn-json-key">    "github"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "github"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
         <a className="syn-link" href="https://github.com/fcreme" target="_blank" rel="noopener noreferrer">https://github.com/fcreme</a>
@@ -95,7 +99,7 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={15}>
-        <span className="syn-json-key">    "linkedin"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "linkedin"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
         <a className="syn-link" href="https://www.linkedin.com/in/felipecremerius" target="_blank" rel="noopener noreferrer">https://linkedin.com/in/felipecremerius</a>
@@ -103,7 +107,7 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={16}>
-        <span className="syn-json-key">    "email"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "email"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
         <a className="syn-link" href="mailto:felipecremerius1@gmail.com">felipecremerius1@gmail.com</a>
@@ -111,7 +115,7 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={17}>
-        <span className="syn-json-key">    "resume"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "resume"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-string">"</span>
         <a className="syn-link" href="/Felipe_Cremerius_CV.pdf" download>Download CV (PDF)</a>
@@ -122,45 +126,45 @@ const PackageJsonView = () => {
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={18}>
-        <span className="syn-json-key">  "contact"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "contact"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-brace">{'{'}</span>
       </Line>
       <Line n={19}>
-        <span className="syn-json-key">    "phone"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "phone"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"+54 11 6200 7718"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"+54 11 6200 7718"</SpecialText>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={20}>
-        <span className="syn-json-key">    "location"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "location"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-string">"Buenos Aires, Argentina"</span>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"Buenos Aires, Argentina"</SpecialText>
       </Line>
       <Line n={21}>
         <span className="syn-json-brace">{'  }'}</span>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={22}>
-        <span className="syn-json-key">  "stack"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "stack"'}</SpecialText>
         <span className="syn-punctuation">: </span>
         <span className="syn-json-brace">[</span>
-        <span className="syn-json-string">"React"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"React"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"TypeScript"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"TypeScript"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"Tailwind CSS"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"Tailwind CSS"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"Node.js"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"Node.js"</SpecialText>
         <span className="syn-punctuation">, </span>
-        <span className="syn-json-string">"Jest"</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"Jest"</SpecialText>
         <span className="syn-json-brace">]</span>
         <span className="syn-punctuation">,</span>
       </Line>
       <Line n={23}>
-        <span className="syn-json-key">  "available"</span>
+        <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "available"'}</SpecialText>
         <span className="syn-punctuation">: </span>
-        <span className="syn-json-bool">true</span>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-bool">true</SpecialText>
       </Line>
       <Line n={24}>
         <span className="syn-json-brace">{'}'}</span>

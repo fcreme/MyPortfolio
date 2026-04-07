@@ -970,6 +970,50 @@
   font-size: 11px;
 }
 
+/* ===== IMAGE GLITCH REVEAL ===== */
+.image-glitch-reveal {
+  animation: imageGlitchReveal 1s ease-out forwards;
+}
+
+@keyframes imageGlitchReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-4px);
+    filter: brightness(3) saturate(0);
+    clip-path: inset(0 100% 0 0);
+  }
+  15% {
+    opacity: 0.6;
+    transform: translateX(3px);
+    filter: brightness(2) saturate(0);
+    clip-path: inset(0 60% 0 0);
+  }
+  30% {
+    opacity: 0.8;
+    transform: translateX(-2px);
+    filter: brightness(1.5) saturate(0);
+    clip-path: inset(0 30% 0 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(1px);
+    filter: brightness(1.2) saturate(0.5);
+    clip-path: inset(0 10% 0 0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-0.5px);
+    filter: brightness(1.05) saturate(0.8);
+    clip-path: inset(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: none;
+    clip-path: inset(0);
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .nvim-terminal {

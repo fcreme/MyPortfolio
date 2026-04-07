@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { SpecialText } from '../ui/special-text';
 
 const PLUGINS = [
   { name: 'lazy.nvim', time: '1.2ms' },
@@ -59,8 +60,12 @@ const LazyLoader = ({ onComplete }) => {
       <div className="lazy-loader-content">
         <div className="lazy-header">
           <span className="lazy-icon">💤</span>
-          <span className="lazy-title">lazy.nvim</span>
-          <span className="lazy-subtitle"> — loading plugins...</span>
+          <span className="lazy-title">
+            <SpecialText speed={18} delay={0.1}>lazy.nvim</SpecialText>
+          </span>
+          <span className="lazy-subtitle">
+            <SpecialText speed={15} delay={0.3}>{' — loading plugins...'}</SpecialText>
+          </span>
         </div>
 
         <div className="lazy-plugin-list">
@@ -84,8 +89,20 @@ const LazyLoader = ({ onComplete }) => {
             return (
               <div key={plugin.name} className={`lazy-plugin-row ${statusClass}`}>
                 <span className="lazy-plugin-icon">{icon}</span>
-                <span className="lazy-plugin-name">{plugin.name}</span>
-                <span className="lazy-plugin-time">{timeDisplay}</span>
+                <span className="lazy-plugin-name">
+                  {i <= loadedCount && loadingIndex > 0 ? (
+                    <SpecialText speed={14} delay={0}>{plugin.name}</SpecialText>
+                  ) : (
+                    plugin.name
+                  )}
+                </span>
+                <span className="lazy-plugin-time">
+                  {i < loadedCount ? (
+                    <SpecialText speed={12} delay={0}>{timeDisplay}</SpecialText>
+                  ) : (
+                    timeDisplay
+                  )}
+                </span>
               </div>
             );
           })}
