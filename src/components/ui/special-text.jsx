@@ -18,6 +18,7 @@ export function SpecialText({
   className = "",
   inView = false,
   once = true,
+  onComplete,
 }) {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once, margin: "-100px" });
@@ -29,6 +30,8 @@ export function SpecialText({
   const [animationStep, setAnimationStep] = useState(0);
   const intervalRef = useRef(null);
   const startTimeoutRef = useRef(null);
+  const onCompleteRef = useRef(null);
+  onCompleteRef.current = onComplete;
 
   function clearStartTimeout() {
     if (startTimeoutRef.current === null) return;
@@ -93,6 +96,7 @@ export function SpecialText({
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
+      if (onCompleteRef.current) onCompleteRef.current();
     }
   };
 
@@ -156,6 +160,7 @@ export function SpecialText({
     <span
       ref={containerRef}
       className={className}
+      style={hasStarted ? undefined : { visibility: 'hidden' }}
     >
       {displayText}
     </span>

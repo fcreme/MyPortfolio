@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.15",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^2.19.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
@@ -18,7 +21,8 @@
     "react-scripts": "5.0.1",
     "react-tooltip": "^5.30.0",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.183.2"
   },
   "scripts": {
     "start": "react-scripts start",

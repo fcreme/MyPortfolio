@@ -1,3 +1,175 @@
+/* ===== THEME DEFINITIONS ===== */
+[data-theme="tokyonight"] {
+  --nvim-bg: #0f0f1e;
+  --nvim-bg-transparent: rgba(15, 15, 30, 0.75);
+  --nvim-bg-sidebar: rgba(10, 10, 20, 0.75);
+  --nvim-bg-titlebar: rgba(10, 10, 20, 0.8);
+  --nvim-bg-overlay: rgba(10, 10, 20, 0.88);
+  --nvim-bg-overlay-deep: rgba(10, 10, 20, 0.95);
+  --nvim-bg-commandline: rgba(26, 26, 46, 0.85);
+  --nvim-bg-statusbar: rgba(200, 200, 200, 0.95);
+  --nvim-bg-telescope: rgba(15, 15, 30, 0.96);
+  --nvim-bg-hover: rgba(255, 255, 255, 0.05);
+  --nvim-bg-active: rgba(255, 255, 255, 0.08);
+  --nvim-bg-cursor-line: rgba(255, 255, 255, 0.04);
+  --nvim-bg-selected: rgba(96, 165, 250, 0.12);
+  --nvim-bg-selected-hover: rgba(96, 165, 250, 0.16);
+  --nvim-fg: #e2e8f0;
+  --nvim-fg-dim: rgba(255, 255, 255, 0.5);
+  --nvim-fg-dimmer: rgba(255, 255, 255, 0.3);
+  --nvim-fg-dimmest: rgba(255, 255, 255, 0.2);
+  --nvim-fg-faint: rgba(255, 255, 255, 0.15);
+  --nvim-fg-ghost: rgba(255, 255, 255, 0.06);
+  --nvim-fg-current: rgba(255, 255, 255, 0.85);
+  --nvim-fg-bright: #ffffff;
+  --nvim-fg-muted: #c8c8c8;
+  --nvim-fg-subtle: rgba(255, 255, 255, 0.45);
+  --nvim-fg-statusbar: #0a0a14;
+  --nvim-border: rgba(255, 255, 255, 0.06);
+  --nvim-border-strong: rgba(255, 255, 255, 0.08);
+  --nvim-border-stronger: rgba(255, 255, 255, 0.15);
+  --nvim-keyword: #c084fc;
+  --nvim-string: #4ade80;
+  --nvim-function: #fbbf24;
+  --nvim-type: #60a5fa;
+  --nvim-comment: rgba(255, 255, 255, 0.3);
+  --nvim-tag: #f87171;
+  --nvim-heading: #60a5fa;
+  --nvim-heading-marker: #3b82f6;
+  --nvim-link: #3b82f6;
+  --nvim-link-hover: #60a5fa;
+  --nvim-bold: #f1f5f9;
+  --nvim-italic: #cbd5e1;
+  --nvim-netrw-comment: #b8a965;
+  --nvim-netrw-dir: #5fdfdf;
+  --nvim-tilde: #3a5faa;
+  --nvim-cursor-bg: rgba(255, 255, 255, 0.7);
+  --nvim-dot-red: #ff5f57;
+  --nvim-dot-yellow: #febc2e;
+  --nvim-dot-green: #28c840;
+  --nvim-mode-normal: #3b82f6;
+  --nvim-mode-insert: #4ade80;
+  --nvim-error: #f87171;
+  --nvim-dashboard-ascii: #60a5fa;
+  --nvim-lazy-title: #c084fc;
+  --nvim-lazy-loading: #fbbf24;
+  --nvim-submit-hover: #93c5fd;
+}
+
+[data-theme="gruvbox"] {
+  --nvim-bg: #282828;
+  --nvim-bg-transparent: rgba(40, 40, 40, 0.75);
+  --nvim-bg-sidebar: rgba(29, 32, 33, 0.75);
+  --nvim-bg-titlebar: rgba(29, 32, 33, 0.8);
+  --nvim-bg-overlay: rgba(29, 32, 33, 0.88);
+  --nvim-bg-overlay-deep: rgba(29, 32, 33, 0.95);
+  --nvim-bg-commandline: rgba(50, 48, 47, 0.85);
+  --nvim-bg-statusbar: rgba(213, 196, 161, 0.95);
+  --nvim-bg-telescope: rgba(40, 40, 40, 0.96);
+  --nvim-bg-hover: rgba(235, 219, 178, 0.06);
+  --nvim-bg-active: rgba(235, 219, 178, 0.1);
+  --nvim-bg-cursor-line: rgba(235, 219, 178, 0.05);
+  --nvim-bg-selected: rgba(131, 165, 152, 0.15);
+  --nvim-bg-selected-hover: rgba(131, 165, 152, 0.2);
+  --nvim-fg: #ebdbb2;
+  --nvim-fg-dim: rgba(235, 219, 178, 0.5);
+  --nvim-fg-dimmer: rgba(235, 219, 178, 0.35);
+  --nvim-fg-dimmest: rgba(235, 219, 178, 0.2);
+  --nvim-fg-faint: rgba(235, 219, 178, 0.15);
+  --nvim-fg-ghost: rgba(235, 219, 178, 0.06);
+  --nvim-fg-current: rgba(235, 219, 178, 0.85);
+  --nvim-fg-bright: #fbf1c7;
+  --nvim-fg-muted: #bdae93;
+  --nvim-fg-subtle: rgba(235, 219, 178, 0.45);
+  --nvim-fg-statusbar: #282828;
+  --nvim-border: rgba(235, 219, 178, 0.06);
+  --nvim-border-strong: rgba(235, 219, 178, 0.1);
+  --nvim-border-stronger: rgba(235, 219, 178, 0.18);
+  --nvim-keyword: #fb4934;
+  --nvim-string: #b8bb26;
+  --nvim-function: #b8bb26;
+  --nvim-type: #fabd2f;
+  --nvim-comment: #928374;
+  --nvim-tag: #fb4934;
+  --nvim-heading: #fabd2f;
+  --nvim-heading-marker: #d79921;
+  --nvim-link: #83a598;
+  --nvim-link-hover: #8ec07c;
+  --nvim-bold: #fbf1c7;
+  --nvim-italic: #d5c4a1;
+  --nvim-netrw-comment: #928374;
+  --nvim-netrw-dir: #8ec07c;
+  --nvim-tilde: #504945;
+  --nvim-cursor-bg: rgba(235, 219, 178, 0.7);
+  --nvim-dot-red: #cc241d;
+  --nvim-dot-yellow: #d79921;
+  --nvim-dot-green: #98971a;
+  --nvim-mode-normal: #83a598;
+  --nvim-mode-insert: #b8bb26;
+  --nvim-error: #fb4934;
+  --nvim-dashboard-ascii: #fabd2f;
+  --nvim-lazy-title: #d3869b;
+  --nvim-lazy-loading: #fabd2f;
+  --nvim-submit-hover: #8ec07c;
+}
+
+[data-theme="catppuccin"] {
+  --nvim-bg: #1e1e2e;
+  --nvim-bg-transparent: rgba(30, 30, 46, 0.75);
+  --nvim-bg-sidebar: rgba(24, 24, 37, 0.75);
+  --nvim-bg-titlebar: rgba(24, 24, 37, 0.8);
+  --nvim-bg-overlay: rgba(24, 24, 37, 0.88);
+  --nvim-bg-overlay-deep: rgba(24, 24, 37, 0.95);
+  --nvim-bg-commandline: rgba(30, 30, 46, 0.85);
+  --nvim-bg-statusbar: rgba(186, 194, 222, 0.95);
+  --nvim-bg-telescope: rgba(30, 30, 46, 0.96);
+  --nvim-bg-hover: rgba(205, 214, 244, 0.05);
+  --nvim-bg-active: rgba(205, 214, 244, 0.08);
+  --nvim-bg-cursor-line: rgba(205, 214, 244, 0.04);
+  --nvim-bg-selected: rgba(137, 180, 250, 0.12);
+  --nvim-bg-selected-hover: rgba(137, 180, 250, 0.16);
+  --nvim-fg: #cdd6f4;
+  --nvim-fg-dim: rgba(205, 214, 244, 0.5);
+  --nvim-fg-dimmer: rgba(205, 214, 244, 0.35);
+  --nvim-fg-dimmest: rgba(205, 214, 244, 0.2);
+  --nvim-fg-faint: rgba(205, 214, 244, 0.15);
+  --nvim-fg-ghost: rgba(205, 214, 244, 0.06);
+  --nvim-fg-current: rgba(205, 214, 244, 0.85);
+  --nvim-fg-bright: #ffffff;
+  --nvim-fg-muted: #a6adc8;
+  --nvim-fg-subtle: rgba(205, 214, 244, 0.45);
+  --nvim-fg-statusbar: #1e1e2e;
+  --nvim-border: rgba(205, 214, 244, 0.06);
+  --nvim-border-strong: rgba(205, 214, 244, 0.08);
+  --nvim-border-stronger: rgba(205, 214, 244, 0.15);
+  --nvim-keyword: #cba6f7;
+  --nvim-string: #a6e3a1;
+  --nvim-function: #f9e2af;
+  --nvim-type: #89b4fa;
+  --nvim-comment: #6c7086;
+  --nvim-tag: #f38ba8;
+  --nvim-heading: #89b4fa;
+  --nvim-heading-marker: #74c7ec;
+  --nvim-link: #74c7ec;
+  --nvim-link-hover: #89dceb;
+  --nvim-bold: #cdd6f4;
+  --nvim-italic: #bac2de;
+  --nvim-netrw-comment: #6c7086;
+  --nvim-netrw-dir: #94e2d5;
+  --nvim-tilde: #45475a;
+  --nvim-cursor-bg: rgba(205, 214, 244, 0.7);
+  --nvim-dot-red: #f38ba8;
+  --nvim-dot-yellow: #f9e2af;
+  --nvim-dot-green: #a6e3a1;
+  --nvim-mode-normal: #89b4fa;
+  --nvim-mode-insert: #a6e3a1;
+  --nvim-error: #f38ba8;
+  --nvim-dashboard-ascii: #89b4fa;
+  --nvim-lazy-title: #cba6f7;
+  --nvim-lazy-loading: #f9e2af;
+  --nvim-submit-hover: #89dceb;
+}
+
 /* ===== GIF BACKGROUND WRAPPER ===== */
 .nvim-bg-wrapper {
   position: relative;
@@ -29,7 +201,7 @@
   background: transparent;
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   overflow: hidden;
 }
 
@@ -39,10 +211,10 @@
   align-items: center;
   height: 36px;
   min-height: 36px;
-  background: rgba(10, 10, 20, 0.8);
+  background: var(--nvim-bg-titlebar);
   padding: 0 12px;
   gap: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--nvim-border);
   user-select: none;
   -webkit-app-region: drag;
 }
@@ -58,14 +230,14 @@
   border-radius: 50%;
 }
 
-.titlebar-dot.red { background: #ff5f57; }
-.titlebar-dot.yellow { background: #febc2e; }
-.titlebar-dot.green { background: #28c840; }
+.titlebar-dot.red { background: var(--nvim-dot-red); }
+.titlebar-dot.yellow { background: var(--nvim-dot-yellow); }
+.titlebar-dot.green { background: var(--nvim-dot-green); }
 
 .titlebar-text {
   flex: 1;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--nvim-fg-dim);
   font-size: 12px;
   letter-spacing: 0.3px;
 }
@@ -81,8 +253,8 @@
 .nvim-filetree {
   width: 260px;
   min-width: 260px;
-  background: rgba(10, 10, 20, 0.75);
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--nvim-bg-sidebar);
+  border-right: 1px solid var(--nvim-border);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -96,7 +268,7 @@
 }
 
 .netrw-comment {
-  color: #b8a965;
+  color: var(--nvim-netrw-comment);
   padding: 0 12px;
   line-height: 22px;
   white-space: nowrap;
@@ -119,20 +291,20 @@
 }
 
 .netrw-item.clickable:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--nvim-bg-hover);
 }
 
 .netrw-dir {
-  color: #5fdfdf;
+  color: var(--nvim-netrw-dir);
 }
 
 .netrw-file {
-  color: #c8c8c8;
+  color: var(--nvim-fg-muted);
 }
 
 .netrw-file.active {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+  background: var(--nvim-bg-active);
+  color: var(--nvim-fg-bright);
 }
 
 .netrw-child {
@@ -144,7 +316,7 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  background: rgba(15, 15, 30, 0.75);
+  background: var(--nvim-bg-transparent);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -156,7 +328,7 @@
 }
 
 .tilde-line {
-  color: #3a5faa;
+  color: var(--nvim-tilde);
   line-height: 22px;
   padding-left: 20px;
   font-size: 14px;
@@ -176,7 +348,7 @@
   min-width: 48px;
   text-align: right;
   padding-right: 16px;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
   user-select: none;
   flex-shrink: 0;
 }
@@ -194,158 +366,158 @@
 
 /* ===== CURSOR LINE HIGHLIGHT ===== */
 .nvim-line.cursor-line {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--nvim-bg-cursor-line);
 }
 
 .line-number-current {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: var(--nvim-fg-current) !important;
   font-weight: 700;
 }
 
 /* ===== SYNTAX HIGHLIGHTING ===== */
 
 .syn-heading {
-  color: #60a5fa;
+  color: var(--nvim-heading);
   font-weight: 700;
 }
 
 .syn-heading-marker {
-  color: #3b82f6;
+  color: var(--nvim-heading-marker);
   font-weight: 700;
 }
 
 .syn-bold {
-  color: #f1f5f9;
+  color: var(--nvim-bold);
   font-weight: 700;
 }
 
 .syn-italic {
-  color: #cbd5e1;
+  color: var(--nvim-italic);
   font-style: italic;
 }
 
 .syn-link {
-  color: #3b82f6;
+  color: var(--nvim-link);
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.15s;
 }
 
 .syn-link:hover {
-  color: #60a5fa;
+  color: var(--nvim-link-hover);
 }
 
 .syn-link-bracket {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--nvim-fg-dimmer);
 }
 
 .syn-list-marker {
-  color: #fbbf24;
+  color: var(--nvim-function);
 }
 
 .syn-hr {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
 }
 
 .syn-table-border {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
 }
 
 .syn-table-key {
-  color: #c084fc;
+  color: var(--nvim-keyword);
 }
 
 .syn-table-value {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .syn-keyword {
-  color: #c084fc;
+  color: var(--nvim-keyword);
 }
 
 .syn-type {
-  color: #60a5fa;
+  color: var(--nvim-type);
 }
 
 .syn-function {
-  color: #fbbf24;
+  color: var(--nvim-function);
 }
 
 .syn-string {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .syn-number {
-  color: #fbbf24;
+  color: var(--nvim-function);
 }
 
 .syn-comment {
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--nvim-comment);
   font-style: italic;
 }
 
 .syn-tag {
-  color: #f87171;
+  color: var(--nvim-tag);
 }
 
 .syn-attr {
-  color: #60a5fa;
+  color: var(--nvim-type);
 }
 
 .syn-punctuation {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--nvim-fg-dim);
 }
 
 .syn-operator {
-  color: #c084fc;
+  color: var(--nvim-keyword);
 }
 
 .syn-variable {
-  color: #e2e8f0;
+  color: var(--nvim-fg);
 }
 
 .syn-property {
-  color: #60a5fa;
+  color: var(--nvim-type);
 }
 
 .syn-value {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .syn-prompt {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .syn-flag {
-  color: #fbbf24;
+  color: var(--nvim-function);
 }
 
 .syn-command {
-  color: #60a5fa;
+  color: var(--nvim-type);
 }
 
 .syn-json-key {
-  color: #60a5fa;
+  color: var(--nvim-type);
 }
 
 .syn-json-string {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .syn-json-number {
-  color: #fbbf24;
+  color: var(--nvim-function);
 }
 
 .syn-json-bool {
-  color: #c084fc;
+  color: var(--nvim-keyword);
 }
 
 .syn-json-null {
-  color: #c084fc;
+  color: var(--nvim-keyword);
 }
 
 .syn-json-brace {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--nvim-fg-dim);
 }
 
 /* ===== BLINKING CURSOR ===== */
@@ -353,7 +525,7 @@
   display: inline-block;
   width: 8px;
   height: 18px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--nvim-cursor-bg);
   animation: blink 1s step-end infinite;
   vertical-align: text-bottom;
   margin-left: 2px;
@@ -375,35 +547,35 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
   flex: 1;
-  caret-color: #4ade80;
+  caret-color: var(--nvim-string);
   padding: 0;
   line-height: 22px;
 }
 
 .terminal-input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
 }
 
 .terminal-textarea {
   background: transparent;
   border: none;
   outline: none;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
   width: 100%;
   resize: none;
-  caret-color: #4ade80;
+  caret-color: var(--nvim-string);
   padding: 0;
   line-height: 22px;
 }
 
 .terminal-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
 }
 
 .submit-line {
@@ -412,15 +584,15 @@
 }
 
 .submit-line:hover .syn-command {
-  color: #93c5fd;
+  color: var(--nvim-submit-hover);
 }
 
 .form-status {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .form-status.error {
-  color: #f87171;
+  color: var(--nvim-error);
 }
 
 /* ===== TWO-LINE STATUS LINE ===== */
@@ -435,8 +607,8 @@
   justify-content: space-between;
   height: 24px;
   min-height: 24px;
-  background: rgba(200, 200, 200, 0.95);
-  color: #0a0a14;
+  background: var(--nvim-bg-statusbar);
+  color: var(--nvim-fg-statusbar);
   padding: 0 10px;
   font-size: 12px;
   font-weight: 700;
@@ -449,16 +621,16 @@
 }
 
 .statusline-filename {
-  color: #0a0a14;
+  color: var(--nvim-fg-statusbar);
 }
 
 .statusline-ro {
-  color: #0a0a14;
+  color: var(--nvim-fg-statusbar);
   opacity: 0.7;
 }
 
 .statusline-lines {
-  color: #0a0a14;
+  color: var(--nvim-fg-statusbar);
   opacity: 0.6;
 }
 
@@ -469,11 +641,11 @@
 }
 
 .statusline-pos {
-  color: #0a0a14;
+  color: var(--nvim-fg-statusbar);
 }
 
 .statusline-pct {
-  color: #0a0a14;
+  color: var(--nvim-fg-statusbar);
   min-width: 30px;
   text-align: right;
 }
@@ -483,7 +655,7 @@
   align-items: center;
   height: 24px;
   min-height: 24px;
-  background: rgba(26, 26, 46, 0.85);
+  background: var(--nvim-bg-commandline);
   padding: 0 10px;
   font-size: 12px;
 }
@@ -494,11 +666,11 @@
 }
 
 .commandline-mode.normal {
-  color: #3b82f6;
+  color: var(--nvim-mode-normal);
 }
 
 .commandline-mode.insert {
-  color: #4ade80;
+  color: var(--nvim-mode-insert);
 }
 
 /* ===== COMMAND INPUT ===== */
@@ -509,7 +681,7 @@
 }
 
 .commandline-colon {
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-weight: 700;
 }
 
@@ -517,22 +689,26 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 12px;
   flex: 1;
-  caret-color: #e2e8f0;
+  caret-color: var(--nvim-fg);
   padding: 0;
   line-height: 24px;
 }
 
 .commandline-echo-cmd {
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-weight: 700;
 }
 
 .commandline-echo-arg {
-  color: #4ade80;
+  color: var(--nvim-string);
+}
+
+.commandline-echo-error {
+  color: var(--nvim-error);
 }
 
 /* ===== MOBILE SIDEBAR TOGGLE ===== */
@@ -544,10 +720,10 @@
   z-index: 100;
   width: 40px;
   height: 40px;
-  background: rgba(26, 26, 46, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--nvim-bg-commandline);
+  border: 1px solid var(--nvim-border-strong);
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--nvim-fg-dim);
   font-size: 18px;
   cursor: pointer;
   align-items: center;
@@ -567,7 +743,7 @@
 
 /* ===== CLICKABLE SECTIONS IN README ===== */
 .nav-file-link {
-  color: #3b82f6;
+  color: var(--nvim-link);
   cursor: pointer;
   text-decoration: underline;
   transition: color 0.15s;
@@ -579,7 +755,7 @@
 }
 
 .nav-file-link:hover {
-  color: #60a5fa;
+  color: var(--nvim-link-hover);
 }
 
 /* ===== LAZY LOADER ===== */
@@ -590,13 +766,13 @@
   width: 100vw;
   height: 100vh;
   z-index: 200;
-  background: rgba(10, 10, 20, 0.95);
+  background: var(--nvim-bg-overlay-deep);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   transition: opacity 0.4s ease;
 }
 
@@ -619,12 +795,12 @@
 }
 
 .lazy-title {
-  color: #c084fc;
+  color: var(--nvim-lazy-title);
   font-weight: 700;
 }
 
 .lazy-subtitle {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--nvim-fg-dim);
 }
 
 .lazy-plugin-list {
@@ -656,39 +832,39 @@
 }
 
 .lazy-plugin-done .lazy-plugin-icon {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .lazy-plugin-done .lazy-plugin-name {
-  color: #e2e8f0;
+  color: var(--nvim-fg);
 }
 
 .lazy-plugin-done .lazy-plugin-time {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--nvim-fg-subtle);
 }
 
 .lazy-plugin-loading .lazy-plugin-icon {
-  color: #fbbf24;
+  color: var(--nvim-lazy-loading);
 }
 
 .lazy-plugin-loading .lazy-plugin-name {
-  color: #fbbf24;
+  color: var(--nvim-lazy-loading);
 }
 
 .lazy-plugin-loading .lazy-plugin-time {
-  color: #fbbf24;
+  color: var(--nvim-lazy-loading);
 }
 
 .lazy-plugin-pending .lazy-plugin-icon {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--nvim-fg-faint);
 }
 
 .lazy-plugin-pending .lazy-plugin-name {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--nvim-fg-dimmest);
 }
 
 .lazy-plugin-pending .lazy-plugin-time {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--nvim-fg-faint);
 }
 
 .lazy-progress-section {
@@ -704,15 +880,15 @@
 }
 
 .lazy-progress-filled {
-  color: #4ade80;
+  color: var(--nvim-string);
 }
 
 .lazy-progress-empty {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--nvim-fg-faint);
 }
 
 .lazy-progress-count {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--nvim-fg-dim);
   min-width: 40px;
   text-align: right;
 }
@@ -725,12 +901,12 @@
   width: 100vw;
   height: 100vh;
   z-index: 150;
-  background: rgba(10, 10, 20, 0.88);
+  background: var(--nvim-bg-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
 }
 
 .dashboard-content {
@@ -750,13 +926,13 @@
 .dashboard-ascii-line {
   font-size: 11px;
   line-height: 1.15;
-  color: #60a5fa;
+  color: var(--nvim-dashboard-ascii);
   white-space: pre;
   letter-spacing: 0px;
 }
 
 .dashboard-subtitle {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--nvim-fg-subtle);
   font-size: 14px;
   margin-bottom: 32px;
   letter-spacing: 1px;
@@ -779,7 +955,7 @@
   border: none;
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   padding: 6px 12px;
   cursor: pointer;
   border-radius: 4px;
@@ -789,26 +965,26 @@
 }
 
 .dashboard-action:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--nvim-bg-hover);
 }
 
 .dashboard-action-key {
-  color: #4ade80;
+  color: var(--nvim-string);
   font-weight: 700;
   min-width: 28px;
 }
 
 .dashboard-action-file {
-  color: #60a5fa;
+  color: var(--nvim-type);
   min-width: 140px;
 }
 
 .dashboard-action-sep {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
 }
 
 .dashboard-action-desc {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--nvim-fg-subtle);
 }
 
 .dashboard-tildes {
@@ -822,7 +998,7 @@
 }
 
 .dashboard-footer {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
   font-size: 12px;
   letter-spacing: 0.5px;
 }
@@ -846,8 +1022,8 @@
   width: 500px;
   max-width: 92vw;
   max-height: 400px;
-  background: rgba(15, 15, 30, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--nvim-bg-telescope);
+  border: 1px solid var(--nvim-border-stronger);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -858,11 +1034,11 @@
 .telescope-header {
   padding: 10px 16px 8px;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--nvim-border-strong);
 }
 
 .telescope-title {
-  color: #c084fc;
+  color: var(--nvim-keyword);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -876,7 +1052,7 @@
 }
 
 .telescope-prompt {
-  color: #4ade80;
+  color: var(--nvim-string);
   font-size: 14px;
   font-weight: 700;
   flex-shrink: 0;
@@ -887,20 +1063,20 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
-  caret-color: #4ade80;
+  caret-color: var(--nvim-string);
   padding: 0;
 }
 
 .telescope-input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--nvim-fg-dimmest);
 }
 
 .telescope-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--nvim-border-strong);
   margin: 0 16px;
 }
 
@@ -921,37 +1097,37 @@
 }
 
 .telescope-result:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--nvim-bg-cursor-line);
 }
 
 .telescope-result-selected {
-  background: rgba(96, 165, 250, 0.12);
+  background: var(--nvim-bg-selected);
 }
 
 .telescope-result-selected:hover {
-  background: rgba(96, 165, 250, 0.16);
+  background: var(--nvim-bg-selected-hover);
 }
 
 .telescope-result-name {
-  color: #e2e8f0;
+  color: var(--nvim-fg);
   font-weight: 500;
 }
 
 .telescope-result-path {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--nvim-fg-dimmest);
   font-size: 11px;
   margin-left: 12px;
   flex-shrink: 0;
 }
 
 .telescope-match {
-  color: #4ade80;
+  color: var(--nvim-string);
   font-weight: 700;
 }
 
 .telescope-empty {
   padding: 20px 16px;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--nvim-fg-dimmer);
   text-align: center;
   font-size: 13px;
 }
@@ -962,12 +1138,154 @@
   justify-content: center;
   gap: 16px;
   padding: 8px 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--nvim-border-strong);
 }
 
 .telescope-hint {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--nvim-fg-dimmest);
   font-size: 11px;
+}
+
+/* ===== TERMINAL PANEL ===== */
+.terminal-panel {
+  height: 200px;
+  min-height: 200px;
+  background: var(--nvim-bg-sidebar);
+  border-top: 1px solid var(--nvim-border);
+  display: flex;
+  flex-direction: column;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.terminal-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  min-height: 24px;
+  padding: 0 12px;
+  background: var(--nvim-bg-commandline);
+  border-bottom: 1px solid var(--nvim-border);
+  user-select: none;
+}
+
+.terminal-panel-title {
+  color: var(--nvim-fg-dim);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.terminal-panel-close {
+  background: none;
+  border: none;
+  color: var(--nvim-fg-dimmer);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.terminal-panel-close:hover {
+  color: var(--nvim-fg);
+}
+
+.terminal-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 12px;
+}
+
+.terminal-panel-line {
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-panel-prompt {
+  color: var(--nvim-string);
+  font-weight: 700;
+}
+
+.terminal-panel-cmd {
+  color: var(--nvim-fg);
+}
+
+.terminal-panel-output {
+  color: var(--nvim-fg-muted);
+}
+
+.terminal-panel-error {
+  color: var(--nvim-error);
+}
+
+.terminal-panel-input-line {
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+.terminal-panel-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--nvim-fg);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 13px;
+  flex: 1;
+  caret-color: var(--nvim-string);
+  padding: 0;
+  line-height: 20px;
+}
+
+.terminal-panel-neofetch {
+  display: flex;
+  gap: 16px;
+  line-height: 18px;
+}
+
+.terminal-panel-neofetch-ascii {
+  color: var(--nvim-type);
+  white-space: pre;
+  flex-shrink: 0;
+}
+
+.terminal-panel-neofetch-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.terminal-panel-neofetch-title {
+  color: var(--nvim-string);
+  font-weight: 700;
+}
+
+.terminal-panel-neofetch-sep {
+  color: var(--nvim-fg-dimmest);
+}
+
+.terminal-panel-neofetch-label {
+  color: var(--nvim-type);
+  font-weight: 700;
+}
+
+.terminal-panel-neofetch-value {
+  color: var(--nvim-fg);
+}
+
+.terminal-panel-neofetch-colors {
+  display: flex;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.terminal-panel-neofetch-color {
+  width: 18px;
+  height: 10px;
+  border-radius: 1px;
 }
 
 /* ===== IMAGE GLITCH REVEAL ===== */
@@ -1076,6 +1394,11 @@
   .dashboard-action-file {
     min-width: 110px;
   }
+
+  .terminal-panel {
+    height: 150px;
+    min-height: 150px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1132,5 +1455,10 @@
 
   .telescope-modal {
     max-height: 70vh;
+  }
+
+  .terminal-panel {
+    height: 120px;
+    min-height: 120px;
   }
 }

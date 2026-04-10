@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Line, Empty } from '../Line';
 import { LinkPreview } from '../../ui/link-preview';
 import { SpecialText } from '../../ui/special-text';
 
 const ProjectsView = () => {
+  const [linkReady, setLinkReady] = useState({});
   const projects = [
     {
       title: 'TIDE Active - Personal Brand',
@@ -134,7 +135,9 @@ const ProjectsView = () => {
               <SpecialText speed={6} delay={next(0.01)} className="syn-string">{project.descBefore}</SpecialText>
             )}
             {project.descLinkText ? (
-              <LinkPreview url={project.descLinkUrl} isStatic={true} imageSrc={project.descLinkImg} className="text-cyan-400 hover:text-cyan-300 cursor-pointer">{project.descLinkText}</LinkPreview>
+              <LinkPreview url={project.descLinkUrl} isStatic={true} imageSrc={project.descLinkImg} className="text-cyan-400 hover:text-cyan-300 cursor-pointer" disabled={!linkReady[idx]}>
+                <SpecialText speed={6} delay={next(0.01)} onComplete={() => setLinkReady(prev => ({...prev, [idx]: true}))}>{project.descLinkText}</SpecialText>
+              </LinkPreview>
             ) : null}
             <SpecialText speed={6} delay={next(0.01)} className="syn-string">{project.descAfter}</SpecialText>
             <SpecialText speed={5} delay={next(0.01)} className="syn-string">{'"'}</SpecialText>

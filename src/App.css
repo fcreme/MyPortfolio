@@ -1,5 +1,5 @@
 .App {
   height: 100vh;
   overflow: hidden;
-  background: #0f0f1a;
+  background: var(--nvim-bg, #0f0f1a);
 }

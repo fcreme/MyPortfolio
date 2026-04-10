@@ -8,6 +8,8 @@ const lineCountMap = {
   'projects.tsx': 24,
   'contact.sh': 22,
   'package.json': 24,
+  'help.txt': 42,
+  'hologram-demo.jsx': 12,
 };
 
 const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel }) => {
@@ -56,6 +58,16 @@ const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, 
 
     // Echo of last command (e.g. ":e about.md")
     if (commandText) {
+      // Error messages (E123: ...) or fun quit messages
+      const isError = /^E\d+:/.test(commandText);
+      const isVimCmd = commandText.startsWith(':');
+      if (isError || !isVimCmd) {
+        return (
+          <span className={isError ? 'commandline-echo-error' : 'commandline-echo-cmd'}>
+            {commandText}
+          </span>
+        );
+      }
       return (
         <span className="commandline-echo">
           <span className="commandline-echo-cmd">

@@ -8,6 +8,7 @@ import CursorContext from './terminal/CursorContext';
 import LazyLoader from './terminal/LazyLoader';
 import Dashboard from './terminal/Dashboard';
 import Telescope from './terminal/Telescope';
+import TerminalPanel from './terminal/TerminalPanel';
 import ReadmeView from './terminal/views/ReadmeView';
 import AboutView from './terminal/views/AboutView';
 import ExperienceView from './terminal/views/ExperienceView';
@@ -16,7 +17,20 @@ import ProjectsView from './terminal/views/ProjectsView';
 import ContactView from './terminal/views/ContactView';
 import PackageJsonView from './terminal/views/PackageJsonView';
 import DitherDemoView from './terminal/views/DitherDemoView';
+import HelpView from './terminal/views/HelpView';
+import HologramView from './terminal/views/HologramView';
 import './NeovimTerminal.css';
+
+const VALID_THEMES = ['tokyonight', 'gruvbox', 'catppuccin'];
+
+const QUIT_MESSAGES = [
+  'E32: Can\'t quit vim... You\'re here forever.',
+  'E37: No write since last change (use :q! to override)... just kidding.',
+  'This is your life now. Welcome to Neovim.',
+  'sudo rm -rf /? Nice try.',
+  'Have you tried turning it off and on again?',
+  'Alt+F4? We don\'t do that here.',
+];
 
 const lineCountMap = {
   'README.md': 34,
@@ -27,11 +41,14 @@ const lineCountMap = {
   'contact.sh': 22,
   'package.json': 24,
   'dither-demo.jsx': 45,
+  'help.txt': 42,
+  'hologram-demo.jsx': 12,
 };
 
 const allFiles = [
   'README.md', 'about.md', 'experience.md',
   'skills.tsx', 'projects.tsx', 'contact.sh', 'package.json', 'dither-demo.jsx',
+  // 'hologram-demo.jsx',
 ];
 
 const TildeFiller = () => {
@@ -81,6 +98,8 @@ const NeovimTerminal = () => {
   const [cursorLine, setCursorLine] = useState(1);
   const [commandText, setCommandText] = useState('');
   const [commandMode, setCommandMode] = useState(false);
+  const [terminalOpen, setTerminalOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem('nvim-theme') || 'tokyonight');
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -91,6 +110,12 @@ const NeovimTerminal = () => {
   const contentRef = useRef(null);
   const lastGPress = useRef(0);
   const commandTimeoutRef = useRef(null);
+  const quitCounter = useRef(0);
+
+  // Apply theme to data attribute
+  useEffect(() => {
+    localStorage.setItem('nvim-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -110,10 +135,10 @@ const NeovimTerminal = () => {
     }
   }, [activeFile]);
 
-  const showCommandEcho = useCallback((text) => {
+  const showCommandEcho = useCallback((text, duration = 800) => {
     if (commandTimeoutRef.current) clearTimeout(commandTimeoutRef.current);
     setCommandText(text);
-    commandTimeoutRef.current = setTimeout(() => setCommandText(''), 800);
+    commandTimeoutRef.current = setTimeout(() => setCommandText(''), duration);
   }, []);
 
   const handleSelectFile = useCallback((file) => {
@@ -139,15 +164,60 @@ const NeovimTerminal = () => {
         setActiveFile(match);
         return;
       }
-    }
-
-    // :q — do nothing visible, just show the command
-    if (trimmed === 'q' || trimmed === 'q!' || trimmed === 'wq') {
-      showCommandEcho(`:${trimmed}`);
+      showCommandEcho(`E492: Not an editor command: e ${eMatch[1]}`, 3000);
       return;
     }
 
-    showCommandEcho(`:${trimmed}`);
+    // :q / :q! / :wq — cycle through funny messages
+    if (trimmed === 'q' || trimmed === 'q!' || trimmed === 'wq') {
+      const msg = QUIT_MESSAGES[quitCounter.current % QUIT_MESSAGES.length];
+      quitCounter.current++;
+      showCommandEcho(msg, 3000);
+      return;
+    }
+
+    // :help — open help view
+    if (trimmed === 'help') {
+      showCommandEcho(':help');
+      setActiveFile('help.txt');
+      return;
+    }
+
+    // :colorscheme <name>
+    const csMatch = trimmed.match(/^colorscheme\s+(.+)/);
+    if (csMatch) {
+      const name = csMatch[1].toLowerCase().trim();
+      if (VALID_THEMES.includes(name)) {
+        setTheme(name);
+        showCommandEcho(`:colorscheme ${name}`);
+      } else {
+        showCommandEcho(`E185: Cannot find color scheme '${csMatch[1]}'`, 3000);
+      }
+      return;
+    }
+
+    // :Telescope
+    if (trimmed === 'Telescope' || trimmed === 'telescope') {
+      showCommandEcho(':Telescope');
+      setTelescopeOpen(true);
+      return;
+    }
+
+    // :terminal / :term
+    if (trimmed === 'terminal' || trimmed === 'term') {
+      showCommandEcho(`:${trimmed}`);
+      setTerminalOpen(true);
+      return;
+    }
+
+    // :version
+    if (trimmed === 'version') {
+      showCommandEcho('NVIM v0.10.0 — Felipe Portfolio Edition', 3000);
+      return;
+    }
+
+    // Unknown command
+    showCommandEcho(`E492: Not an editor command: ${trimmed}`, 3000);
   }, [showCommandEcho]);
 
   // Keyboard shortcuts
@@ -160,10 +230,19 @@ const NeovimTerminal = () => {
         return;
       }
 
+      // Ctrl+` toggles terminal panel
+      if (e.ctrlKey && e.key === '`' && appPhase === 'editor') {
+        e.preventDefault();
+        setTerminalOpen((prev) => !prev);
+        return;
+      }
+
       // Don't handle editor shortcuts unless in editor phase
       if (appPhase !== 'editor') return;
       // Don't intercept when telescope is open
       if (telescopeOpen) return;
+      // Don't intercept when terminal panel is focused
+      if (terminalOpen) return;
       // Don't intercept when in INSERT mode (contact form)
       if (vimMode === 'INSERT') return;
       // Don't intercept when command mode is active (handled by StatusLine input)
@@ -221,7 +300,7 @@ const NeovimTerminal = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [vimMode, commandMode, activeFile, appPhase, telescopeOpen]);
+  }, [vimMode, commandMode, activeFile, appPhase, telescopeOpen, terminalOpen]);
 
   const handleToggleDir = useCallback((dir) => {
     setExpandedDirs((prev) =>
@@ -296,6 +375,10 @@ const NeovimTerminal = () => {
     setTelescopeOpen(false);
   }, []);
 
+  const handleTerminalClose = useCallback(() => {
+    setTerminalOpen(false);
+  }, []);
+
   const cursorValue = useMemo(() => ({ cursorLine }), [cursorLine]);
 
   const renderView = () => {
@@ -327,13 +410,17 @@ const NeovimTerminal = () => {
         return <PackageJsonView />;
       case 'dither-demo.jsx':
         return <DitherDemoView />;
+      case 'help.txt':
+        return <HelpView />;
+      case 'hologram-demo.jsx':
+        return <HologramView />;
       default:
         return <ReadmeView {...props} />;
     }
   };
 
   return (
-    <div className="nvim-bg-wrapper">
+    <div className="nvim-bg-wrapper" data-theme={theme}>
       <div
         className="nvim-bg-gif"
         style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/residentevil.gif)` }}
@@ -379,6 +466,11 @@ const NeovimTerminal = () => {
               </div>
             </CursorContext.Provider>
           </div>
+
+          {terminalOpen && (
+            <TerminalPanel onClose={handleTerminalClose} theme={theme} />
+          )}
+
           <StatusLine
             vimMode={vimMode}
             activeFile={activeFile}

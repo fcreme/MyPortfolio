@@ -20,7 +20,8 @@ export const LinkPreview = ({
   quality = 50,
   layout = "fixed",
   isStatic = false,
-  imageSrc = ""
+  imageSrc = "",
+  disabled = false,
 }) => {
   let src;
   if (!isStatic) {
@@ -71,12 +72,13 @@ export const LinkPreview = ({
         openDelay={50}
         closeDelay={100}
         onOpenChange={(open) => {
-          setOpen(open);
+          if (!disabled) setOpen(open);
         }}>
         <HoverCardPrimitive.Trigger
-          onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white", className)}
-          href={url}>
+          onMouseMove={disabled ? undefined : handleMouseMove}
+          className={cn("text-black dark:text-white", disabled ? "" : className)}
+          href={disabled ? undefined : url}
+          style={disabled ? { pointerEvents: 'none' } : undefined}>
           {children}
         </HoverCardPrimitive.Trigger>
 

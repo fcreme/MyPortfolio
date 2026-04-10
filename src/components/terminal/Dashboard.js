@@ -29,6 +29,9 @@ const ACTIONS = [
 const TILDE_COUNT = 8;
 
 const Dashboard = ({ onSelectFile }) => {
+  let d = 0;
+  const next = (step = 0.05) => { d += step; return d; };
+
   const handleAction = useCallback((file) => {
     onSelectFile(file);
   }, [onSelectFile]);
@@ -51,12 +54,14 @@ const Dashboard = ({ onSelectFile }) => {
       <div className="dashboard-content">
         <div className="dashboard-ascii">
           {ASCII_ART.map((line, i) => (
-            <div key={i} className="dashboard-ascii-line">{line}</div>
+            <div key={i} className="dashboard-ascii-line">
+              <SpecialText speed={40} delay={next(0.04)} className="text-inherit">{line || ' '}</SpecialText>
+            </div>
           ))}
         </div>
 
         <div className="dashboard-subtitle">
-          <SpecialText speed={12} delay={0.2} className="text-inherit">Full Stack Developer</SpecialText>
+          <SpecialText speed={12} delay={next(0.1)} className="text-inherit">Full Stack Developer</SpecialText>
         </div>
 
         <div className="dashboard-actions">
@@ -66,22 +71,24 @@ const Dashboard = ({ onSelectFile }) => {
               className="dashboard-action"
               onClick={() => handleAction(action.file)}
             >
-              <span className="dashboard-action-key">[{action.key}]</span>
-              <span className="dashboard-action-file">{action.label}</span>
-              <span className="dashboard-action-sep">—</span>
-              <span className="dashboard-action-desc">{action.desc}</span>
+              <SpecialText speed={5} delay={next(0.06)} className="dashboard-action-key">[{action.key}]</SpecialText>
+              <SpecialText speed={8} delay={next(0.01)} className="dashboard-action-file">{action.label}</SpecialText>
+              <SpecialText speed={5} delay={next(0.005)} className="dashboard-action-sep">—</SpecialText>
+              <SpecialText speed={8} delay={next(0.005)} className="dashboard-action-desc">{action.desc}</SpecialText>
             </button>
           ))}
         </div>
 
         <div className="dashboard-tildes">
           {Array.from({ length: TILDE_COUNT }, (_, i) => (
-            <div key={i} className="tilde-line">~</div>
+            <div key={i} className="tilde-line">
+              <SpecialText speed={5} delay={next(0.03)} className="text-inherit">~</SpecialText>
+            </div>
           ))}
         </div>
 
         <div className="dashboard-footer">
-          <SpecialText speed={8} delay={0.5} className="text-inherit">felipe-portfolio v2.0 — neovim edition</SpecialText>
+          <SpecialText speed={8} delay={next(0.1)} className="text-inherit">felipe-portfolio v2.0 — neovim edition</SpecialText>
         </div>
       </div>
     </div>
