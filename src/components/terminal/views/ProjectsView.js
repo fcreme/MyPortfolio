@@ -18,15 +18,15 @@ const ProjectsView = () => {
       githubUrl: 'https://github.com/fcreme/tideactive-personal-brand',
     },
     {
-      title: 'ClientDash - Project Management',
+      title: 'Repokit - Developer Assistant CLI',
       descBefore: '',
       descLinkText: null,
       descLinkUrl: null,
       descLinkImg: null,
-      descAfter: 'Full-stack project management dashboard with Kanban board, drag-and-drop tasks, real-time stats, authentication (email + Google OAuth), dark mode, and aurora animated backgrounds.',
-      technologies: ['React', 'Express', 'Prisma', 'Tailwind CSS', 'Framer Motion', 'SQLite'],
-      liveUrl: 'https://github.com/fcreme/client-dashboard',
-      githubUrl: 'https://github.com/fcreme/client-dashboard',
+      descAfter: 'Repo-aware developer assistant CLI built in Go. Analyzes codebases, detects React component patterns, tracks dependencies with circular import detection, generates code following project conventions, and provides interactive chat mode for natural language exploration.',
+      technologies: ['Go', 'Cobra', 'SQLite', 'CLI'],
+      liveUrl: null,
+      githubUrl: 'https://github.com/fcreme/CLI',
     },
     {
       title: 'OnChain - DeFi Interface',
@@ -40,15 +40,15 @@ const ProjectsView = () => {
       githubUrl: 'https://github.com/fcreme/OnChainApp',
     },
     {
-      title: 'Strudel Live Coding [Experimental]',
-      descBefore: 'Experimental explorations in ',
-      descLinkText: 'algorithmic music composition',
-      descLinkUrl: '#',
-      descLinkImg: '/strudel.png',
-      descAfter: ' through live coding. Features multi-layered drum patterns, synthesizers, and real-time performance with Strudel and TidalCycles.',
-      technologies: ['Strudel', 'TidalCycles', 'JavaScript', 'Web Audio API'],
-      liveUrl: 'https://strudel.cc/',
-      githubUrl: 'https://github.com/fcreme/strudel-livecoding',
+      title: 'Digital Wounds - Atmospheric Experience',
+      descBefore: '',
+      descLinkText: null,
+      descLinkUrl: null,
+      descLinkImg: null,
+      descAfter: 'Native C++ dark atmospheric desktop experience inspired by Resident Evil Remake and Silent Hill. Hybrid rendering with pre-rendered Blender backgrounds, real-time 3D objects, interactive books, dynamic lighting, and cinematic post-processing effects (film grain, vignette, bloom).',
+      technologies: ['C++17', 'SDL2', 'OpenGL', 'GLSL', 'CMake', 'Blender'],
+      liveUrl: null,
+      githubUrl: 'https://github.com/fcreme/digital-wounds',
     },
   ];
 
@@ -160,11 +160,17 @@ const ProjectsView = () => {
           <Line n={l()}>
             <SpecialText speed={5} delay={next(0.02)} className="syn-property">{'    liveUrl'}</SpecialText>
             <SpecialText speed={5} delay={next(0.01)} className="syn-operator">{': '}</SpecialText>
-            <SpecialText speed={5} delay={next(0.01)} className="syn-string">{'"'}</SpecialText>
-            <a className="syn-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <SpecialText speed={5} delay={next(0.01)}>{project.liveUrl}</SpecialText>
-            </a>
-            <SpecialText speed={5} delay={next(0.01)} className="syn-string">{'"'}</SpecialText>
+            {project.liveUrl ? (
+              <>
+                <SpecialText speed={5} delay={next(0.01)} className="syn-string">{'"'}</SpecialText>
+                <a className="syn-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <SpecialText speed={5} delay={next(0.01)}>{project.liveUrl}</SpecialText>
+                </a>
+                <SpecialText speed={5} delay={next(0.01)} className="syn-string">{'"'}</SpecialText>
+              </>
+            ) : (
+              <SpecialText speed={5} delay={next(0.01)} className="syn-keyword">null</SpecialText>
+            )}
             <SpecialText speed={5} delay={next(0.01)} className="syn-punctuation">,</SpecialText>
           </Line>
           <Line n={l()}>
