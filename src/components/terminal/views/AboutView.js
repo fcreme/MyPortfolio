@@ -58,16 +58,19 @@ const AboutView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>{"I'm Felipe Cremerius, a Full Stack Developer specialized in React,"}</SpecialText>
+        <SpecialText speed={8} delay={next()}>{"I'm Felipe Cremerius, a Full Stack Developer who builds end-to-end"}</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>Node.js, and modern web applications. I build end-to-end solutions</SpecialText>
+        <SpecialText speed={8} delay={next()}>solutions across the entire stack, from React frontends and Node.js</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>from frontend interfaces to backend APIs, collaborating with business</SpecialText>
+        <SpecialText speed={8} delay={next()}>APIs to database architecture, DevOps pipelines, and backend services</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>stakeholders to translate workflows into scalable applications.</SpecialText>
+        <SpecialText speed={8} delay={next()}>with Express and NestJS. I collaborate with business stakeholders</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>to translate complex workflows into scalable, production-ready systems.</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
@@ -88,13 +91,16 @@ const AboutView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>My approach focuses on performance, responsive and pixel-perfect UI.</SpecialText>
+        <SpecialText speed={8} delay={next()}>My approach focuses on clean architecture, performance optimization,</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>{"I'm currently deepening my skills in Three.js, frontend performance"}</SpecialText>
+        <SpecialText speed={8} delay={next()}>{"and reliable systems. I'm currently deepening my skills in systems"}</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>optimization, testing strategies, and automation with n8n.</SpecialText>
+        <SpecialText speed={8} delay={next()}>programming, cloud infrastructure, testing strategies, and workflow</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>automation with n8n.</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
