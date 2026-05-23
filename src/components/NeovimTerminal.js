@@ -478,6 +478,8 @@ const NeovimTerminal = () => {
             commandMode={commandMode}
             onCommand={handleCommand}
             onCommandCancel={() => setCommandMode(false)}
+            cursorLine={cursorLine}
+            contentRef={contentRef}
           />
 
           <button

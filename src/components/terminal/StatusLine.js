@@ -12,10 +12,33 @@ const lineCountMap = {
   'hologram-demo.jsx': 12,
 };
 
-const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel }) => {
+const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel, cursorLine, contentRef }) => {
   const lineCount = lineCountMap[activeFile] || 0;
   const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState('');
+  const [scrollPct, setScrollPct] = useState('All');
+
+  // Track scroll position
+  useEffect(() => {
+    const el = contentRef?.current;
+    if (!el) return;
+    const update = () => {
+      const { scrollTop, scrollHeight, clientHeight } = el;
+      const maxScroll = scrollHeight - clientHeight;
+      if (maxScroll <= 0) {
+        setScrollPct('All');
+      } else if (scrollTop <= 1) {
+        setScrollPct('Top');
+      } else if (scrollTop >= maxScroll - 1) {
+        setScrollPct('Bot');
+      } else {
+        setScrollPct(`${Math.round((scrollTop / maxScroll) * 100)}%`);
+      }
+    };
+    update();
+    el.addEventListener('scroll', update);
+    return () => el.removeEventListener('scroll', update);
+  }, [contentRef, activeFile]);
 
   // Focus input when command mode activates
   useEffect(() => {
@@ -99,8 +122,8 @@ const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, 
           <span className="statusline-lines">{lineCount}L</span>
         </span>
         <span className="statusline-right">
-          <span className="statusline-pos">1,1</span>
-          <span className="statusline-pct">All</span>
+          <span className="statusline-pos">{cursorLine || 1},1</span>
+          <span className="statusline-pct">{scrollPct}</span>
         </span>
       </div>
       <div className="nvim-commandline">
