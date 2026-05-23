@@ -322,6 +322,63 @@
   flex-direction: column;
 }
 
+/* Themed scrollbar */
+.nvim-content-pane::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nvim-content-pane::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nvim-content-pane::-webkit-scrollbar-thumb {
+  background: var(--nvim-fg-dimmest, rgba(255, 255, 255, 0.15));
+  border-radius: 3px;
+}
+
+.nvim-content-pane::-webkit-scrollbar-thumb:hover {
+  background: var(--nvim-fg-subtle, rgba(255, 255, 255, 0.3));
+}
+
+/* Firefox scrollbar */
+.nvim-content-pane {
+  scrollbar-width: thin;
+  scrollbar-color: var(--nvim-fg-dimmest, rgba(255, 255, 255, 0.15)) transparent;
+}
+
+/* Themed scrollbar — all scrollable panels */
+.nvim-filetree::-webkit-scrollbar,
+.telescope-results::-webkit-scrollbar,
+.terminal-panel-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nvim-filetree::-webkit-scrollbar-track,
+.telescope-results::-webkit-scrollbar-track,
+.terminal-panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nvim-filetree::-webkit-scrollbar-thumb,
+.telescope-results::-webkit-scrollbar-thumb,
+.terminal-panel-body::-webkit-scrollbar-thumb {
+  background: var(--nvim-fg-dimmest, rgba(255, 255, 255, 0.15));
+  border-radius: 3px;
+}
+
+.nvim-filetree::-webkit-scrollbar-thumb:hover,
+.telescope-results::-webkit-scrollbar-thumb:hover,
+.terminal-panel-body::-webkit-scrollbar-thumb:hover {
+  background: var(--nvim-fg-subtle, rgba(255, 255, 255, 0.3));
+}
+
+.nvim-filetree,
+.telescope-results,
+.terminal-panel-body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--nvim-fg-dimmest, rgba(255, 255, 255, 0.15)) transparent;
+}
+
 /* ===== TILDE FILLER ===== */
 .tilde-filler {
   flex-shrink: 0;
