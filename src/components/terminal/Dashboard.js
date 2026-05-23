@@ -26,9 +26,15 @@ const ACTIONS = [
   { key: 'c', file: 'contact.sh', label: 'contact.sh', desc: 'Contact' },
 ];
 
-const TILDE_COUNT = 8;
+const getTildeCount = () => {
+  if (typeof window === 'undefined') return 6;
+  if (window.innerHeight <= 650) return 2;
+  if (window.innerHeight <= 800) return 4;
+  return 8;
+};
 
 const Dashboard = ({ onSelectFile }) => {
+  const TILDE_COUNT = getTildeCount();
   let d = 0;
   const next = (step = 0.05) => { d += step; return d; };
 

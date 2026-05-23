@@ -907,6 +907,7 @@
   justify-content: center;
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   color: var(--nvim-fg);
+  overflow-y: auto;
 }
 
 .dashboard-content {
@@ -915,7 +916,8 @@
   align-items: center;
   width: 100%;
   max-width: 600px;
-  padding: 0 20px;
+  padding: 20px 20px;
+  margin: auto;
 }
 
 .dashboard-ascii {
@@ -1329,6 +1331,55 @@
     transform: translateX(0);
     filter: none;
     clip-path: inset(0);
+  }
+}
+
+/* ===== LAPTOP HEIGHT ===== */
+@media (max-height: 800px) {
+  .dashboard-ascii-line {
+    font-size: 9px;
+    line-height: 1.1;
+  }
+
+  .dashboard-subtitle {
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+
+  .dashboard-actions {
+    gap: 2px;
+    margin-bottom: 16px;
+  }
+
+  .dashboard-action {
+    padding: 4px 12px;
+    font-size: 13px;
+  }
+
+  .dashboard-tildes {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-height: 650px) {
+  .dashboard-ascii-line {
+    font-size: 7px;
+    line-height: 1.05;
+  }
+
+  .dashboard-subtitle {
+    margin-bottom: 14px;
+    font-size: 12px;
+  }
+
+  .dashboard-actions {
+    gap: 1px;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-action {
+    padding: 3px 10px;
+    font-size: 12px;
   }
 }
 
