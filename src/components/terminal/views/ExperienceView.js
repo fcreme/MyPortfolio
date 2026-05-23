@@ -147,6 +147,36 @@ const ExperienceView = () => {
       <Line n={l()}>
         <SpecialText speed={8} delay={next()} className="syn-bold">CoderHouse</SpecialText>
       </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-hr">---</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'# '}</SpecialText>
+        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Certifications</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-bold">Model Context Protocol: Advanced Topics</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-comment">{' — Anthropic, Feb 2026'}</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-bold">Introduction to Model Context Protocol</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-comment">{' — Anthropic, Feb 2026'}</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-bold">Claude Code in Action</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-comment">{' — Anthropic, Jan 2026'}</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-bold">Claude 101</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-comment">{' — Anthropic, Feb 2026'}</SpecialText>
+      </Line>
     </div>
   );
 };
