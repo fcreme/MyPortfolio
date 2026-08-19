@@ -36,7 +36,7 @@ const ProjectsView = () => {
       descLinkImg: '/img.png',
       descAfter: ' for interacting with ERC20 tokens on Ethereum Sepolia testnet. Multi-wallet connectivity, real-time balances, token transfers, approvals and minting with glassmorphism UI.',
       technologies: ['React', 'TypeScript', 'Wagmi', 'RainbowKit', 'Material-UI', 'Zustand'],
-      liveUrl: 'https://tokenflow-app.vercel.app/',
+      liveUrl: null,
       githubUrl: 'https://github.com/fcreme/OnChainApp',
     },
     {
