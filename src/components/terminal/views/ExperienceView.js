@@ -70,7 +70,7 @@ const ExperienceView = () => {
       <Line n={l()}>
         <SpecialText speed={8} delay={next()} className="syn-bold">Reino Ceramicos</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-comment">{' | '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)} className="syn-italic">2025 - Present</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-italic">Jul 2025 - Jun 2026</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
