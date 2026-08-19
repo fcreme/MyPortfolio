@@ -84,7 +84,7 @@ const AboutView = () => {
         <SpecialText speed={8} delay={next()}>dashboards and management tools with React, API integrations, and</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>data visualization. Previously worked as a freelance developer</SpecialText>
+        <SpecialText speed={8} delay={next()}>data visualization. I also work as a freelance developer,</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={8} delay={next()}>building responsive interfaces and automating workflows.</SpecialText>

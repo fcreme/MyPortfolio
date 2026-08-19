@@ -74,7 +74,8 @@ portfolio/
 │   │   │   ├── TitleBar.js        # Terminal title bar
 │   │   │   ├── Line.js            # Line rendering with numbers
 │   │   │   ├── Telescope.js       # Fuzzy finder overlay
-│   │   │   ├── LazyLoader.js      # On-demand component loading
+│   │   │   ├── TerminalPanel.js   # Ctrl+` shell panel
+│   │   │   ├── LazyLoader.js      # lazy.nvim style boot screen
 │   │   │   ├── CursorContext.js   # Cursor state management
 │   │   │   └── views/
 │   │   │       ├── ReadmeView.js
@@ -83,16 +84,15 @@ portfolio/
 │   │   │       ├── SkillsView.js
 │   │   │       ├── ProjectsView.js
 │   │   │       ├── ContactView.js
-│   │   │       └── PackageJsonView.js
-│   │   ├── Hero.js
-│   │   ├── About.js
-│   │   ├── Skills.js
-│   │   ├── Projects.js
-│   │   ├── Contact.js
-│   │   ├── Header.js
-│   │   ├── Footer.js
+│   │   │       ├── PackageJsonView.js
+│   │   │       ├── DitherDemoView.js
+│   │   │       ├── HelpView.js
+│   │   │       └── HologramView.js
 │   │   └── ui/
-│   │       └── AuroraBackground.js
+│   │       ├── special-text.jsx   # Scramble-in text effect
+│   │       ├── link-preview.jsx   # Hover link previews
+│   │       ├── dither-shader.jsx  # WebGL dither effect
+│   │       └── HologramCube.jsx   # three.js hologram
 │   ├── lib/
 │   │   └── utils.js
 │   ├── App.js

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 
 const lineCountMap = {
   'README.md': 34,
-  'about.md': 31,
+  'about.md': 40,
   'experience.md': 71,
   'skills.tsx': 65,
   'projects.tsx': 24,
