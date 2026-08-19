@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef, useMemo, Suspense, lazy } from 'react';
+import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import TitleBar from './terminal/TitleBar';
@@ -20,9 +20,6 @@ import DitherDemoView from './terminal/views/DitherDemoView';
 import HelpView from './terminal/views/HelpView';
 import './NeovimTerminal.css';
 
-// Pulls in three.js + fiber + drei + postprocessing (~248 kB gzip).
-// Split out so it only loads if hologram-demo.jsx is actually opened.
-const HologramView = lazy(() => import('./terminal/views/HologramView'));
 
 const VALID_THEMES = ['tokyonight', 'gruvbox', 'catppuccin'];
 
@@ -45,13 +42,11 @@ const lineCountMap = {
   'package.json': 24,
   'dither-demo.jsx': 45,
   'help.txt': 42,
-  'hologram-demo.jsx': 12,
 };
 
 const allFiles = [
   'README.md', 'about.md', 'experience.md',
   'skills.tsx', 'projects.tsx', 'contact.sh', 'package.json', 'dither-demo.jsx',
-  // 'hologram-demo.jsx',
 ];
 
 const TildeFiller = () => {
@@ -415,8 +410,6 @@ const NeovimTerminal = () => {
         return <DitherDemoView />;
       case 'help.txt':
         return <HelpView />;
-      case 'hologram-demo.jsx':
-        return <HologramView />;
       default:
         return <ReadmeView {...props} />;
     }
@@ -462,9 +455,7 @@ const NeovimTerminal = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <Suspense fallback={<div className="nvim-line"><span className="line-content">Loading...</span></div>}>
-                      {renderView()}
-                    </Suspense>
+                    {renderView()}
                   </motion.div>
                 </AnimatePresence>
                 <TildeFiller key={`tilde-${activeFile}`} />

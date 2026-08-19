@@ -9,7 +9,6 @@ const lineCountMap = {
   'contact.sh': 22,
   'package.json': 24,
   'help.txt': 42,
-  'hologram-demo.jsx': 12,
 };
 
 const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel, cursorLine, contentRef }) => {
