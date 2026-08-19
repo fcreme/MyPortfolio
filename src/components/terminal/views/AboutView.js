@@ -74,6 +74,12 @@ const AboutView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>I currently work in AI evaluation for a company under NDA, reviewing</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>model-generated pull requests and grading multi-step reasoning.</SpecialText>
+      </Line>
+      <Line n={l()}>
         <SpecialText speed={8} delay={next()}>{'During my time at '}</SpecialText>
         <LinkPreview url="#" isStatic={true} imageSrc="/reino2.png" className="text-cyan-400 hover:text-cyan-300 cursor-pointer" disabled={!linkReady}>
           <SpecialText speed={8} delay={next(0.01)} onComplete={() => setLinkReady(true)}>Reino Ceramicos</SpecialText>
