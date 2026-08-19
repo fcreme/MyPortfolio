@@ -21,6 +21,50 @@ const ExperienceView = () => {
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
+        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">AI Evaluation & Data Annotation</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()} className="syn-bold">Confidential (NDA)</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-comment">{' | '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-italic">May 2026 - Present</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>Reviewing and evaluating AI model outputs for an AI company under NDA.</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>Work centers on two tracks: pull request evaluation, assessing</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>model-generated code changes for correctness and quality, and reasoning</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()}>evaluation, grading multi-step reasoning against detailed rubrics.</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>PR evaluation: reviewing AI-generated code changes for correctness</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>Reasoning evaluation: grading multi-step reasoning & chain-of-thought</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>Applying detailed annotation rubrics consistently across large volumes</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>Writing structured justifications supporting each rating decision</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-hr">---</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
         <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Full Stack Developer</SpecialText>
       </Line>
       <Line n={l()}>

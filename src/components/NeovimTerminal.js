@@ -35,7 +35,7 @@ const QUIT_MESSAGES = [
 const lineCountMap = {
   'README.md': 34,
   'about.md': 35,
-  'experience.md': 56,
+  'experience.md': 71,
   'skills.tsx': 65,
   'projects.tsx': 24,
   'contact.sh': 22,
