@@ -74,7 +74,7 @@ const AboutView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>{'Most recently at '}</SpecialText>
+        <SpecialText speed={8} delay={next()}>{'During my time at '}</SpecialText>
         <LinkPreview url="#" isStatic={true} imageSrc="/reino2.png" className="text-cyan-400 hover:text-cyan-300 cursor-pointer" disabled={!linkReady}>
           <SpecialText speed={8} delay={next(0.01)} onComplete={() => setLinkReady(true)}>Reino Ceramicos</SpecialText>
         </LinkPreview>
@@ -84,7 +84,7 @@ const AboutView = () => {
         <SpecialText speed={8} delay={next()}>dashboards and management tools with React, API integrations, and</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>data visualization. Previously worked as a freelance developer</SpecialText>
+        <SpecialText speed={8} delay={next()}>data visualization. I also work as a freelance developer,</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={8} delay={next()}>building responsive interfaces and automating workflows.</SpecialText>
