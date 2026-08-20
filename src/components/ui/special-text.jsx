@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "motion/react";
+import { usePrefersReducedMotion } from "../../lib/usePrefersReducedMotion";
 
 const RANDOM_CHARS = "_!X$0-+*#";
 
@@ -21,6 +22,7 @@ export function SpecialText({
   onComplete,
 }) {
   const containerRef = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const isInView = useInView(containerRef, { once, margin: "-100px" });
   const shouldAnimate = inView ? isInView : true;
   const [hasStarted, setHasStarted] = useState(() => !inView && delay <= 0);
@@ -101,6 +103,20 @@ export function SpecialText({
   };
 
   useEffect(() => {
+    if (!prefersReducedMotion) return;
+    clearStartTimeout();
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    setHasStarted(true);
+    setDisplayText(text);
+    if (onCompleteRef.current) onCompleteRef.current();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prefersReducedMotion, text]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
     if (shouldAnimate && !hasStarted) {
       clearStartTimeout();
       if (delay <= 0) {
@@ -114,10 +130,10 @@ export function SpecialText({
     }
     return () => clearStartTimeout();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shouldAnimate, hasStarted, delay, text.length]);
+  }, [shouldAnimate, hasStarted, delay, text.length, prefersReducedMotion]);
 
   useEffect(() => {
-    if (!hasStarted) {
+    if (!hasStarted || prefersReducedMotion) {
       return;
     }
 
@@ -139,10 +155,10 @@ export function SpecialText({
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPhase, animationStep, text, speed, hasStarted]);
+  }, [currentPhase, animationStep, text, speed, hasStarted, prefersReducedMotion]);
 
   useEffect(() => {
-    if (hasStarted) {
+    if (hasStarted && !prefersReducedMotion) {
       setDisplayText(" ".repeat(text.length));
       setCurrentPhase("phase1");
       setAnimationStep(0);
@@ -154,7 +170,8 @@ export function SpecialText({
         clearInterval(intervalRef.current);
       }
     };
-  }, [text, hasStarted]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [text, hasStarted, prefersReducedMotion]);
 
   return (
     <span

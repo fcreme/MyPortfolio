@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SpecialText } from '../ui/special-text';
+import { usePrefersReducedMotion } from '../../lib/usePrefersReducedMotion';
 
 const PLUGINS = [
   { name: 'lazy.nvim', time: '1.2ms' },
@@ -24,17 +25,26 @@ const LazyLoader = ({ onComplete }) => {
   const [spinnerFrame, setSpinnerFrame] = useState(0);
   const [done, setDone] = useState(false);
   const intervalRef = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  // The boot sequence is pure decoration and costs ~4s. Skip it outright
+  // for anyone who has asked for reduced motion.
+  useEffect(() => {
+    if (prefersReducedMotion) onComplete();
+  }, [prefersReducedMotion, onComplete]);
 
   // Spinner animation
   useEffect(() => {
+    if (prefersReducedMotion) return;
     intervalRef.current = setInterval(() => {
       setSpinnerFrame((prev) => (prev + 1) % SPINNER_FRAMES.length);
     }, 80);
     return () => clearInterval(intervalRef.current);
-  }, []);
+  }, [prefersReducedMotion]);
 
   // Staggered plugin loading
   useEffect(() => {
+    if (prefersReducedMotion) return;
     if (loadingIndex >= PLUGINS.length) {
       const timer = setTimeout(() => {
         setDone(true);
@@ -50,7 +60,7 @@ const LazyLoader = ({ onComplete }) => {
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [loadingIndex, onComplete]);
+  }, [loadingIndex, onComplete, prefersReducedMotion]);
 
   const progressFilled = Math.floor((loadedCount / PLUGINS.length) * 20);
   const progressEmpty = 20 - progressFilled;
