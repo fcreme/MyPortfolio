@@ -18,6 +18,7 @@ import ContactView from './terminal/views/ContactView';
 import PackageJsonView from './terminal/views/PackageJsonView';
 import DitherDemoView from './terminal/views/DitherDemoView';
 import HelpView from './terminal/views/HelpView';
+import { getLineCount } from './terminal/lineCounts';
 import './NeovimTerminal.css';
 
 
@@ -31,18 +32,6 @@ const QUIT_MESSAGES = [
   'Have you tried turning it off and on again?',
   'Alt+F4? We don\'t do that here.',
 ];
-
-const lineCountMap = {
-  'README.md': 34,
-  'about.md': 38,
-  'experience.md': 71,
-  'skills.tsx': 65,
-  'projects.tsx': 24,
-  'contact.sh': 22,
-  'package.json': 24,
-  'dither-demo.jsx': 45,
-  'help.txt': 42,
-};
 
 const allFiles = [
   'README.md', 'about.md', 'experience.md',
@@ -246,7 +235,7 @@ const NeovimTerminal = () => {
       // Don't intercept when command mode is active (handled by StatusLine input)
       if (commandMode) return;
 
-      const maxLine = lineCountMap[activeFile] || 30;
+      const maxLine = getLineCount(activeFile) || 30;
 
       switch (e.key) {
         case 'j': {

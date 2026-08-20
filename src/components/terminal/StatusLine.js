@@ -1,18 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
-
-const lineCountMap = {
-  'README.md': 34,
-  'about.md': 38,
-  'experience.md': 71,
-  'skills.tsx': 65,
-  'projects.tsx': 24,
-  'contact.sh': 22,
-  'package.json': 24,
-  'help.txt': 42,
-};
+import { getLineCount } from './lineCounts';
 
 const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel, cursorLine, contentRef }) => {
-  const lineCount = lineCountMap[activeFile] || 0;
+  const lineCount = getLineCount(activeFile);
   const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState('');
   const [scrollPct, setScrollPct] = useState('All');
