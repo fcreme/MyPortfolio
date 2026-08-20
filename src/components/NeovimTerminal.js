@@ -420,7 +420,7 @@ const NeovimTerminal = () => {
     <div className="nvim-bg-wrapper" data-theme={theme}>
       <div
         className="nvim-bg-gif"
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/residentevil.gif)` }}
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/residentevil.webp)` }}
       />
 
       {appPhase === 'loading' && (
