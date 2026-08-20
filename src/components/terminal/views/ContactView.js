@@ -152,6 +152,11 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
           <SpecialText speed={8} delay={0} className="form-status">{"Message sent successfully! I'll respond soon."}</SpecialText>
         </Line>
       )}
+      {formStatus === 'unconfigured' && (
+        <Line n={l()}>
+          <SpecialText speed={8} delay={0} className="form-status error">{'Form is offline — email felipecremerius1@gmail.com directly.'}</SpecialText>
+        </Line>
+      )}
       {formStatus === 'error' && (
         <Line n={l()}>
           <SpecialText speed={8} delay={0} className="form-status error">Error sending message. Please try again.</SpecialText>

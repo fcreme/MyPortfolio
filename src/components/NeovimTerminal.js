@@ -313,10 +313,22 @@ const NeovimTerminal = () => {
 
     setFormStatus('sending');
 
-    // EmailJS configuration - replace these with your actual values
-    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-    const userID = process.env.REACT_APP_EMAILJS_USER_ID || 'YOUR_USER_ID';
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.REACT_APP_EMAILJS_USER_ID;
+
+    // Without credentials the send would fire at placeholder IDs and fail with
+    // a generic error, so surface the real problem and offer a mailto instead.
+    if (!serviceID || !templateID || !userID) {
+      console.error(
+        'EmailJS is not configured. Set REACT_APP_EMAILJS_SERVICE_ID, ' +
+        'REACT_APP_EMAILJS_TEMPLATE_ID and REACT_APP_EMAILJS_USER_ID ' +
+        '(see .env.example) and rebuild.'
+      );
+      setFormStatus('unconfigured');
+      setTimeout(() => setFormStatus('idle'), 6000);
+      return;
+    }
 
     const templateParams = {
       from_name: contactForm.name,
