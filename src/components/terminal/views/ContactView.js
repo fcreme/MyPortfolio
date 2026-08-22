@@ -111,14 +111,14 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
         </div>
       </Line>
       <Line n={l()}>
-        <div className="terminal-input-line">
+        <div className="terminal-input-line multiline">
           <SpecialText speed={5} delay={next()} className="syn-command">{'read '}</SpecialText>
           <SpecialText speed={5} delay={next(0.005)} className="syn-flag">{'-p '}</SpecialText>
           <SpecialText speed={5} delay={next(0.01)} className="syn-string" onComplete={() => showField('message')}>{"\"Message: \" "}</SpecialText>
-          <input
-            className="terminal-input"
-            type="text"
+          <textarea
+            className="terminal-textarea"
             name="message"
+            rows={3}
             value={contactForm.message}
             onChange={onFormChange}
             onFocus={onFocus}
@@ -155,6 +155,11 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
       {formStatus === 'unconfigured' && (
         <Line n={l()}>
           <SpecialText speed={8} delay={0} className="form-status error">{'Form is offline — email felipecremerius1@gmail.com directly.'}</SpecialText>
+        </Line>
+      )}
+      {formStatus === 'invalid-email' && (
+        <Line n={l()}>
+          <SpecialText speed={8} delay={0} className="form-status error">{"That email address doesn't look right."}</SpecialText>
         </Line>
       )}
       {formStatus === 'error' && (

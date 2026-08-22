@@ -130,7 +130,7 @@ const PackageJsonView = () => {
         <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "resume"'}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">: </SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-string">"</SpecialText>
-        <a className="syn-link" href="/Felipe_Cremerius_CV.pdf" download>
+        <a className="syn-link" href={`${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`} download>
           <SpecialText speed={5} delay={next(0.01)}>Download CV (PDF)</SpecialText>
         </a>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-string">"</SpecialText>

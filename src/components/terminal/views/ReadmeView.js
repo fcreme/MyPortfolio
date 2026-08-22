@@ -10,7 +10,7 @@ const ReadmeView = ({ onNavigate }) => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Felipe_Cremerius_CV.pdf';
+    link.href = `${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`;
     link.download = 'Felipe_Cremerius_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -145,7 +145,7 @@ const ReadmeView = ({ onNavigate }) => {
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
         <SpecialText speed={8} delay={next(0.01)} className="syn-bold">{'Resume: '}</SpecialText>
-        <a className="syn-link" href="/Felipe_Cremerius_CV.pdf" download>
+        <a className="syn-link" href={`${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`} download>
           <SpecialText speed={8} delay={next(0.01)}>Download CV (PDF)</SpecialText>
         </a>
       </Line>
