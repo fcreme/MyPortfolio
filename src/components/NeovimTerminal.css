@@ -187,7 +187,6 @@
 
 /* ===== GIF BACKGROUND WRAPPER ===== */
 .nvim-bg-wrapper {
-  --nvim-font: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -231,7 +230,7 @@
   height: 100vh;
   width: 100vw;
   background: transparent;
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   color: var(--nvim-fg);
   overflow: hidden;
@@ -644,7 +643,7 @@
   border: none;
   outline: none;
   color: var(--nvim-fg);
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   flex: 1;
   caret-color: var(--nvim-string);
@@ -661,7 +660,7 @@
   border: none;
   outline: none;
   color: var(--nvim-fg);
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   flex: 1;
   min-width: 0;
@@ -795,7 +794,7 @@
   border: none;
   outline: none;
   color: var(--nvim-fg);
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 12px;
   flex: 1;
   caret-color: var(--nvim-fg);
@@ -876,7 +875,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   color: var(--nvim-fg);
   transition: opacity 0.4s ease;
@@ -1011,7 +1010,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   color: var(--nvim-fg);
   overflow-y: auto;
 }
@@ -1061,7 +1060,7 @@
   gap: 12px;
   background: none;
   border: none;
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   color: var(--nvim-fg);
   padding: 6px 12px;
@@ -1123,7 +1122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
 }
 
 .telescope-modal {
@@ -1172,7 +1171,7 @@
   border: none;
   outline: none;
   color: var(--nvim-fg);
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   caret-color: var(--nvim-string);
   padding: 0;
@@ -1262,7 +1261,7 @@
   border-top: 1px solid var(--nvim-border);
   display: flex;
   flex-direction: column;
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 13px;
   overflow: hidden;
 }
@@ -1341,7 +1340,7 @@
   border: none;
   outline: none;
   color: var(--nvim-fg);
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 13px;
   flex: 1;
   caret-color: var(--nvim-string);
@@ -1636,7 +1635,7 @@
   border: 1px solid var(--nvim-border-stronger);
   border-radius: 6px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-  font-family: var(--nvim-font);
+  font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 13px;
   overflow: hidden;
 }

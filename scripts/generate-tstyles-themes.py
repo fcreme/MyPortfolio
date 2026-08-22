@@ -69,6 +69,9 @@ def build(scheme, entry, name):
 
     # theme.json carries these; the site had no way to express them until now.
     weight = '600' if entry.get('weight') == 'semi-bold' else '400'
+    # Every bundled style asks for Cascadia Code in its theme.json, so use it
+    # and fall back to the site's own stack if the webfont has not arrived.
+    face = "'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace"
     bg_opacity = entry.get('bgOpacity', 1.0)
     # The artwork each style pairs itself with, as the animated GIF it ships --
     # a still frame is not what the style is. sober ships a solid square rather
@@ -85,6 +88,7 @@ def build(scheme, entry, name):
             f'{rgba(mix(bg, accent, 0.3), 0.34)} 55%, {rgba(bg, 0.5)} 100%)')
 
     return {
+        '--nvim-font': face,
         '--nvim-font-weight': weight,
         '--nvim-bg-image': bg_image,
         '--nvim-bg-image-opacity': f'{bg_opacity}',

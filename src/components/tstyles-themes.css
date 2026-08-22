@@ -6,6 +6,7 @@
  */
 
 [data-theme="eva"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/eva.gif);
   --nvim-bg-image-opacity: 0.35;
@@ -67,6 +68,7 @@
 }
 
 [data-theme="ex-machina"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/ex-machina.gif);
   --nvim-bg-image-opacity: 0.35;
@@ -128,6 +130,7 @@
 }
 
 [data-theme="forest"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/forest.gif);
   --nvim-bg-image-opacity: 0.45;
@@ -189,6 +192,7 @@
 }
 
 [data-theme="garden-rain"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/garden-rain.gif);
   --nvim-bg-image-opacity: 0.4;
@@ -250,6 +254,7 @@
 }
 
 [data-theme="golden-forest"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/golden-forest.gif);
   --nvim-bg-image-opacity: 0.55;
@@ -311,6 +316,7 @@
 }
 
 [data-theme="halo"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/halo.gif);
   --nvim-bg-image-opacity: 0.55;
@@ -372,6 +378,7 @@
 }
 
 [data-theme="kitty"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/kitty.gif);
   --nvim-bg-image-opacity: 0.35;
@@ -433,6 +440,7 @@
 }
 
 [data-theme="lain"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/lain.gif);
   --nvim-bg-image-opacity: 0.4;
@@ -494,6 +502,7 @@
 }
 
 [data-theme="marquee"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/marquee.gif);
   --nvim-bg-image-opacity: 0.55;
@@ -555,6 +564,7 @@
 }
 
 [data-theme="neon-rain"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/neon-rain.gif);
   --nvim-bg-image-opacity: 0.4;
@@ -616,6 +626,7 @@
 }
 
 [data-theme="rain"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 400;
   --nvim-bg-image: url(../assets/themes/rain.gif);
   --nvim-bg-image-opacity: 0.4;
@@ -677,6 +688,7 @@
 }
 
 [data-theme="snowday"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/snowday.gif);
   --nvim-bg-image-opacity: 0.45;
@@ -738,6 +750,7 @@
 }
 
 [data-theme="sober"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 400;
   --nvim-bg-image: none;
   --nvim-bg-image-opacity: 1.0;
@@ -799,6 +812,7 @@
 }
 
 [data-theme="tombraider"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/tombraider.gif);
   --nvim-bg-image-opacity: 0.55;
@@ -860,6 +874,7 @@
 }
 
 [data-theme="umbrella"] {
+  --nvim-font: 'Cascadia Code Variable', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --nvim-font-weight: 600;
   --nvim-bg-image: url(../assets/themes/umbrella.gif);
   --nvim-bg-image-opacity: 0.35;
