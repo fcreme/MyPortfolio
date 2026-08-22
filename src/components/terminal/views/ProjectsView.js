@@ -7,6 +7,17 @@ const ProjectsView = () => {
   const [linkReady, setLinkReady] = useState({});
   const projects = [
     {
+      title: 'TerminalStyles - Terminal Theme Switcher',
+      descBefore: '',
+      descLinkText: null,
+      descLinkUrl: null,
+      descLinkImg: null,
+      descAfter: 'PowerShell module on the PowerShell Gallery that themes your terminal live. Arrow through 16 bundled styles previewing each one in the current tab, Enter keeps it and Esc reverts exactly how it was. Sets color scheme, cursor, font, opacity and background in one command, and installs coding fonts from their official sources. Works on Windows Terminal, Terminal.app, iTerm2 and anything speaking OSC sequences, styling zsh and bash as well as PowerShell.',
+      technologies: ['PowerShell', 'Pester', 'ANSI / OSC', 'Windows Terminal', 'iTerm2'],
+      liveUrl: 'https://www.powershellgallery.com/packages/TerminalStyles',
+      githubUrl: 'https://github.com/fcreme/TerminalStyles',
+    },
+    {
       title: 'TIDE Active - Personal Brand',
       descBefore: '',
       descLinkText: 'Personal brand website',
@@ -16,17 +27,6 @@ const ProjectsView = () => {
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
       liveUrl: 'https://tideactive.com/',
       githubUrl: 'https://github.com/fcreme/tideactive-personal-brand',
-    },
-    {
-      title: 'Repokit - Developer Assistant CLI',
-      descBefore: '',
-      descLinkText: null,
-      descLinkUrl: null,
-      descLinkImg: null,
-      descAfter: 'Repo-aware developer assistant CLI built in Go. Analyzes codebases, detects React component patterns, tracks dependencies with circular import detection, generates code following project conventions, and provides interactive chat mode for natural language exploration.',
-      technologies: ['Go', 'Cobra', 'SQLite', 'CLI'],
-      liveUrl: null,
-      githubUrl: 'https://github.com/fcreme/CLI',
     },
     {
       title: 'OnChain - DeFi Interface',

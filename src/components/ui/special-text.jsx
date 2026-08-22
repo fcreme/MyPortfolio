@@ -13,22 +13,23 @@ function getRandomChar(prevChar) {
 }
 
 /**
- * The characters that give a line somewhere to break: whitespace, and the
- * hyphen and slash a break is allowed after. Every frame has to leave them at
- * the indices the finished text puts them — scramble them, or replace them with
- * the non-breaking filler below, and the line re-wraps mid-animation. A long
- * string then gains a row and shoves the rest of the buffer down.
+ * The characters that give a line somewhere to break. Every frame has to leave
+ * them at the indices the finished text puts them — scramble them, or replace
+ * them with the non-breaking filler below, and the line re-wraps mid-animation.
+ * A long string then gains a row and shoves the rest of the buffer down.
  *
- * Measured across 240-1500px in 2px steps: with these preserved, every frame
- * occupies exactly the rows the finished text does.
+ * The set is measured, not assumed: rendering "a...a<char>b...b" in a box too
+ * narrow for both runs shows which characters the browser will break after.
+ * Whitespace, hyphen, en dash, em dash and the question mark do; the slash,
+ * underscore, full stop, comma, colon and every bracket do not.
  */
-const BREAKABLE = /[\s\-/]/;
+const BREAKABLE = /[\s\-\u2013\u2014?]/;
 
 /** Blank filler that still takes up a character's width. */
 const FILLER = "\u00A0";
 
 /** Same footprint as `text`, drawn blank. */
-const blankLike = (text) => text.replace(/[^\s\-/]/g, FILLER);
+const blankLike = (text) => text.replace(/[^\s\-\u2013\u2014?]/g, FILLER);
 
 export function SpecialText({
   children,
