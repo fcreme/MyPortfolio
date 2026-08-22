@@ -84,7 +84,6 @@ portfolio/
 │   │   │       ├── ProjectsView.js
 │   │   │       ├── ContactView.js
 │   │   │       ├── PackageJsonView.js
-│   │   │       ├── DitherDemoView.js
 │   │   │       ├── HelpView.js
 │   │   │       └── HologramView.js
 │   │   └── ui/

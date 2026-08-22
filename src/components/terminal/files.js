@@ -23,7 +23,6 @@ export const FILES = [
   { name: 'package.json', dir: '' },
   { name: 'skills.tsx', dir: 'src' },
   { name: 'projects.tsx', dir: 'src' },
-  { name: 'dither-demo.jsx', dir: 'src' },
   { name: 'help.txt', dir: null },
 ];
 
