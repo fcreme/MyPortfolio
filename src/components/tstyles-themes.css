@@ -7,7 +7,7 @@
 
 [data-theme="eva"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/eva.webp);
+  --nvim-bg-image: url(../assets/themes/eva.gif);
   --nvim-bg-image-opacity: 0.35;
   --nvim-bg-tint: linear-gradient(155deg, rgba(10, 0, 6, 0.28) 0%, rgba(57, 59, 74, 0.34) 55%, rgba(10, 0, 6, 0.5) 100%);
   --nvim-bg: #0a0006;
@@ -68,7 +68,7 @@
 
 [data-theme="ex-machina"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/ex-machina.webp);
+  --nvim-bg-image: url(../assets/themes/ex-machina.gif);
   --nvim-bg-image-opacity: 0.35;
   --nvim-bg-tint: linear-gradient(155deg, rgba(2, 6, 13, 0.28) 0%, rgba(34, 68, 86, 0.34) 55%, rgba(2, 6, 13, 0.5) 100%);
   --nvim-bg: #02060d;
@@ -129,7 +129,7 @@
 
 [data-theme="forest"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/forest.webp);
+  --nvim-bg-image: url(../assets/themes/forest.gif);
   --nvim-bg-image-opacity: 0.45;
   --nvim-bg-tint: linear-gradient(155deg, rgba(10, 24, 32, 0.28) 0%, rgba(34, 66, 94, 0.34) 55%, rgba(10, 24, 32, 0.5) 100%);
   --nvim-bg: #0a1820;
@@ -190,7 +190,7 @@
 
 [data-theme="garden-rain"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/garden-rain.webp);
+  --nvim-bg-image: url(../assets/themes/garden-rain.gif);
   --nvim-bg-image-opacity: 0.4;
   --nvim-bg-tint: linear-gradient(155deg, rgba(20, 32, 40, 0.28) 0%, rgba(41, 68, 93, 0.34) 55%, rgba(20, 32, 40, 0.5) 100%);
   --nvim-bg: #142028;
@@ -251,7 +251,7 @@
 
 [data-theme="golden-forest"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/golden-forest.webp);
+  --nvim-bg-image: url(../assets/themes/golden-forest.gif);
   --nvim-bg-image-opacity: 0.55;
   --nvim-bg-tint: linear-gradient(155deg, rgba(13, 17, 8, 0.28) 0%, rgba(46, 53, 34, 0.34) 55%, rgba(13, 17, 8, 0.5) 100%);
   --nvim-bg: #0d1108;
@@ -312,7 +312,7 @@
 
 [data-theme="halo"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/halo.webp);
+  --nvim-bg-image: url(../assets/themes/halo.gif);
   --nvim-bg-image-opacity: 0.55;
   --nvim-bg-tint: linear-gradient(155deg, rgba(0, 0, 0, 0.28) 0%, rgba(31, 43, 76, 0.34) 55%, rgba(0, 0, 0, 0.5) 100%);
   --nvim-bg: #000000;
@@ -373,7 +373,7 @@
 
 [data-theme="kitty"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/kitty.webp);
+  --nvim-bg-image: url(../assets/themes/kitty.gif);
   --nvim-bg-image-opacity: 0.35;
   --nvim-bg-tint: linear-gradient(155deg, rgba(26, 22, 34, 0.28) 0%, rgba(78, 78, 100, 0.34) 55%, rgba(26, 22, 34, 0.5) 100%);
   --nvim-bg: #1a1622;
@@ -434,7 +434,7 @@
 
 [data-theme="lain"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/lain.webp);
+  --nvim-bg-image: url(../assets/themes/lain.gif);
   --nvim-bg-image-opacity: 0.4;
   --nvim-bg-tint: linear-gradient(155deg, rgba(8, 8, 15, 0.28) 0%, rgba(46, 56, 68, 0.34) 55%, rgba(8, 8, 15, 0.5) 100%);
   --nvim-bg: #08080f;
@@ -495,7 +495,7 @@
 
 [data-theme="marquee"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/marquee.webp);
+  --nvim-bg-image: url(../assets/themes/marquee.gif);
   --nvim-bg-image-opacity: 0.55;
   --nvim-bg-tint: linear-gradient(155deg, rgba(0, 0, 0, 0.28) 0%, rgba(29, 50, 76, 0.34) 55%, rgba(0, 0, 0, 0.5) 100%);
   --nvim-bg: #000000;
@@ -556,7 +556,7 @@
 
 [data-theme="neon-rain"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/neon-rain.webp);
+  --nvim-bg-image: url(../assets/themes/neon-rain.gif);
   --nvim-bg-image-opacity: 0.4;
   --nvim-bg-tint: linear-gradient(155deg, rgba(12, 24, 40, 0.28) 0%, rgba(49, 70, 95, 0.34) 55%, rgba(12, 24, 40, 0.5) 100%);
   --nvim-bg: #0c1828;
@@ -617,7 +617,7 @@
 
 [data-theme="rain"] {
   --nvim-font-weight: 400;
-  --nvim-bg-image: url(../assets/themes/rain.webp);
+  --nvim-bg-image: url(../assets/themes/rain.gif);
   --nvim-bg-image-opacity: 0.4;
   --nvim-bg-tint: linear-gradient(155deg, rgba(42, 46, 72, 0.28) 0%, rgba(76, 80, 112, 0.34) 55%, rgba(42, 46, 72, 0.5) 100%);
   --nvim-bg: #2a2e48;
@@ -678,7 +678,7 @@
 
 [data-theme="snowday"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/snowday.webp);
+  --nvim-bg-image: url(../assets/themes/snowday.gif);
   --nvim-bg-image-opacity: 0.45;
   --nvim-bg-tint: linear-gradient(155deg, rgba(21, 36, 58, 0.28) 0%, rgba(46, 68, 96, 0.34) 55%, rgba(21, 36, 58, 0.5) 100%);
   --nvim-bg: #15243a;
@@ -800,7 +800,7 @@
 
 [data-theme="tombraider"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/tombraider.webp);
+  --nvim-bg-image: url(../assets/themes/tombraider.gif);
   --nvim-bg-image-opacity: 0.55;
   --nvim-bg-tint: linear-gradient(155deg, rgba(0, 0, 0, 0.28) 0%, rgba(29, 50, 76, 0.34) 55%, rgba(0, 0, 0, 0.5) 100%);
   --nvim-bg: #000000;
@@ -861,7 +861,7 @@
 
 [data-theme="umbrella"] {
   --nvim-font-weight: 600;
-  --nvim-bg-image: url(../assets/themes/umbrella.webp);
+  --nvim-bg-image: url(../assets/themes/umbrella.gif);
   --nvim-bg-image-opacity: 0.35;
   --nvim-bg-tint: linear-gradient(155deg, rgba(10, 8, 8, 0.28) 0%, rgba(54, 48, 39, 0.34) 55%, rgba(10, 8, 8, 0.5) 100%);
   --nvim-bg: #0a0808;
