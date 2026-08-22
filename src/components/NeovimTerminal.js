@@ -19,11 +19,12 @@ import PackageJsonView from './terminal/views/PackageJsonView';
 import DitherDemoView from './terminal/views/DitherDemoView';
 import HelpView from './terminal/views/HelpView';
 import { findFile } from './terminal/files';
+import TStyles from './terminal/TStyles';
+import { isTheme, DEFAULT_THEME } from './terminal/themes';
+import './tstyles-themes.css';
 import './NeovimTerminal.css';
 
 
-const VALID_THEMES = ['tokyonight', 'gruvbox', 'catppuccin'];
-const DEFAULT_THEME = 'tokyonight';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MOBILE_BREAKPOINT = 768;
 
@@ -33,7 +34,7 @@ const MOBILE_BREAKPOINT = 768;
 const readStoredTheme = () => {
   try {
     const saved = localStorage.getItem('nvim-theme');
-    return VALID_THEMES.includes(saved) ? saved : DEFAULT_THEME;
+    return isTheme(saved) ? saved : DEFAULT_THEME;
   } catch {
     return DEFAULT_THEME;
   }
@@ -97,6 +98,9 @@ const NeovimTerminal = () => {
   const [commandText, setCommandText] = useState('');
   const [commandMode, setCommandMode] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
+  const [tstylesOpen, setTstylesOpen] = useState(false);
+  // What to fall back to if the picker is dismissed instead of confirmed.
+  const themeBeforePicker = useRef(null);
   const [theme, setTheme] = useState(readStoredTheme);
   const [contactForm, setContactForm] = useState({
     name: '',
@@ -116,14 +120,16 @@ const NeovimTerminal = () => {
   // outlives the component and fires setState on an unmounted tree.
   useEffect(() => () => clearTimeout(formTimeoutRef.current), []);
 
-  // Apply theme to data attribute
+  // Apply theme to data attribute. Previews are deliberately excluded: a style
+  // you arrowed past and backed out of should not outlive the session.
   useEffect(() => {
+    if (tstylesOpen) return;
     try {
       localStorage.setItem('nvim-theme', theme);
     } catch {
       // Storage blocked — the theme still applies for this session.
     }
-  }, [theme]);
+  }, [theme, tstylesOpen]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -214,10 +220,18 @@ const NeovimTerminal = () => {
     }
 
     // :colorscheme <name>
+    // :tstyles — the TerminalStyles picker, live-previewing every style
+    if (trimmed.toLowerCase() === 'tstyles') {
+      showCommandEcho(':tstyles');
+      themeBeforePicker.current = theme;
+      setTstylesOpen(true);
+      return;
+    }
+
     const csMatch = trimmed.match(/^colorscheme\s+(.+)/);
     if (csMatch) {
       const name = csMatch[1].toLowerCase().trim();
-      if (VALID_THEMES.includes(name)) {
+      if (isTheme(name)) {
         setTheme(name);
         showCommandEcho(`:colorscheme ${name}`);
       } else {
@@ -248,7 +262,28 @@ const NeovimTerminal = () => {
 
     // Unknown command
     showCommandEcho(`E492: Not an editor command: ${trimmed}`, 3000);
+  }, [showCommandEcho, theme]);
+
+  const openTstyles = useCallback(() => {
+    themeBeforePicker.current = theme;
+    setTstylesOpen(true);
+  }, [theme]);
+
+  const handleTstylesPreview = useCallback((id) => setTheme(id), []);
+
+  const handleTstylesCommit = useCallback((id) => {
+    themeBeforePicker.current = null;
+    setTheme(id);
+    setTstylesOpen(false);
+    showCommandEcho(`:colorscheme ${id}`);
   }, [showCommandEcho]);
+
+  const handleTstylesCancel = useCallback(() => {
+    const previous = themeBeforePicker.current;
+    themeBeforePicker.current = null;
+    if (previous) setTheme(previous);
+    setTstylesOpen(false);
+  }, []);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -271,6 +306,8 @@ const NeovimTerminal = () => {
       if (appPhase !== 'editor') return;
       // Don't intercept when telescope is open
       if (telescopeOpen) return;
+      // Don't intercept while the style picker has the keyboard
+      if (tstylesOpen) return;
       // Don't intercept when terminal panel is focused
       if (terminalOpen) return;
       // Don't intercept when in INSERT mode (contact form)
@@ -330,7 +367,7 @@ const NeovimTerminal = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [vimMode, commandMode, appPhase, telescopeOpen, terminalOpen, lineCount]);
+  }, [vimMode, commandMode, appPhase, telescopeOpen, terminalOpen, tstylesOpen, lineCount]);
 
   const handleToggleDir = useCallback((dir) => {
     setExpandedDirs((prev) =>
@@ -447,7 +484,7 @@ const NeovimTerminal = () => {
       case 'skills.tsx':
         return <SkillsView />;
       case 'projects.tsx':
-        return <ProjectsView />;
+        return <ProjectsView onRunTstyles={openTstyles} />;
       case 'contact.sh':
         return (
           <ContactView
@@ -542,6 +579,15 @@ const NeovimTerminal = () => {
             {sidebarOpen ? '✕' : '☰'}
           </button>
         </div>
+      )}
+
+      {tstylesOpen && (
+        <TStyles
+          startedOn={theme}
+          onPreview={handleTstylesPreview}
+          onCommit={handleTstylesCommit}
+          onCancel={handleTstylesCancel}
+        />
       )}
 
       {telescopeOpen && (

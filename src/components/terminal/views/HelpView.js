@@ -68,6 +68,10 @@ const HelpView = () => {
         <span className="syn-comment">{'Switch color theme'}</span>
       </Line>
       <Line n={l()}>
+        <span className="syn-keyword">{'  :tstyles            '}</span>
+        <span className="syn-comment">{'Live style picker (TerminalStyles)'}</span>
+      </Line>
+      <Line n={l()}>
         <span className="syn-keyword">{'  :version           '}</span>
         <span className="syn-comment">{'Show version info'}</span>
       </Line>
@@ -88,6 +92,13 @@ const HelpView = () => {
       <Line n={l()}>
         <span className="syn-string">{'  catppuccin   '}</span>
         <span className="syn-comment">{'Soft pastels (mocha)'}</span>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <span className="syn-comment">{'  " Plus 15 styles from TerminalStyles — run :tstyles to'}</span>
+      </Line>
+      <Line n={l()}>
+        <span className="syn-comment">{'  " page through them, Enter keeps one, Esc puts it back.'}</span>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>

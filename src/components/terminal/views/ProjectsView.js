@@ -3,7 +3,7 @@ import { Line, Empty } from '../Line';
 import { LinkPreview } from '../../ui/link-preview';
 import { SpecialText } from '../../ui/special-text';
 
-const ProjectsView = () => {
+const ProjectsView = ({ onRunTstyles }) => {
   const [linkReady, setLinkReady] = useState({});
   const projects = [
     {
@@ -14,6 +14,7 @@ const ProjectsView = () => {
       descLinkImg: null,
       descAfter: 'PowerShell module on the PowerShell Gallery that themes your terminal live. Arrow through 16 bundled styles previewing each one in the current tab, Enter keeps it and Esc reverts exactly how it was. Sets color scheme, cursor, font, opacity and background in one command, and installs coding fonts from their official sources. Works on Windows Terminal, Terminal.app, iTerm2 and anything speaking OSC sequences, styling zsh and bash as well as PowerShell.',
       technologies: ['PowerShell', 'Pester', 'ANSI / OSC', 'Windows Terminal', 'iTerm2'],
+      tryCommand: ':tstyles',
       liveUrl: 'https://www.powershellgallery.com/packages/TerminalStyles',
       githubUrl: 'https://github.com/fcreme/TerminalStyles',
     },
@@ -189,6 +190,29 @@ const ProjectsView = () => {
             )}
             <SpecialText speed={5} delay={next(0.01)} className="syn-punctuation">,</SpecialText>
           </Line>
+          {project.tryCommand && (
+            <Line n={l()}>
+              <SpecialText speed={5} delay={next(0.02)} className="syn-property">{'    tryIt'}</SpecialText>
+              <SpecialText speed={5} delay={next(0.01)} className="syn-operator">{': '}</SpecialText>
+              <span
+                className="try-command"
+                onClick={onRunTstyles}
+                onKeyDown={(e) => {
+                  if (e.key !== 'Enter' && e.key !== ' ') return;
+                  e.preventDefault();
+                  onRunTstyles();
+                }}
+                role="button"
+                tabIndex={0}
+                title="Open the style picker"
+              >
+                <SpecialText speed={5} delay={next(0.01)} className="syn-string">{'"run '}</SpecialText>
+                <SpecialText speed={6} delay={next(0.01)} className="syn-command">{project.tryCommand}</SpecialText>
+                <SpecialText speed={5} delay={next(0.01)} className="syn-string">{' right here"'}</SpecialText>
+              </span>
+              <SpecialText speed={5} delay={next(0.01)} className="syn-punctuation">,</SpecialText>
+            </Line>
+          )}
           <Line n={l()}>
             <SpecialText speed={5} delay={next(0.02)} className="syn-punctuation">{'  }'}</SpecialText>
             {idx < projects.length - 1 && <SpecialText speed={5} delay={next(0.01)} className="syn-punctuation">,</SpecialText>}
