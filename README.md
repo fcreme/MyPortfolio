@@ -35,6 +35,7 @@ the property of their rights holders. Nothing here is claimed as original art.
 | UI Library | React 18 |
 | Styling | Tailwind CSS 3 |
 | Animations | Motion |
+| Fonts | JetBrains Mono, Cascadia Code (OFL-1.1, via Fontsource) |
 | Email | EmailJS |
 | Build Tool | Create React App |
 

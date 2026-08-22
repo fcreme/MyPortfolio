@@ -20,6 +20,10 @@ import HelpView from './terminal/views/HelpView';
 import { findFile } from './terminal/files';
 import TStyles from './terminal/TStyles';
 import { isTheme, DEFAULT_THEME } from './terminal/themes';
+// Cascadia Code is what every TerminalStyles style names as its font. The
+// variable build carries 200-700 in one file, and unicode-range means only the
+// latin subset (47 KB) is fetched for this page.
+import '@fontsource-variable/cascadia-code/wght.css';
 import './tstyles-themes.css';
 import './NeovimTerminal.css';
 
