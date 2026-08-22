@@ -54,7 +54,7 @@ def readable(c, bg, target):
             return lifted
     return (255, 255, 255)
 
-def build(scheme, entry):
+def build(scheme, entry, name):
     S = {k: rgb(v) for k, v in scheme.items() if isinstance(v, str) and v.startswith('#')}
     bg, fg = S['background'], S['foreground']
     fg = readable(fg, bg, 7.0)
@@ -70,14 +70,22 @@ def build(scheme, entry):
     # theme.json carries these; the site had no way to express them until now.
     weight = '600' if entry.get('weight') == 'semi-bold' else '400'
     bg_opacity = entry.get('bgOpacity', 1.0)
+    # A frame of the artwork each style pairs itself with. sober ships a solid
+    # square rather than a picture -- it is meant to have no backdrop at all.
+    has_image = os.path.isfile(os.path.join(ROOT, 'src/assets/themes', f'{name}.webp'))
+    bg_image = f"url(../assets/themes/{name}.webp)" if has_image else 'none'
     # A wash in the theme's own colours over the background image, so switching
     # style changes the whole page rather than only the text on top of it.
     accent = readable(blue, bg, 3.0)
-    tint = (f'linear-gradient(155deg, {rgba(bg, 0.55)} 0%, '
-            f'{rgba(mix(bg, accent, 0.35), 0.62)} 55%, {rgba(bg, 0.78)} 100%)')
+    # Light: the style's own backgroundImageOpacity already dims the artwork,
+    # and the artwork is chosen to match the palette. This only has to settle
+    # the image behind the text, not hide it.
+    tint = (f'linear-gradient(155deg, {rgba(bg, 0.28)} 0%, '
+            f'{rgba(mix(bg, accent, 0.3), 0.34)} 55%, {rgba(bg, 0.5)} 100%)')
 
     return {
         '--nvim-font-weight': weight,
+        '--nvim-bg-image': bg_image,
         '--nvim-bg-image-opacity': f'{bg_opacity}',
         '--nvim-bg-tint': tint,
         '--nvim-bg': hexs(bg),
@@ -159,7 +167,7 @@ css = [
 ]
 registry = []
 for name, entry in DATA.items():
-    vars_ = build(entry['scheme'], entry)
+    vars_ = build(entry['scheme'], entry, name)
     css.append(f'[data-theme="{name}"] {{')
     for k, v in vars_.items():
         css.append(f'  {k}: {v};')

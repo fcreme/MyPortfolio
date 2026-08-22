@@ -16,6 +16,16 @@ A developer portfolio built with React, styled as a fully interactive **Neovim t
 - **Fully Responsive** — Optimized for desktop, tablet, and mobile
 - **Contact Form** — Functional email form via EmailJS
 
+## Theme artwork
+
+The backdrops behind the `:tstyles` styles are the images each style pairs
+itself with, taken from the `gifs` branch of
+[TerminalStyles](https://github.com/fcreme/TerminalStyles) and re-encoded as
+single WebP frames. They are other people's work, used here as decoration:
+the pixel-art pieces carry their artists' signatures (several are by
+[anasabdin](https://anasabdin.itch.io/)), and the film and game stills remain
+the property of their rights holders. Nothing here is claimed as original art.
+
 ## Tech Stack
 
 | Layer | Technology |
