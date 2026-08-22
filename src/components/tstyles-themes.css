@@ -6,6 +6,9 @@
  */
 
 [data-theme="eva"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.35;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(10, 0, 6, 0.55) 0%, rgba(65, 69, 85, 0.62) 55%, rgba(10, 0, 6, 0.78) 100%);
   --nvim-bg: #0a0006;
   --nvim-bg-transparent: rgba(10, 0, 6, 0.75);
   --nvim-bg-sidebar: rgba(6, 0, 4, 0.75);
@@ -63,6 +66,9 @@
 }
 
 [data-theme="ex-machina"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.35;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(2, 6, 13, 0.55) 0%, rgba(40, 78, 98, 0.62) 55%, rgba(2, 6, 13, 0.78) 100%);
   --nvim-bg: #02060d;
   --nvim-bg-transparent: rgba(2, 6, 13, 0.75);
   --nvim-bg-sidebar: rgba(1, 4, 8, 0.75);
@@ -120,6 +126,9 @@
 }
 
 [data-theme="forest"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.45;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(10, 24, 32, 0.55) 0%, rgba(38, 73, 105, 0.62) 55%, rgba(10, 24, 32, 0.78) 100%);
   --nvim-bg: #0a1820;
   --nvim-bg-transparent: rgba(10, 24, 32, 0.75);
   --nvim-bg-sidebar: rgba(6, 16, 21, 0.75);
@@ -177,6 +186,9 @@
 }
 
 [data-theme="garden-rain"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.4;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(20, 32, 40, 0.55) 0%, rgba(44, 74, 102, 0.62) 55%, rgba(20, 32, 40, 0.78) 100%);
   --nvim-bg: #142028;
   --nvim-bg-transparent: rgba(20, 32, 40, 0.75);
   --nvim-bg-sidebar: rgba(13, 21, 26, 0.75);
@@ -234,6 +246,9 @@
 }
 
 [data-theme="golden-forest"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.55;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(13, 17, 8, 0.55) 0%, rgba(51, 59, 38, 0.62) 55%, rgba(13, 17, 8, 0.78) 100%);
   --nvim-bg: #0d1108;
   --nvim-bg-transparent: rgba(13, 17, 8, 0.75);
   --nvim-bg-sidebar: rgba(8, 11, 5, 0.75);
@@ -291,6 +306,9 @@
 }
 
 [data-theme="halo"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.55;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(0, 0, 0, 0.55) 0%, rgba(36, 50, 89, 0.62) 55%, rgba(0, 0, 0, 0.78) 100%);
   --nvim-bg: #000000;
   --nvim-bg-transparent: rgba(0, 0, 0, 0.75);
   --nvim-bg-sidebar: rgba(0, 0, 0, 0.75);
@@ -348,6 +366,9 @@
 }
 
 [data-theme="kitty"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.35;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(26, 22, 34, 0.55) 0%, rgba(87, 88, 111, 0.62) 55%, rgba(26, 22, 34, 0.78) 100%);
   --nvim-bg: #1a1622;
   --nvim-bg-transparent: rgba(26, 22, 34, 0.75);
   --nvim-bg-sidebar: rgba(17, 14, 22, 0.75);
@@ -405,6 +426,9 @@
 }
 
 [data-theme="lain"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.4;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(8, 8, 15, 0.55) 0%, rgba(53, 64, 77, 0.62) 55%, rgba(8, 8, 15, 0.78) 100%);
   --nvim-bg: #08080f;
   --nvim-bg-transparent: rgba(8, 8, 15, 0.75);
   --nvim-bg-sidebar: rgba(5, 5, 10, 0.75);
@@ -462,6 +486,9 @@
 }
 
 [data-theme="marquee"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.55;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(0, 0, 0, 0.55) 0%, rgba(34, 59, 89, 0.62) 55%, rgba(0, 0, 0, 0.78) 100%);
   --nvim-bg: #000000;
   --nvim-bg-transparent: rgba(0, 0, 0, 0.75);
   --nvim-bg-sidebar: rgba(0, 0, 0, 0.75);
@@ -519,6 +546,9 @@
 }
 
 [data-theme="neon-rain"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.4;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(12, 24, 40, 0.55) 0%, rgba(55, 77, 104, 0.62) 55%, rgba(12, 24, 40, 0.78) 100%);
   --nvim-bg: #0c1828;
   --nvim-bg-transparent: rgba(12, 24, 40, 0.75);
   --nvim-bg-sidebar: rgba(8, 16, 26, 0.75);
@@ -576,6 +606,9 @@
 }
 
 [data-theme="rain"] {
+  --nvim-font-weight: 400;
+  --nvim-bg-image-opacity: 0.4;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(42, 46, 72, 0.55) 0%, rgba(82, 86, 118, 0.62) 55%, rgba(42, 46, 72, 0.78) 100%);
   --nvim-bg: #2a2e48;
   --nvim-bg-transparent: rgba(42, 46, 72, 0.75);
   --nvim-bg-sidebar: rgba(27, 30, 47, 0.75);
@@ -633,6 +666,9 @@
 }
 
 [data-theme="snowday"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.45;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(21, 36, 58, 0.55) 0%, rgba(51, 74, 102, 0.62) 55%, rgba(21, 36, 58, 0.78) 100%);
   --nvim-bg: #15243a;
   --nvim-bg-transparent: rgba(21, 36, 58, 0.75);
   --nvim-bg-sidebar: rgba(14, 23, 38, 0.75);
@@ -690,6 +726,9 @@
 }
 
 [data-theme="sober"] {
+  --nvim-font-weight: 400;
+  --nvim-bg-image-opacity: 1.0;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(10, 10, 10, 0.55) 0%, rgba(60, 71, 71, 0.62) 55%, rgba(10, 10, 10, 0.78) 100%);
   --nvim-bg: #0a0a0a;
   --nvim-bg-transparent: rgba(10, 10, 10, 0.75);
   --nvim-bg-sidebar: rgba(6, 6, 6, 0.75);
@@ -747,6 +786,9 @@
 }
 
 [data-theme="tombraider"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.55;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(0, 0, 0, 0.55) 0%, rgba(34, 59, 89, 0.62) 55%, rgba(0, 0, 0, 0.78) 100%);
   --nvim-bg: #000000;
   --nvim-bg-transparent: rgba(0, 0, 0, 0.75);
   --nvim-bg-sidebar: rgba(0, 0, 0, 0.75);
@@ -804,6 +846,9 @@
 }
 
 [data-theme="umbrella"] {
+  --nvim-font-weight: 600;
+  --nvim-bg-image-opacity: 0.35;
+  --nvim-bg-tint: linear-gradient(155deg, rgba(10, 8, 8, 0.55) 0%, rgba(61, 55, 44, 0.62) 55%, rgba(10, 8, 8, 0.78) 100%);
   --nvim-bg: #0a0808;
   --nvim-bg-transparent: rgba(10, 8, 8, 0.75);
   --nvim-bg-sidebar: rgba(6, 5, 5, 0.75);

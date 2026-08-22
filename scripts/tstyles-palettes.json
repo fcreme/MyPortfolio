@@ -24,7 +24,10 @@
       "brightWhite": "#ffffff"
     },
     "quote": "Anta baka?",
-    "desc": "Neon Genesis Evangelion aesthetic \u2014 coral-red CRT palette with mustard yellow overlay (Eva's status displays) over pale pink-white text, pulled directly from Asuka / Unit-02 stills."
+    "desc": "Neon Genesis Evangelion aesthetic \u2014 coral-red CRT palette with mustard yellow overlay (Eva's status displays) over pale pink-white text, pulled directly from Asuka / Unit-02 stills.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.35
   },
   "ex-machina": {
     "scheme": {
@@ -51,7 +54,10 @@
       "brightWhite": "#ffffff"
     },
     "quote": "You've been programmed and fed by another. Are you bothered? It would bother me.",
-    "desc": "Ex Machina aesthetic \u2014 cold electric cyan wireframe with a coral pink accent, recalling Ava's body scans during the consciousness-test sessions. Pale cyan default text on near-black, vintage cursor."
+    "desc": "Ex Machina aesthetic \u2014 cold electric cyan wireframe with a coral pink accent, recalling Ava's body scans during the consciousness-test sessions. Pale cyan default text on near-black, vintage cursor.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.35
   },
   "forest": {
     "scheme": {
@@ -78,7 +84,10 @@
       "brightWhite": "#f5e8d8"
     },
     "quote": "",
-    "desc": "Quiet alpine wilderness. Pixel-art mountain vista with snow-tipped peaks at golden hour, deep evergreen forest, mirror lake reflection. Cool blue-green base, peach for the cursor and accent, sage-green for syntax highlights, vivid sky-blue for keywords."
+    "desc": "Quiet alpine wilderness. Pixel-art mountain vista with snow-tipped peaks at golden hour, deep evergreen forest, mirror lake reflection. Cool blue-green base, peach for the cursor and accent, sage-green for syntax highlights, vivid sky-blue for keywords.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.45
   },
   "garden-rain": {
     "scheme": {
@@ -105,7 +114,10 @@
       "brightWhite": "#e8e8e8"
     },
     "quote": "",
-    "desc": "Ghibli-style garden rainfall. Pixel-art wet stone steps, a metal bucket and a vivid blue plastic one collecting rainwater, leafy plants with blue flowers, soft rain streaks. Cool slate-blue base, vivid plant-green for the cursor and accents, rain-puddle cyan for strings, bucket-blue for keywords."
+    "desc": "Ghibli-style garden rainfall. Pixel-art wet stone steps, a metal bucket and a vivid blue plastic one collecting rainwater, leafy plants with blue flowers, soft rain streaks. Cool slate-blue base, vivid plant-green for the cursor and accents, rain-puddle cyan for strings, bucket-blue for keywords.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.4
   },
   "golden-forest": {
     "scheme": {
@@ -132,7 +144,10 @@
       "brightWhite": "#f5e8b8"
     },
     "quote": "",
-    "desc": "Warm sepia/forest styling. Gold-and-olive palette over near-black, filled-box cursor, GIF stretched to fill the window for an immersive woodland or autumn-light backdrop. No CRT effect, no acrylic \u2014 clean and grounded."
+    "desc": "Warm sepia/forest styling. Gold-and-olive palette over near-black, filled-box cursor, GIF stretched to fill the window for an immersive woodland or autumn-light backdrop. No CRT effect, no acrylic \u2014 clean and grounded.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.55
   },
   "halo": {
     "scheme": {
@@ -159,7 +174,10 @@
       "brightWhite": "#ffe8d0"
     },
     "quote": "",
-    "desc": "Third in the EXT3 LED-marquee series, sister piece to tombraider and marquee. Pixel-art psychedelic portrait inside a circular halo ring, rendered in coral, magenta, lavender, blue, and gold dot-matrix LEDs against pure black. Coral-orange cursor and tab color, arcade gold strings, electric blue variables, vintage CRT cursor."
+    "desc": "Third in the EXT3 LED-marquee series, sister piece to tombraider and marquee. Pixel-art psychedelic portrait inside a circular halo ring, rendered in coral, magenta, lavender, blue, and gold dot-matrix LEDs against pure black. Coral-orange cursor and tab color, arcade gold strings, electric blue variables, vintage CRT cursor.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.55
   },
   "kitty": {
     "scheme": {
@@ -186,7 +204,10 @@
       "brightWhite": "#ffffff"
     },
     "quote": "",
-    "desc": "Soft pastel CRT styling with a pink-lavender palette and a retro-terminal effect. Acrylic background blur, vintage cursor, GIF anchored to the bottom-right corner so it feels like a sticker."
+    "desc": "Soft pastel CRT styling with a pink-lavender palette and a retro-terminal effect. Acrylic background blur, vintage cursor, GIF anchored to the bottom-right corner so it feels like a sticker.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.35
   },
   "lain": {
     "scheme": {
@@ -213,7 +234,10 @@
       "brightWhite": "#f0e8f0"
     },
     "quote": "",
-    "desc": "Serial Experiments Lain. Pixel-art rendering of Lain at her Navi computer \u2014 tangled cables, faint red status lights, the teddy bear, the small TV. Deep blackish base, lavender-pink monitor glow for the cursor and primary accents, ghost-pale foreground, vintage cursor for the late-90s CRT aesthetic."
+    "desc": "Serial Experiments Lain. Pixel-art rendering of Lain at her Navi computer \u2014 tangled cables, faint red status lights, the teddy bear, the small TV. Deep blackish base, lavender-pink monitor glow for the cursor and primary accents, ghost-pale foreground, vintage cursor for the late-90s CRT aesthetic.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.4
   },
   "marquee": {
     "scheme": {
@@ -240,7 +264,10 @@
       "brightWhite": "#ffe0e8"
     },
     "quote": "",
-    "desc": "EXT3-series LED marquee, sister piece to tombraider. Pixel-art portrait of a girl in hot magenta with cool blue arm accents and the gold \"EXT3\" call-out label, dot-matrix rendering against pure black. Magenta cursor and tab color, arcade gold strings, electric blue variables, vintage CRT cursor."
+    "desc": "EXT3-series LED marquee, sister piece to tombraider. Pixel-art portrait of a girl in hot magenta with cool blue arm accents and the gold \"EXT3\" call-out label, dot-matrix rendering against pure black. Magenta cursor and tab color, arcade gold strings, electric blue variables, vintage CRT cursor.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.55
   },
   "neon-rain": {
     "scheme": {
@@ -267,7 +294,10 @@
       "brightWhite": "#ffffff"
     },
     "quote": "",
-    "desc": "Cyberpunk rainy night. Pixel-art dystopia \u2014 corporate tower marked \"05\", neon yellow sign, matrix-green building displays, lone delivery truck at a gas-station canopy under steady rain. Deep blue base, neon yellow for the cursor and primary accents, matrix green for status, muted dusty foreground."
+    "desc": "Cyberpunk rainy night. Pixel-art dystopia \u2014 corporate tower marked \"05\", neon yellow sign, matrix-green building displays, lone delivery truck at a gas-station canopy under steady rain. Deep blue base, neon yellow for the cursor and primary accents, matrix green for status, muted dusty foreground.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.4
   },
   "rain": {
     "scheme": {
@@ -294,7 +324,10 @@
       "brightWhite": "#e5e2f0"
     },
     "quote": "Still no sign of the others.",
-    "desc": "Contemplative highland-storm aesthetic \u2014 slate-purple stormy sky, vivid moss-green undertones, warm rust for the lone cloaked traveler. Quieter than umbrella's drama, but more colorful than sober. Closer in spirit to a Ghibli / Miyazaki rainscape than a sci-fi terminal."
+    "desc": "Contemplative highland-storm aesthetic \u2014 slate-purple stormy sky, vivid moss-green undertones, warm rust for the lone cloaked traveler. Quieter than umbrella's drama, but more colorful than sober. Closer in spirit to a Ghibli / Miyazaki rainscape than a sci-fi terminal.",
+    "weight": "normal",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.4
   },
   "snowday": {
     "scheme": {
@@ -321,7 +354,10 @@
       "brightWhite": "#f5e8d0"
     },
     "quote": "",
-    "desc": "Quiet winter sunset. Pixel-art creek meandering through a snow-dusted birch grove, peach-coral light streaming through bare branches, soft dusty pink on the distant mountain. Deep dusk-blue base, warm sunset peach for the cursor, sage-green for syntax accents, stream-blue keywords."
+    "desc": "Quiet winter sunset. Pixel-art creek meandering through a snow-dusted birch grove, peach-coral light streaming through bare branches, soft dusty pink on the distant mountain. Deep dusk-blue base, warm sunset peach for the cursor, sage-green for syntax accents, stream-blue keywords.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.45
   },
   "sober": {
     "scheme": {
@@ -348,7 +384,10 @@
       "brightWhite": "#f0f0f0"
     },
     "quote": "",
-    "desc": "The quiet one."
+    "desc": "The quiet one.",
+    "weight": "normal",
+    "face": "Cascadia Code",
+    "bgOpacity": 1.0
   },
   "tombraider": {
     "scheme": {
@@ -375,7 +414,10 @@
       "brightWhite": "#ffe0e8"
     },
     "quote": "",
-    "desc": "90s arcade marquee. LED-pixel rendering of the TOMB RAIDER sign with Lara's silhouette in hot neon magenta, gold \"EXT3\" call-out label, cyan-blue highlights. Pure black base, neon magenta cursor and tab color, arcade gold for strings, electric cyan for variables, vintage CRT cursor."
+    "desc": "90s arcade marquee. LED-pixel rendering of the TOMB RAIDER sign with Lara's silhouette in hot neon magenta, gold \"EXT3\" call-out label, cyan-blue highlights. Pure black base, neon magenta cursor and tab color, arcade gold for strings, electric cyan for variables, vintage CRT cursor.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.55
   },
   "umbrella": {
     "scheme": {
@@ -402,6 +444,9 @@
       "brightWhite": "#fff8e8"
     },
     "quote": "Welcome to Umbrella Corporation. Status: FINE.",
-    "desc": "Survival-horror classified-doc styling. Muted blood-red brackets and labels over bone-white text, with a 3-line typewriter prompt and a startup banner that reads like a save-room readout."
+    "desc": "Survival-horror classified-doc styling. Muted blood-red brackets and labels over bone-white text, with a 3-line typewriter prompt and a startup banner that reads like a save-room readout.",
+    "weight": "semi-bold",
+    "face": "Cascadia Code",
+    "bgOpacity": 0.35
   }
 }

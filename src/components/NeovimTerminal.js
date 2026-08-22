@@ -510,6 +510,7 @@ const NeovimTerminal = () => {
         className="nvim-bg-gif"
         style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/residentevil.webp)` }}
       />
+      <div className="nvim-bg-tint" />
 
       {appPhase === 'loading' && (
         <LazyLoader onComplete={handleLoadingComplete} />
