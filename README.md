@@ -18,10 +18,12 @@ A developer portfolio built with React, styled as a fully interactive **Neovim t
 
 ## Theme artwork
 
-The backdrops behind the `:tstyles` styles are the images each style pairs
-itself with, taken from the `gifs` branch of
-[TerminalStyles](https://github.com/fcreme/TerminalStyles) and re-encoded as
-single WebP frames. They are other people's work, used here as decoration:
+The backdrops behind the `:tstyles` styles are the animated GIFs each style
+pairs itself with, taken verbatim from the `gifs` branch of
+[TerminalStyles](https://github.com/fcreme/TerminalStyles). They are loaded only
+when their style is selected, so the page's own background is all a visitor
+downloads unless they go looking. They are other people's work, used here as
+decoration:
 the pixel-art pieces carry their artists' signatures (several are by
 [anasabdin](https://anasabdin.itch.io/)), and the film and game stills remain
 the property of their rights holders. Nothing here is claimed as original art.

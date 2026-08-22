@@ -70,10 +70,11 @@ def build(scheme, entry, name):
     # theme.json carries these; the site had no way to express them until now.
     weight = '600' if entry.get('weight') == 'semi-bold' else '400'
     bg_opacity = entry.get('bgOpacity', 1.0)
-    # A frame of the artwork each style pairs itself with. sober ships a solid
-    # square rather than a picture -- it is meant to have no backdrop at all.
-    has_image = os.path.isfile(os.path.join(ROOT, 'src/assets/themes', f'{name}.webp'))
-    bg_image = f"url(../assets/themes/{name}.webp)" if has_image else 'none'
+    # The artwork each style pairs itself with, as the animated GIF it ships --
+    # a still frame is not what the style is. sober ships a solid square rather
+    # than a picture: it is meant to have no backdrop at all.
+    has_image = os.path.isfile(os.path.join(ROOT, 'src/assets/themes', f'{name}.gif'))
+    bg_image = f"url(../assets/themes/{name}.gif)" if has_image else 'none'
     # A wash in the theme's own colours over the background image, so switching
     # style changes the whole page rather than only the text on top of it.
     accent = readable(blue, bg, 3.0)
