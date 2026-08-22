@@ -1,18 +1,5 @@
 import React from 'react';
-
-const netrwFiles = [
-  { type: 'dir', name: 'src/' },
-  { type: 'file', name: 'README.md' },
-  { type: 'file', name: 'about.md' },
-  { type: 'file', name: 'experience.md' },
-  { type: 'file', name: 'contact.sh' },
-  { type: 'file', name: 'package.json' },
-];
-
-const srcFiles = [
-  { type: 'file', name: 'skills.tsx' },
-  { type: 'file', name: 'projects.tsx' },
-];
+import { rootFiles, srcFiles } from './files';
 
 const FileTree = ({ activeFile, expandedDirs, onToggleDir, onSelectFile, sidebarOpen }) => {
   const isSrcExpanded = expandedDirs.includes('src');
@@ -34,28 +21,19 @@ const FileTree = ({ activeFile, expandedDirs, onToggleDir, onSelectFile, sidebar
         <div className="netrw-item netrw-dir">../</div>
         <div className="netrw-item netrw-dir">./</div>
 
-        {netrwFiles.map((item) => {
-          if (item.type === 'dir') {
-            return (
-              <div
-                key={item.name}
-                className="netrw-item netrw-dir clickable"
-                onClick={handleDirClick}
-              >
-                {isSrcExpanded ? '▾ ' : '▸ '}{item.name}
-              </div>
-            );
-          }
-          return (
-            <div
-              key={item.name}
-              className={`netrw-item netrw-file clickable${item.name === activeFile ? ' active' : ''}`}
-              onClick={() => onSelectFile(item.name)}
-            >
-              {item.name}
-            </div>
-          );
-        })}
+        <div className="netrw-item netrw-dir clickable" onClick={handleDirClick}>
+          {isSrcExpanded ? '▾ ' : '▸ '}src/
+        </div>
+
+        {rootFiles.map((item) => (
+          <div
+            key={item.name}
+            className={`netrw-item netrw-file clickable${item.name === activeFile ? ' active' : ''}`}
+            onClick={() => onSelectFile(item.name)}
+          >
+            {item.name}
+          </div>
+        ))}
 
         {isSrcExpanded && srcFiles.map((item) => (
           <div

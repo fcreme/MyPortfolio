@@ -1,21 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-
-const ALL_FILES = [
-  { name: 'README.md', path: '~/felipe-portfolio/README.md' },
-  { name: 'about.md', path: '~/felipe-portfolio/about.md' },
-  { name: 'experience.md', path: '~/felipe-portfolio/experience.md' },
-  { name: 'skills.tsx', path: '~/felipe-portfolio/src/skills.tsx' },
-  { name: 'projects.tsx', path: '~/felipe-portfolio/src/projects.tsx' },
-  { name: 'contact.sh', path: '~/felipe-portfolio/contact.sh' },
-  { name: 'package.json', path: '~/felipe-portfolio/package.json' },
-];
+import { listedFiles, filePath } from './files';
 
 const Telescope = ({ onSelect, onClose }) => {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef(null);
 
-  const filtered = ALL_FILES.filter((f) =>
+  const filtered = listedFiles.filter((f) =>
     f.name.toLowerCase().includes(query.toLowerCase())
   );
 
@@ -116,7 +107,7 @@ const Telescope = ({ onSelect, onClose }) => {
                 <span className="telescope-result-name">
                   {highlightMatch(file.name)}
                 </span>
-                <span className="telescope-result-path">{file.path}</span>
+                <span className="telescope-result-path">{filePath(file)}</span>
               </div>
             ))
           )}

@@ -32,7 +32,7 @@ const ProjectsView = () => {
       title: 'OnChain - DeFi Interface',
       descBefore: '',
       descLinkText: 'Modern DeFi interface',
-      descLinkUrl: '#',
+      descLinkUrl: null,
       descLinkImg: '/img.png',
       descAfter: ' for interacting with ERC20 tokens on Ethereum Sepolia testnet. Multi-wallet connectivity, real-time balances, token transfers, approvals and minting with glassmorphism UI.',
       technologies: ['React', 'TypeScript', 'Wagmi', 'RainbowKit', 'Material-UI', 'Zustand'],

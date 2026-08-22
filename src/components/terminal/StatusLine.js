@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { getLineCount } from './lineCounts';
 
-const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel, cursorLine, contentRef }) => {
-  const lineCount = getLineCount(activeFile);
+const StatusLine = ({ vimMode, activeFile, commandText, commandMode, onCommand, onCommandCancel, cursorLine, lineCount, contentRef }) => {
   const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState('');
   const [scrollPct, setScrollPct] = useState('All');

@@ -18,11 +18,25 @@ import ContactView from './terminal/views/ContactView';
 import PackageJsonView from './terminal/views/PackageJsonView';
 import DitherDemoView from './terminal/views/DitherDemoView';
 import HelpView from './terminal/views/HelpView';
-import { getLineCount } from './terminal/lineCounts';
+import { findFile } from './terminal/files';
 import './NeovimTerminal.css';
 
 
 const VALID_THEMES = ['tokyonight', 'gruvbox', 'catppuccin'];
+const DEFAULT_THEME = 'tokyonight';
+const MOBILE_BREAKPOINT = 768;
+
+// localStorage throws outright when a browser blocks site data, and the stored
+// name can be stale after a theme is renamed — either way, fall back rather
+// than putting an unknown value in data-theme and rendering an unstyled page.
+const readStoredTheme = () => {
+  try {
+    const saved = localStorage.getItem('nvim-theme');
+    return VALID_THEMES.includes(saved) ? saved : DEFAULT_THEME;
+  } catch {
+    return DEFAULT_THEME;
+  }
+};
 
 const QUIT_MESSAGES = [
   'E32: Can\'t quit vim... You\'re here forever.',
@@ -31,11 +45,6 @@ const QUIT_MESSAGES = [
   'sudo rm -rf /? Nice try.',
   'Have you tried turning it off and on again?',
   'Alt+F4? We don\'t do that here.',
-];
-
-const allFiles = [
-  'README.md', 'about.md', 'experience.md',
-  'skills.tsx', 'projects.tsx', 'contact.sh', 'package.json', 'dither-demo.jsx',
 ];
 
 const TildeFiller = () => {
@@ -79,14 +88,15 @@ const NeovimTerminal = () => {
   const [appPhase, setAppPhase] = useState('loading');
   const [telescopeOpen, setTelescopeOpen] = useState(false);
   const [activeFile, setActiveFile] = useState('README.md');
-  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= MOBILE_BREAKPOINT);
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth > MOBILE_BREAKPOINT);
   const [expandedDirs, setExpandedDirs] = useState(['src']);
   const [vimMode, setVimMode] = useState('NORMAL');
   const [cursorLine, setCursorLine] = useState(1);
   const [commandText, setCommandText] = useState('');
   const [commandMode, setCommandMode] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem('nvim-theme') || 'tokyonight');
+  const [theme, setTheme] = useState(readStoredTheme);
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -94,6 +104,7 @@ const NeovimTerminal = () => {
     message: '',
   });
   const [formStatus, setFormStatus] = useState('idle');
+  const [lineCount, setLineCount] = useState(0);
   const contentRef = useRef(null);
   const lastGPress = useRef(0);
   const commandTimeoutRef = useRef(null);
@@ -101,18 +112,45 @@ const NeovimTerminal = () => {
 
   // Apply theme to data attribute
   useEffect(() => {
-    localStorage.setItem('nvim-theme', theme);
+    try {
+      localStorage.setItem('nvim-theme', theme);
+    } catch {
+      // Storage blocked — the theme still applies for this session.
+    }
   }, [theme]);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
+      const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
+      setIsMobile(mobile);
+      if (!mobile) {
         setSidebarOpen(true);
       }
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Views build their lines imperatively — some inside a `.map()`, some behind
+  // a conditional (contact.sh grows a line while a status message shows) — so a
+  // hand-kept table drifts. Count what the buffer actually rendered instead.
+  useEffect(() => {
+    if (appPhase !== 'editor') return undefined;
+    const el = contentRef.current;
+    if (!el) return undefined;
+
+    const recount = () => {
+      const n = el.querySelectorAll('.nvim-line').length;
+      // Mid-transition the outgoing view has unmounted and the incoming one
+      // hasn't mounted yet; keeping the previous count avoids a "0L" flash.
+      if (n > 0) setLineCount(n);
+    };
+
+    recount();
+    const observer = new MutationObserver(recount);
+    observer.observe(el, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [appPhase]);
 
   // Reset cursor when switching files
   useEffect(() => {
@@ -131,10 +169,10 @@ const NeovimTerminal = () => {
   const handleSelectFile = useCallback((file) => {
     showCommandEcho(`:e ${file}`);
     setActiveFile(file);
-    if (window.innerWidth <= 768) {
+    if (isMobile) {
       setSidebarOpen(false);
     }
-  }, [showCommandEcho]);
+  }, [showCommandEcho, isMobile]);
 
   const handleCommand = useCallback((input) => {
     setCommandMode(false);
@@ -144,11 +182,10 @@ const NeovimTerminal = () => {
     // :e <filename>
     const eMatch = trimmed.match(/^e\s+(.+)/);
     if (eMatch) {
-      const query = eMatch[1].toLowerCase();
-      const match = allFiles.find((f) => f.toLowerCase().includes(query));
+      const match = findFile(eMatch[1]);
       if (match) {
-        showCommandEcho(`:e ${match}`);
-        setActiveFile(match);
+        showCommandEcho(`:e ${match.name}`);
+        setActiveFile(match.name);
         return;
       }
       showCommandEcho(`E492: Not an editor command: e ${eMatch[1]}`, 3000);
@@ -235,7 +272,7 @@ const NeovimTerminal = () => {
       // Don't intercept when command mode is active (handled by StatusLine input)
       if (commandMode) return;
 
-      const maxLine = getLineCount(activeFile) || 30;
+      const maxLine = Math.max(lineCount, 1);
 
       switch (e.key) {
         case 'j': {
@@ -287,7 +324,7 @@ const NeovimTerminal = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [vimMode, commandMode, activeFile, appPhase, telescopeOpen, terminalOpen]);
+  }, [vimMode, commandMode, appPhase, telescopeOpen, terminalOpen, lineCount]);
 
   const handleToggleDir = useCallback((dir) => {
     setExpandedDirs((prev) =>
@@ -436,7 +473,7 @@ const NeovimTerminal = () => {
           <TitleBar />
           <div className="nvim-editor-area">
             <div
-              className={`sidebar-overlay${sidebarOpen && window.innerWidth <= 768 ? ' visible' : ''}`}
+              className={`sidebar-overlay${sidebarOpen && isMobile ? ' visible' : ''}`}
               onClick={() => setSidebarOpen(false)}
             />
             <FileTree
@@ -476,6 +513,7 @@ const NeovimTerminal = () => {
             onCommand={handleCommand}
             onCommandCancel={() => setCommandMode(false)}
             cursorLine={cursorLine}
+            lineCount={lineCount}
             contentRef={contentRef}
           />
 
