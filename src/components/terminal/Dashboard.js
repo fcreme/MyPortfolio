@@ -44,6 +44,8 @@ const Dashboard = ({ onSelectFile }) => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
+      // Ctrl+P belongs to Telescope, and Cmd+A / Cmd+C are select-all and copy.
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
       const action = ACTIONS.find((a) => a.key === e.key.toLowerCase());
       if (action) {
         e.preventDefault();

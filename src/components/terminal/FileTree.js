@@ -1,25 +1,18 @@
 import React from 'react';
-
-const netrwFiles = [
-  { type: 'dir', name: 'src/' },
-  { type: 'file', name: 'README.md' },
-  { type: 'file', name: 'about.md' },
-  { type: 'file', name: 'experience.md' },
-  { type: 'file', name: 'contact.sh' },
-  { type: 'file', name: 'package.json' },
-];
-
-const srcFiles = [
-  { type: 'file', name: 'skills.tsx' },
-  { type: 'file', name: 'projects.tsx' },
-  // { type: 'file', name: 'hologram-demo.jsx' },
-];
+import { rootFiles, srcFiles } from './files';
 
 const FileTree = ({ activeFile, expandedDirs, onToggleDir, onSelectFile, sidebarOpen }) => {
   const isSrcExpanded = expandedDirs.includes('src');
 
   const handleDirClick = () => {
     onToggleDir('src');
+  };
+
+  // Enter and Space are what a focused role="button" is expected to answer to.
+  const activateOnKey = (fn) => (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    fn();
   };
 
   return (
@@ -35,34 +28,40 @@ const FileTree = ({ activeFile, expandedDirs, onToggleDir, onSelectFile, sidebar
         <div className="netrw-item netrw-dir">../</div>
         <div className="netrw-item netrw-dir">./</div>
 
-        {netrwFiles.map((item) => {
-          if (item.type === 'dir') {
-            return (
-              <div
-                key={item.name}
-                className="netrw-item netrw-dir clickable"
-                onClick={handleDirClick}
-              >
-                {isSrcExpanded ? '▾ ' : '▸ '}{item.name}
-              </div>
-            );
-          }
-          return (
-            <div
-              key={item.name}
-              className={`netrw-item netrw-file clickable${item.name === activeFile ? ' active' : ''}`}
-              onClick={() => onSelectFile(item.name)}
-            >
-              {item.name}
-            </div>
-          );
-        })}
+        <div
+          className="netrw-item netrw-dir clickable"
+          onClick={handleDirClick}
+          onKeyDown={activateOnKey(handleDirClick)}
+          role="button"
+          tabIndex={0}
+          aria-expanded={isSrcExpanded}
+        >
+          {isSrcExpanded ? '▾ ' : '▸ '}src/
+        </div>
+
+        {rootFiles.map((item) => (
+          <div
+            key={item.name}
+            className={`netrw-item netrw-file clickable${item.name === activeFile ? ' active' : ''}`}
+            onClick={() => onSelectFile(item.name)}
+            onKeyDown={activateOnKey(() => onSelectFile(item.name))}
+            role="button"
+            tabIndex={0}
+            aria-current={item.name === activeFile ? 'true' : undefined}
+          >
+            {item.name}
+          </div>
+        ))}
 
         {isSrcExpanded && srcFiles.map((item) => (
           <div
             key={item.name}
             className={`netrw-item netrw-file netrw-child clickable${item.name === activeFile ? ' active' : ''}`}
             onClick={() => onSelectFile(item.name)}
+            onKeyDown={activateOnKey(() => onSelectFile(item.name))}
+            role="button"
+            tabIndex={0}
+            aria-current={item.name === activeFile ? 'true' : undefined}
           >
             {item.name}
           </div>

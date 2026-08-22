@@ -1,21 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-
-const ALL_FILES = [
-  { name: 'README.md', path: '~/felipe-portfolio/README.md' },
-  { name: 'about.md', path: '~/felipe-portfolio/about.md' },
-  { name: 'experience.md', path: '~/felipe-portfolio/experience.md' },
-  { name: 'skills.tsx', path: '~/felipe-portfolio/src/skills.tsx' },
-  { name: 'projects.tsx', path: '~/felipe-portfolio/src/projects.tsx' },
-  { name: 'contact.sh', path: '~/felipe-portfolio/contact.sh' },
-  { name: 'package.json', path: '~/felipe-portfolio/package.json' },
-];
+import { listedFiles, filePath } from './files';
 
 const Telescope = ({ onSelect, onClose }) => {
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef(null);
 
-  const filtered = ALL_FILES.filter((f) =>
+  const filtered = listedFiles.filter((f) =>
     f.name.toLowerCase().includes(query.toLowerCase())
   );
 
@@ -97,26 +88,36 @@ const Telescope = ({ onSelect, onClose }) => {
             placeholder="Search files..."
             spellCheck={false}
             autoComplete="off"
+            role="combobox"
+            aria-expanded="true"
+            aria-controls="telescope-results"
+            aria-activedescendant={
+              filtered.length ? `telescope-result-${filtered[selectedIndex]?.name}` : undefined
+            }
+            aria-label="Find files"
           />
         </div>
 
         <div className="telescope-divider" />
 
-        <div className="telescope-results">
+        <div className="telescope-results" id="telescope-results" role="listbox" aria-label="Files">
           {filtered.length === 0 ? (
             <div className="telescope-empty">No files found</div>
           ) : (
             filtered.map((file, i) => (
               <div
                 key={file.name}
+                id={`telescope-result-${file.name}`}
                 className={`telescope-result${i === selectedIndex ? ' telescope-result-selected' : ''}`}
                 onClick={() => handleSelect(file)}
                 onMouseEnter={() => setSelectedIndex(i)}
+                role="option"
+                aria-selected={i === selectedIndex}
               >
                 <span className="telescope-result-name">
                   {highlightMatch(file.name)}
                 </span>
-                <span className="telescope-result-path">{file.path}</span>
+                <span className="telescope-result-path">{filePath(file)}</span>
               </div>
             ))
           )}

@@ -294,6 +294,13 @@
   background: var(--nvim-bg-hover);
 }
 
+.netrw-item.clickable:focus-visible,
+.telescope-result:focus-visible {
+  outline: 1px solid var(--nvim-string);
+  outline-offset: -1px;
+  background: var(--nvim-bg-hover);
+}
+
 .netrw-dir {
   color: var(--nvim-netrw-dir);
 }
@@ -624,11 +631,20 @@
   color: var(--nvim-fg);
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 14px;
-  width: 100%;
-  resize: none;
+  flex: 1;
+  min-width: 0;
+  resize: vertical;
   caret-color: var(--nvim-string);
   padding: 0;
   line-height: 22px;
+}
+
+.terminal-textarea::placeholder {
+  color: var(--nvim-fg-dimmest);
+}
+
+.terminal-input-line.multiline {
+  align-items: flex-start;
 }
 
 .terminal-textarea::placeholder {

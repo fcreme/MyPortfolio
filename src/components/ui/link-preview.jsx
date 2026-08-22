@@ -1,57 +1,26 @@
-"use client";
-
 import React from "react";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import { encode } from "qss";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 import { cn } from "../../lib/utils";
 
+/**
+ * A link that reveals a screenshot on hover, tilting slightly toward the
+ * cursor. `url` may be omitted for a project with no live site — the preview
+ * still opens, the trigger just doesn't navigate.
+ */
 export const LinkPreview = ({
   children,
   url,
+  imageSrc,
   className,
   width = 200,
   height = 125,
-  quality = 50,
-  layout = "fixed",
-  isStatic = false,
-  imageSrc = "",
   disabled = false,
 }) => {
-  let src;
-  if (!isStatic) {
-    const params = encode({
-      url,
-      screenshot: true,
-      meta: false,
-      embed: "screenshot.url",
-      colorScheme: "dark",
-      "viewport.isMobile": true,
-      "viewport.deviceScaleFactor": 1,
-      "viewport.width": width * 3,
-      "viewport.height": height * 3,
-    });
-    src = `https://api.microlink.io/?${params}`;
-  } else {
-    src = imageSrc;
-  }
-
   const [isOpen, setOpen] = React.useState(false);
-
-  const [isMounted, setIsMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const springConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);
-
   const translateX = useSpring(x, springConfig);
 
   const handleMouseMove = (event) => {
@@ -63,11 +32,10 @@ export const LinkPreview = ({
 
   return (
     <>
-      {isMounted ? (
-        <div className="hidden">
-          <img src={src} width={width} height={height} alt="preload" />
-        </div>
-      ) : null}
+      {/* Warm the cache so the card isn't empty on first hover. */}
+      <div className="hidden">
+        <img src={imageSrc} width={width} height={height} alt="" />
+      </div>
       <HoverCardPrimitive.Root
         openDelay={50}
         closeDelay={100}
@@ -109,12 +77,13 @@ export const LinkPreview = ({
                 <div
                   className="block p-1 bg-gray-900 border-2 border-cyan-500/50 shadow rounded-xl hover:border-cyan-400"
                   style={{ fontSize: 0 }}>
+                  {/* object-cover: the screenshots are ~2:1, the card is 1.6:1. */}
                   <img
-                    src={isStatic ? imageSrc : src}
+                    src={imageSrc}
                     width={width}
                     height={height}
-                    className="rounded-lg"
-                    alt="preview" />
+                    className="rounded-lg object-cover"
+                    alt="" />
                 </div>
               </motion.div>
             )}

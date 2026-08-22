@@ -62,7 +62,7 @@ const TerminalPanel = ({ onClose, theme }) => {
             { label: null, value: 'felipe@portfolio', isTitle: true },
             { label: null, value: '-------------------', isSep: true },
             { label: 'Role', value: 'Full Stack Developer' },
-            { label: 'Location', value: 'Germany' },
+            { label: 'Location', value: 'Buenos Aires, Argentina' },
             { label: 'Stack', value: 'React, Node.js, TypeScript' },
             { label: 'Editor', value: 'Neovim (btw)' },
             { label: 'Theme', value: theme },
@@ -85,7 +85,7 @@ const TerminalPanel = ({ onClose, theme }) => {
         } else {
           const fileMap = {
             'readme.md': '# Felipe Cremerius\n## Full Stack Developer\nPortfolio built with React, styled as Neovim.',
-            'about.md': '# About Me\nFull Stack Developer based in Germany.\nPassionate about clean code and modern web tech.',
+            'about.md': '# About Me\nFull Stack Developer based in Buenos Aires, Argentina.\nPassionate about clean code and modern web tech.',
             'package.json': '{\n  "name": "felipe-portfolio",\n  "version": "1.0.0",\n  "dependencies": { "react": "^18.2.0" }\n}',
           };
           const key = args.toLowerCase();
@@ -136,7 +136,6 @@ const TerminalPanel = ({ onClose, theme }) => {
         break;
       }
       case 'clear': {
-        setHistory([commandLine]);
         setHistory([]);
         return;
       }
@@ -154,6 +153,16 @@ const TerminalPanel = ({ onClose, theme }) => {
   }, [addOutput, onClose, theme]);
 
   const handleKeyDown = (e) => {
+    // Escape closes the panel, and Ctrl+` has to reach the editor's global
+    // toggle. React delegates keydown at the root, so swallowing propagation
+    // here would stop the window listener from ever seeing them.
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      onClose();
+      return;
+    }
+    if (e.ctrlKey && e.key === '`') return;
+
     e.stopPropagation();
 
     if (e.key === 'Enter') {

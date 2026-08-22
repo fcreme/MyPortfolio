@@ -11,7 +11,7 @@ const ProjectsView = () => {
       descBefore: '',
       descLinkText: 'Personal brand website',
       descLinkUrl: 'https://tideactive.com/',
-      descLinkImg: '/tide2.png',
+      descLinkImg: '/tide2.webp',
       descAfter: ' for fitness and lifestyle trainer. Complete platform with modern design, responsive and optimized for conversion.',
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
       liveUrl: 'https://tideactive.com/',
@@ -32,8 +32,8 @@ const ProjectsView = () => {
       title: 'OnChain - DeFi Interface',
       descBefore: '',
       descLinkText: 'Modern DeFi interface',
-      descLinkUrl: '#',
-      descLinkImg: '/img.png',
+      descLinkUrl: null,
+      descLinkImg: '/onchain.webp',
       descAfter: ' for interacting with ERC20 tokens on Ethereum Sepolia testnet. Multi-wallet connectivity, real-time balances, token transfers, approvals and minting with glassmorphism UI.',
       technologies: ['React', 'TypeScript', 'Wagmi', 'RainbowKit', 'Material-UI', 'Zustand'],
       liveUrl: null,
@@ -135,7 +135,7 @@ const ProjectsView = () => {
               <SpecialText speed={6} delay={next(0.01)} className="syn-string">{project.descBefore}</SpecialText>
             )}
             {project.descLinkText ? (
-              <LinkPreview url={project.descLinkUrl} isStatic={true} imageSrc={project.descLinkImg} className="text-cyan-400 hover:text-cyan-300 cursor-pointer" disabled={!linkReady[idx]}>
+              <LinkPreview url={project.descLinkUrl} imageSrc={project.descLinkImg} className="text-cyan-400 hover:text-cyan-300 cursor-pointer" disabled={!linkReady[idx]}>
                 <SpecialText speed={6} delay={next(0.01)} onComplete={() => setLinkReady(prev => ({...prev, [idx]: true}))}>{project.descLinkText}</SpecialText>
               </LinkPreview>
             ) : null}
