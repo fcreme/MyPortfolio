@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import emailjs from 'emailjs-com';
 import TitleBar from './terminal/TitleBar';
 import FileTree from './terminal/FileTree';
@@ -24,6 +24,7 @@ import './NeovimTerminal.css';
 
 const VALID_THEMES = ['tokyonight', 'gruvbox', 'catppuccin'];
 const DEFAULT_THEME = 'tokyonight';
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MOBILE_BREAKPOINT = 768;
 
 // localStorage throws outright when a browser blocks site data, and the stored
@@ -109,6 +110,11 @@ const NeovimTerminal = () => {
   const lastGPress = useRef(0);
   const commandTimeoutRef = useRef(null);
   const quitCounter = useRef(0);
+  const formTimeoutRef = useRef(null);
+
+  // Every form outcome schedules a reset back to 'idle'; without this the timer
+  // outlives the component and fires setState on an unmounted tree.
+  useEffect(() => () => clearTimeout(formTimeoutRef.current), []);
 
   // Apply theme to data attribute
   useEffect(() => {
@@ -348,6 +354,17 @@ const NeovimTerminal = () => {
   const handleFormSubmit = useCallback(() => {
     if (!contactForm.name || !contactForm.email || !contactForm.message) return;
 
+    const resetLater = (delay) => {
+      clearTimeout(formTimeoutRef.current);
+      formTimeoutRef.current = setTimeout(() => setFormStatus('idle'), delay);
+    };
+
+    if (!EMAIL_PATTERN.test(contactForm.email)) {
+      setFormStatus('invalid-email');
+      resetLater(4000);
+      return;
+    }
+
     setFormStatus('sending');
 
     const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -363,7 +380,7 @@ const NeovimTerminal = () => {
         '(see .env.example) and rebuild.'
       );
       setFormStatus('unconfigured');
-      setTimeout(() => setFormStatus('idle'), 6000);
+      resetLater(6000);
       return;
     }
 
@@ -380,12 +397,12 @@ const NeovimTerminal = () => {
         console.log('Email sent successfully!', response.status, response.text);
         setFormStatus('sent');
         setContactForm({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setFormStatus('idle'), 4000);
+        resetLater(4000);
       })
       .catch((error) => {
         console.error('Failed to send email:', error);
         setFormStatus('error');
-        setTimeout(() => setFormStatus('idle'), 4000);
+        resetLater(4000);
       });
   }, [contactForm]);
 

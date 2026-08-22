@@ -4,7 +4,7 @@ A developer portfolio built with React, styled as a fully interactive **Neovim t
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-10-FF0055?logo=framer&logoColor=white)
+![Motion](https://img.shields.io/badge/Motion-12-FF0055?logo=framer&logoColor=white)
 
 ## Features
 
@@ -12,7 +12,7 @@ A developer portfolio built with React, styled as a fully interactive **Neovim t
 - **Telescope Integration** — Fuzzy finder overlay for quick navigation between sections
 - **Dashboard** — Start screen inspired by Neovim dashboard plugins
 - **Lazy Loading** — Components load on demand for fast initial paint
-- **Smooth Animations** — Transitions powered by Framer Motion
+- **Smooth Animations** — Transitions powered by Motion
 - **Fully Responsive** — Optimized for desktop, tablet, and mobile
 - **Contact Form** — Functional email form via EmailJS
 
@@ -22,8 +22,7 @@ A developer portfolio built with React, styled as a fully interactive **Neovim t
 |-------|-----------|
 | UI Library | React 18 |
 | Styling | Tailwind CSS 3 |
-| Animations | Framer Motion |
-| Icons | Lucide React, React Icons |
+| Animations | Motion |
 | Email | EmailJS |
 | Build Tool | Create React App |
 
