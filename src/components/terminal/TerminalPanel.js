@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { listedFiles } from './files';
 
 const PROMPT = 'felipe@portfolio:~$ ';
 
@@ -73,10 +74,15 @@ const TerminalPanel = ({ onClose, theme }) => {
         break;
       }
       case 'ls': {
-        outputLines = [
-          { type: 'output', content: 'README.md    about.md       experience.md  skills.tsx' },
-          { type: 'output', content: 'projects.tsx contact.sh     package.json   dither-demo.jsx' },
-        ];
+        const names = listedFiles.map((f) => f.name);
+        const col = Math.max(...names.map((n) => n.length)) + 2;
+        outputLines = [];
+        for (let i = 0; i < names.length; i += 4) {
+          outputLines.push({
+            type: 'output',
+            content: names.slice(i, i + 4).map((n) => n.padEnd(col)).join('').trimEnd(),
+          });
+        }
         break;
       }
       case 'cat': {

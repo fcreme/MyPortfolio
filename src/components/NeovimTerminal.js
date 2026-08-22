@@ -16,7 +16,6 @@ import SkillsView from './terminal/views/SkillsView';
 import ProjectsView from './terminal/views/ProjectsView';
 import ContactView from './terminal/views/ContactView';
 import PackageJsonView from './terminal/views/PackageJsonView';
-import DitherDemoView from './terminal/views/DitherDemoView';
 import HelpView from './terminal/views/HelpView';
 import { findFile } from './terminal/files';
 import TStyles from './terminal/TStyles';
@@ -498,8 +497,6 @@ const NeovimTerminal = () => {
         );
       case 'package.json':
         return <PackageJsonView />;
-      case 'dither-demo.jsx':
-        return <DitherDemoView />;
       case 'help.txt':
         return <HelpView />;
       default:
