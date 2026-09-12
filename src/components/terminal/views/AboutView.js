@@ -2,6 +2,7 @@ import React from 'react';
 import { Line, Empty } from '../Line';
 import { DitherShader } from '../../ui/dither-shader';
 import { SpecialText } from '../../ui/special-text';
+import { CvLink } from '../CvLink';
 
 const AboutView = () => {
   let n = 0;
@@ -127,8 +128,8 @@ const AboutView = () => {
         <SpecialText speed={5} delay={next()} className="syn-table-border">{'| '}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-key">Location</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{' | '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)} className="syn-table-value">Buenos Aires, Argentina</SpecialText>
-        <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'       |'}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-table-value">Worldwide</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'                     |'}</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-table-border">{'| '}</SpecialText>
@@ -155,9 +156,9 @@ const AboutView = () => {
         <SpecialText speed={5} delay={next()} className="syn-table-border">{'| '}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-key">Resume</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'   | '}</SpecialText>
-        <a className="syn-link" href={`${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`} download>
+        <CvLink>
           <SpecialText speed={8} delay={next(0.01)}>Download CV</SpecialText>
-        </a>
+        </CvLink>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'                |'}</SpecialText>
       </Line>
       <Empty n={l()} />

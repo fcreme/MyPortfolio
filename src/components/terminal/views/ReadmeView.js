@@ -1,21 +1,13 @@
 import React from 'react';
 import { Line, Empty } from '../Line';
 import { SpecialText } from '../../ui/special-text';
+import { CvLink } from '../CvLink';
 
 const ReadmeView = ({ onNavigate }) => {
   let n = 0;
   const l = () => ++n;
   let d = 0;
   const next = (step = 0.03) => { d += step; return d; };
-
-  const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`;
-    link.download = 'Felipe_Cremerius_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <div className="content-view">
@@ -111,9 +103,9 @@ const ReadmeView = ({ onNavigate }) => {
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'📄 '}</SpecialText>
-        <span className="syn-link" onClick={downloadCV}>
+        <CvLink>
           <SpecialText speed={8} delay={next(0.01)}>[Download CV (PDF)]</SpecialText>
-        </span>
+        </CvLink>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
@@ -145,9 +137,9 @@ const ReadmeView = ({ onNavigate }) => {
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
         <SpecialText speed={8} delay={next(0.01)} className="syn-bold">{'Resume: '}</SpecialText>
-        <a className="syn-link" href={`${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`} download>
+        <CvLink>
           <SpecialText speed={8} delay={next(0.01)}>Download CV (PDF)</SpecialText>
-        </a>
+        </CvLink>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>

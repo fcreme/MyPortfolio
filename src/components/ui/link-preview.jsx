@@ -11,6 +11,7 @@ import { cn } from "../../lib/utils";
 export const LinkPreview = ({
   children,
   url,
+  download,
   imageSrc,
   className,
   width = 200,
@@ -46,6 +47,7 @@ export const LinkPreview = ({
           onMouseMove={disabled ? undefined : handleMouseMove}
           className={cn("text-black dark:text-white", disabled ? "" : className)}
           href={disabled ? undefined : url}
+          download={download}
           style={disabled ? { pointerEvents: 'none' } : undefined}>
           {children}
         </HoverCardPrimitive.Trigger>

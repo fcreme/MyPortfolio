@@ -63,7 +63,7 @@ const TerminalPanel = ({ onClose, theme }) => {
             { label: null, value: 'felipe@portfolio', isTitle: true },
             { label: null, value: '-------------------', isSep: true },
             { label: 'Role', value: 'Full Stack Developer' },
-            { label: 'Location', value: 'Buenos Aires, Argentina' },
+            { label: 'Location', value: 'Worldwide' },
             { label: 'Stack', value: 'React, Node.js, TypeScript' },
             { label: 'Editor', value: 'Neovim (btw)' },
             { label: 'Theme', value: theme },
@@ -91,7 +91,7 @@ const TerminalPanel = ({ onClose, theme }) => {
         } else {
           const fileMap = {
             'readme.md': '# Felipe Cremerius\n## Full Stack Developer\nPortfolio built with React, styled as Neovim.',
-            'about.md': '# About Me\nFull Stack Developer based in Buenos Aires, Argentina.\nPassionate about clean code and modern web tech.',
+            'about.md': '# About Me\nFull Stack Developer working worldwide.\nPassionate about clean code and modern web tech.',
             'package.json': '{\n  "name": "felipe-portfolio",\n  "version": "1.0.0",\n  "dependencies": { "react": "^18.2.0" }\n}',
           };
           const key = args.toLowerCase();

@@ -49,7 +49,7 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-variable">LOCATION</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-operator">=</SpecialText>
-        <SpecialText speed={6} delay={next(0.01)} className="syn-string">"Buenos Aires, Argentina"</SpecialText>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-string">"Worldwide"</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>

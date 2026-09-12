@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from '../Line';
 import { SpecialText } from '../../ui/special-text';
+import { CvLink } from '../CvLink';
 
 const PackageJsonView = () => {
   let n = 0;
@@ -130,9 +131,9 @@ const PackageJsonView = () => {
         <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "resume"'}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">: </SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-string">"</SpecialText>
-        <a className="syn-link" href={`${process.env.PUBLIC_URL}/Felipe_Cremerius_CV.pdf`} download>
+        <CvLink>
           <SpecialText speed={5} delay={next(0.01)}>Download CV (PDF)</SpecialText>
-        </a>
+        </CvLink>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-string">"</SpecialText>
       </Line>
       <Line n={l()}>
@@ -153,7 +154,7 @@ const PackageJsonView = () => {
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-json-key">{'    "location"'}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">: </SpecialText>
-        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"Buenos Aires, Argentina"</SpecialText>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">"Worldwide"</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-json-brace">{'  }'}</SpecialText>
