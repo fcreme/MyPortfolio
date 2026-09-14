@@ -45,8 +45,12 @@ export const LinkPreview = ({
         }}>
         <HoverCardPrimitive.Trigger
           onMouseMove={disabled ? undefined : handleMouseMove}
-          className={cn("text-black dark:text-white", disabled ? "" : className)}
-          href={disabled ? undefined : url}
+          // text-current inherits the buffer's colour: nothing in the app ever sets a
+          // `dark` class, so a dark: variant would leave this black on a black terminal.
+          className={cn("text-current", className)}
+          // pointerEvents below is what disables the trigger — keeping the href means
+          // the link stays focusable while the text is still scrambling in.
+          href={url || undefined}
           download={download}
           style={disabled ? { pointerEvents: 'none' } : undefined}>
           {children}
