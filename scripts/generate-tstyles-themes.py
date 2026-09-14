@@ -125,7 +125,9 @@ def build(scheme, entry, name):
         '--nvim-string': syn('brightGreen'),
         '--nvim-function': syn('brightYellow'),
         '--nvim-type': syn('brightBlue'),
-        '--nvim-comment': hexs(readable(S['brightBlack'], bg, 2.6)),
+        # Comments carry the CV's asides, so they are body text: AA on the
+        # background, not the whisper the terminal palettes use them for.
+        '--nvim-comment': hexs(readable(S['brightBlack'], bg, 4.5)),
         '--nvim-tag': syn('brightRed'),
         '--nvim-heading': syn('brightBlue', 4.5),
         '--nvim-heading-marker': syn('blue', 3.0),

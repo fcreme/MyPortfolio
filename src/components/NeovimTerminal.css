@@ -20,9 +20,11 @@
   --nvim-bg-selected: rgba(96, 165, 250, 0.12);
   --nvim-bg-selected-hover: rgba(96, 165, 250, 0.16);
   --nvim-fg: #e2e8f0;
-  --nvim-fg-dim: rgba(255, 255, 255, 0.5);
-  --nvim-fg-dimmer: rgba(255, 255, 255, 0.3);
-  --nvim-fg-dimmest: rgba(255, 255, 255, 0.2);
+  /* all three dim tiers carry real text (placeholders, paths, hints), so none may drop
+     below 4.5:1 on --nvim-bg; alpha .45 is that floor here, so the ramp starts above it */
+  --nvim-fg-dim: rgba(255, 255, 255, 0.72);
+  --nvim-fg-dimmer: rgba(255, 255, 255, 0.62);
+  --nvim-fg-dimmest: rgba(255, 255, 255, 0.52);
   --nvim-fg-faint: rgba(255, 255, 255, 0.15);
   --nvim-fg-ghost: rgba(255, 255, 255, 0.06);
   --nvim-fg-current: rgba(255, 255, 255, 0.85);
@@ -37,7 +39,7 @@
   --nvim-string: #4ade80;
   --nvim-function: #fbbf24;
   --nvim-type: #60a5fa;
-  --nvim-comment: rgba(255, 255, 255, 0.3);
+  --nvim-comment: rgba(255, 255, 255, 0.46);
   --nvim-tag: #f87171;
   --nvim-heading: #60a5fa;
   --nvim-heading-marker: #3b82f6;
@@ -82,9 +84,11 @@
   --nvim-bg-selected: rgba(131, 165, 152, 0.15);
   --nvim-bg-selected-hover: rgba(131, 165, 152, 0.2);
   --nvim-fg: #ebdbb2;
-  --nvim-fg-dim: rgba(235, 219, 178, 0.5);
-  --nvim-fg-dimmer: rgba(235, 219, 178, 0.35);
-  --nvim-fg-dimmest: rgba(235, 219, 178, 0.2);
+  /* #ebdbb2 on #282828 tops out at 10.75:1, so .57 is the 4.5:1 floor and the ramp
+     only has .60-.80 to spread three text tiers across */
+  --nvim-fg-dim: rgba(235, 219, 178, 0.8);
+  --nvim-fg-dimmer: rgba(235, 219, 178, 0.7);
+  --nvim-fg-dimmest: rgba(235, 219, 178, 0.6);
   --nvim-fg-faint: rgba(235, 219, 178, 0.15);
   --nvim-fg-ghost: rgba(235, 219, 178, 0.06);
   --nvim-fg-current: rgba(235, 219, 178, 0.85);
@@ -99,7 +103,7 @@
   --nvim-string: #b8bb26;
   --nvim-function: #b8bb26;
   --nvim-type: #fabd2f;
-  --nvim-comment: #928374;
+  --nvim-comment: #9e9184;
   --nvim-tag: #fb4934;
   --nvim-heading: #fabd2f;
   --nvim-heading-marker: #d79921;
@@ -107,7 +111,7 @@
   --nvim-link-hover: #8ec07c;
   --nvim-bold: #fbf1c7;
   --nvim-italic: #d5c4a1;
-  --nvim-netrw-comment: #928374;
+  --nvim-netrw-comment: #9e9184;
   --nvim-netrw-dir: #8ec07c;
   --nvim-tilde: #504945;
   --nvim-cursor-bg: rgba(235, 219, 178, 0.7);
@@ -144,9 +148,11 @@
   --nvim-bg-selected: rgba(137, 180, 250, 0.12);
   --nvim-bg-selected-hover: rgba(137, 180, 250, 0.16);
   --nvim-fg: #cdd6f4;
-  --nvim-fg-dim: rgba(205, 214, 244, 0.5);
-  --nvim-fg-dimmer: rgba(205, 214, 244, 0.35);
-  --nvim-fg-dimmest: rgba(205, 214, 244, 0.2);
+  /* #cdd6f4 on #1e1e2e tops out at 11.34:1, so .56 is the 4.5:1 floor and the ramp
+     only has .60-.80 to spread three text tiers across */
+  --nvim-fg-dim: rgba(205, 214, 244, 0.8);
+  --nvim-fg-dimmer: rgba(205, 214, 244, 0.7);
+  --nvim-fg-dimmest: rgba(205, 214, 244, 0.6);
   --nvim-fg-faint: rgba(205, 214, 244, 0.15);
   --nvim-fg-ghost: rgba(205, 214, 244, 0.06);
   --nvim-fg-current: rgba(205, 214, 244, 0.85);
@@ -161,7 +167,7 @@
   --nvim-string: #a6e3a1;
   --nvim-function: #f9e2af;
   --nvim-type: #89b4fa;
-  --nvim-comment: #6c7086;
+  --nvim-comment: #868a9e;
   --nvim-tag: #f38ba8;
   --nvim-heading: #89b4fa;
   --nvim-heading-marker: #74c7ec;
@@ -169,7 +175,7 @@
   --nvim-link-hover: #89dceb;
   --nvim-bold: #cdd6f4;
   --nvim-italic: #bac2de;
-  --nvim-netrw-comment: #6c7086;
+  --nvim-netrw-comment: #868a9e;
   --nvim-netrw-dir: #94e2d5;
   --nvim-tilde: #45475a;
   --nvim-cursor-bg: rgba(205, 214, 244, 0.7);

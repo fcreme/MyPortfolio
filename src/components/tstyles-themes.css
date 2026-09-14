@@ -43,7 +43,7 @@
   --nvim-string: #9ec99e;
   --nvim-function: #f4d87a;
   --nvim-type: #a8c5e8;
-  --nvim-comment: #6e484d;
+  --nvim-comment: #8e7074;
   --nvim-tag: #ff3d5a;
   --nvim-heading: #a8c5e8;
   --nvim-heading-marker: #6ed5ff;
@@ -105,7 +105,7 @@
   --nvim-string: #7df0c4;
   --nvim-function: #ffd4a8;
   --nvim-type: #6ed5ff;
-  --nvim-comment: #2b5a79;
+  --nvim-comment: #597e96;
   --nvim-tag: #ff7b8a;
   --nvim-heading: #6ed5ff;
   --nvim-heading-marker: #00ccff;
@@ -167,7 +167,7 @@
   --nvim-string: #88b56a;
   --nvim-function: #c8d49a;
   --nvim-type: #5aa5f0;
-  --nvim-comment: #556159;
+  --nvim-comment: #7a847e;
   --nvim-tag: #e0a088;
   --nvim-heading: #5aa5f0;
   --nvim-heading-marker: #3a8ee0;
@@ -229,7 +229,7 @@
   --nvim-string: #88c890;
   --nvim-function: #d8c068;
   --nvim-type: #5a98d8;
-  --nvim-comment: #5b636a;
+  --nvim-comment: #83898e;
   --nvim-tag: #c87080;
   --nvim-heading: #5a98d8;
   --nvim-heading-marker: #3a78b8;
@@ -291,7 +291,7 @@
   --nvim-string: #a8bf66;
   --nvim-function: #f4c948;
   --nvim-type: #7a8a5e;
-  --nvim-comment: #555b44;
+  --nvim-comment: #7c816f;
   --nvim-tag: #d4825c;
   --nvim-heading: #7a8a5e;
   --nvim-heading-marker: #566743;
@@ -353,7 +353,7 @@
   --nvim-string: #80e8a8;
   --nvim-function: #ffe860;
   --nvim-type: #6890ff;
-  --nvim-comment: #5f5258;
+  --nvim-comment: #7f7479;
   --nvim-tag: #ff8068;
   --nvim-heading: #6890ff;
   --nvim-heading-marker: #4868d8;
@@ -415,7 +415,7 @@
   --nvim-string: #c9f5e0;
   --nvim-function: #ffe4c2;
   --nvim-type: #c7d2fe;
-  --nvim-comment: #5e586c;
+  --nvim-comment: #837f8e;
   --nvim-tag: #ffb3c1;
   --nvim-heading: #c7d2fe;
   --nvim-heading-marker: #a5b4fc;
@@ -477,7 +477,7 @@
   --nvim-string: #88c0a8;
   --nvim-function: #d8b888;
   --nvim-type: #88a8c0;
-  --nvim-comment: #5a565f;
+  --nvim-comment: #7a777e;
   --nvim-tag: #d06070;
   --nvim-heading: #88a8c0;
   --nvim-heading-marker: #6a8aa8;
@@ -539,7 +539,7 @@
   --nvim-string: #60f0a8;
   --nvim-function: #ffe860;
   --nvim-type: #60a8ff;
-  --nvim-comment: #5f5258;
+  --nvim-comment: #7f7479;
   --nvim-tag: #ff6098;
   --nvim-heading: #60a8ff;
   --nvim-heading-marker: #4090f0;
@@ -601,7 +601,7 @@
   --nvim-string: #88f0a8;
   --nvim-function: #ffe890;
   --nvim-type: #88b0e0;
-  --nvim-comment: #555d6d;
+  --nvim-comment: #7a818d;
   --nvim-tag: #d86850;
   --nvim-heading: #88b0e0;
   --nvim-heading-marker: #5a90d0;
@@ -663,7 +663,7 @@
   --nvim-string: #7aa868;
   --nvim-function: #c8b850;
   --nvim-type: #9ca0cc;
-  --nvim-comment: #6d7088;
+  --nvim-comment: #9496a8;
   --nvim-tag: #c87878;
   --nvim-heading: #9ca0cc;
   --nvim-heading-marker: #7a8ac8;
@@ -725,7 +725,7 @@
   --nvim-string: #98b098;
   --nvim-function: #ffd8a0;
   --nvim-type: #6a90b8;
-  --nvim-comment: #6b645e;
+  --nvim-comment: #938d89;
   --nvim-tag: #e89880;
   --nvim-heading: #6a90b8;
   --nvim-heading-marker: #44739b;
@@ -787,7 +787,7 @@
   --nvim-string: #8eae8e;
   --nvim-function: #c8b898;
   --nvim-type: #9ab8b8;
-  --nvim-comment: #585858;
+  --nvim-comment: #7c7c7c;
   --nvim-tag: #c87878;
   --nvim-heading: #9ab8b8;
   --nvim-heading-marker: #7a9999;
@@ -849,7 +849,7 @@
   --nvim-string: #60f0a8;
   --nvim-function: #ffe860;
   --nvim-type: #60a8ff;
-  --nvim-comment: #5f5258;
+  --nvim-comment: #7f7479;
   --nvim-tag: #ff5090;
   --nvim-heading: #60a8ff;
   --nvim-heading-marker: #4090f0;
@@ -911,7 +911,7 @@
   --nvim-string: #8eae8e;
   --nvim-function: #d4b888;
   --nvim-type: #9b8e70;
-  --nvim-comment: #5c554e;
+  --nvim-comment: #807b75;
   --nvim-tag: #e04848;
   --nvim-heading: #9b8e70;
   --nvim-heading-marker: #7b6e5a;
