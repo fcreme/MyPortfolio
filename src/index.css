@@ -69,13 +69,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #000;
+  /* 100vh counts the strip under the mobile URL bar, so the status and command
+     lines land under browser chrome and can't be scrolled to. dvh where supported. */
   height: 100vh;
+  height: 100dvh;
   color: rgba(255, 255, 255, 0.9);
   overflow: hidden;
 }
 
 #root {
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 

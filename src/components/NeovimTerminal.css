@@ -192,10 +192,14 @@
 }
 
 /* ===== GIF BACKGROUND WRAPPER ===== */
+/* Every 100vh below is paired with a 100dvh override: on mobile 100vh spans the
+   area under the URL bar and toolbar, which parks the status and command lines
+   behind browser chrome where nobody can reach them. */
 .nvim-bg-wrapper {
   position: relative;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -205,6 +209,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-image: var(--nvim-bg-image);
   background-size: cover;
   background-position: center center;
@@ -222,6 +227,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 0;
   pointer-events: none;
   background: var(--nvim-bg-tint);
@@ -234,6 +240,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background: transparent;
   font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
@@ -644,6 +651,9 @@
   gap: 0;
 }
 
+/* 14px matches the buffer, so the typed value lines up with the shell prompt
+   printed beside it. The 22px line-height keeps the field inside the buffer's
+   line rhythm. */
 .terminal-input {
   background: transparent;
   border: none;
@@ -678,6 +688,18 @@
 
 .terminal-textarea::placeholder {
   color: var(--nvim-fg-dimmest);
+}
+
+/* iOS Safari zooms the page when a focused field is under 16px, and this is the
+   form that has to convert. Scoped by pointer rather than width: iPads zoom too
+   and are wider than any breakpoint here, while a mouse pointer never zooms, so
+   desktop keeps the 14px that matches the prompt. Must stay after the base
+   rules above, which it only overrides on source order. */
+@media (pointer: coarse) {
+  .terminal-input,
+  .terminal-textarea {
+    font-size: 16px;
+  }
 }
 
 .terminal-input-line.multiline {
@@ -828,8 +850,8 @@
   bottom: 56px;
   left: 12px;
   z-index: 100;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: var(--nvim-bg-commandline);
   border: 1px solid var(--nvim-border-strong);
   border-radius: 8px;
@@ -876,6 +898,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 200;
   background: var(--nvim-bg-overlay-deep);
   display: flex;
@@ -1011,6 +1034,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 150;
   background: var(--nvim-bg-overlay);
   display: flex;
@@ -1123,6 +1147,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 300;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -1539,6 +1564,17 @@
     display: flex;
   }
 
+  /* 22px line + 22px padding = a 44px thumb target; padding-top/bottom rather
+     than the shorthand so .netrw-child keeps its indent. */
+  .netrw-item.clickable {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  .telescope-result {
+    min-height: 44px;
+  }
+
   .line-number {
     width: 36px;
     min-width: 36px;
@@ -1617,6 +1653,7 @@
 
   .telescope-modal {
     max-height: 70vh;
+    max-height: 70dvh;
   }
 
   .terminal-panel {
