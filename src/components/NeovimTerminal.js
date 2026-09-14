@@ -406,12 +406,20 @@ const NeovimTerminal = () => {
   }, []);
 
   const handleFormSubmit = useCallback(() => {
-    if (!contactForm.name || !contactForm.email || !contactForm.message) return;
+    // a second click while the first send is in flight mails a duplicate
+    if (formStatus === 'sending') return;
 
     const resetLater = (delay) => {
       clearTimeout(formTimeoutRef.current);
       formTimeoutRef.current = setTimeout(() => setFormStatus('idle'), delay);
     };
+
+    // silently doing nothing reads as a broken button, so say what is missing
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      setFormStatus('incomplete');
+      resetLater(4000);
+      return;
+    }
 
     if (!EMAIL_PATTERN.test(contactForm.email)) {
       setFormStatus('invalid-email');
@@ -419,7 +427,12 @@ const NeovimTerminal = () => {
       return;
     }
 
+    // a reset timer armed by an earlier status would fire mid-send, clear
+    // 'sending' and reopen the guard above. The EmailJS XHR sets no timeout
+    // either, so the replacement doubles as a watchdog for a stalled request.
+    clearTimeout(formTimeoutRef.current);
     setFormStatus('sending');
+    formTimeoutRef.current = setTimeout(() => setFormStatus('error'), 30000);
 
     const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -458,7 +471,7 @@ const NeovimTerminal = () => {
         setFormStatus('error');
         resetLater(4000);
       });
-  }, [contactForm]);
+  }, [contactForm, formStatus]);
 
   const handleLoadingComplete = useCallback(() => {
     setAppPhase('dashboard');

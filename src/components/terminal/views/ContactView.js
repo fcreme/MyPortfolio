@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import { Line, Empty } from '../Line';
 import { SpecialText } from '../../ui/special-text';
 
+// Off-screen but present: implicit form submission needs a real submit button,
+// and a screen reader needs the status as text rather than a typed-out animation.
+const SR_ONLY = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0 0 0 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};
+
+const STATUS_MESSAGES = {
+  sending: 'Sending message...',
+  sent: "Message sent successfully! I'll respond soon.",
+  unconfigured: 'Form is offline \u2014 email felipecremerius1@gmail.com directly.',
+  'invalid-email': "That email address doesn't look right.",
+  incomplete: 'Fill in your name, your email and a message before sending.',
+  error: 'Error sending message. Please try again.',
+};
+
 const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, formStatus }) => {
   const [fieldsReady, setFieldsReady] = useState({});
   let n = 0;
@@ -56,6 +79,11 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
         <SpecialText speed={5} delay={next()} className="syn-comment"># Fill in the form below:</SpecialText>
       </Line>
       <Empty n={l()} />
+      <form
+        noValidate
+        style={{ display: 'contents' }}
+        onSubmit={(e) => { e.preventDefault(); onSubmit(); }}
+      >
       <Line n={l()}>
         <div className="terminal-input-line">
           <SpecialText speed={5} delay={next()} className="syn-command">{'read '}</SpecialText>
@@ -65,6 +93,9 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
             className="terminal-input"
             type="text"
             name="name"
+            aria-label="Your name"
+            autoComplete="name"
+            aria-required="true"
             value={contactForm.name}
             onChange={onFormChange}
             onFocus={onFocus}
@@ -83,6 +114,9 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
             className="terminal-input"
             type="email"
             name="email"
+            aria-label="Your email"
+            autoComplete="email"
+            aria-required="true"
             value={contactForm.email}
             onChange={onFormChange}
             onFocus={onFocus}
@@ -101,6 +135,8 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
             className="terminal-input"
             type="text"
             name="subject"
+            aria-label="Subject"
+            autoComplete="off"
             value={contactForm.subject}
             onChange={onFormChange}
             onFocus={onFocus}
@@ -118,6 +154,9 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
           <textarea
             className="terminal-textarea"
             name="message"
+            aria-label="Message"
+            autoComplete="off"
+            aria-required="true"
             rows={3}
             value={contactForm.message}
             onChange={onFormChange}
@@ -135,12 +174,18 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
           onClick={onSubmit}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && onSubmit()}
+          aria-disabled={formStatus === 'sending'}
+          onKeyDown={(e) => {
+            // a role=button has to answer Space as well as Enter
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSubmit(); }
+          }}
         >
           <SpecialText speed={6} delay={next()} className="syn-command">./send_message.sh</SpecialText>
           <SpecialText speed={5} delay={next(0.01)} className="syn-comment">{' # click to send'}</SpecialText>
         </span>
+        <button type="submit" tabIndex={-1} aria-hidden="true" style={SR_ONLY} />
       </Line>
+      </form>
       <Empty n={l()} />
       {formStatus === 'sending' && (
         <Line n={l()}>
@@ -162,11 +207,19 @@ const ContactView = ({ contactForm, onFormChange, onSubmit, onFocus, onBlur, for
           <SpecialText speed={8} delay={0} className="form-status error">{"That email address doesn't look right."}</SpecialText>
         </Line>
       )}
+      {formStatus === 'incomplete' && (
+        <Line n={l()}>
+          <SpecialText speed={8} delay={0} className="form-status error">{STATUS_MESSAGES.incomplete}</SpecialText>
+        </Line>
+      )}
       {formStatus === 'error' && (
         <Line n={l()}>
           <SpecialText speed={8} delay={0} className="form-status error">Error sending message. Please try again.</SpecialText>
         </Line>
       )}
+      <span role="status" aria-live="polite" style={SR_ONLY}>
+        {STATUS_MESSAGES[formStatus] || ''}
+      </span>
     </div>
   );
 };
