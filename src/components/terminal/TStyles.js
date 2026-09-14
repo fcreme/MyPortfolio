@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { THEMES, EDITOR_THEMES, themeIndex } from './themes';
+import { useGlobalKeys } from './keyboard';
 
 /**
  * A standing-in-for-the-real-thing version of the TerminalStyles picker.
@@ -22,23 +23,21 @@ const TStyles = ({ startedOn, onPreview, onCommit, onCancel }) => {
     });
   }, [onPreview]);
 
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === 'ArrowDown' || e.key === 'j' || (e.ctrlKey && e.key === 'n')) {
-        e.preventDefault(); move(1);
-      } else if (e.key === 'ArrowUp' || e.key === 'k' || (e.ctrlKey && e.key === 'p')) {
-        e.preventDefault(); move(-1);
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        onCommit(THEMES[index].id);
-      } else if (e.key === 'Escape') {
-        e.preventDefault();
-        onCancel();
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+  const onKeyDown = useCallback((e) => {
+    if (e.key === 'ArrowDown' || e.key === 'j' || (e.ctrlKey && e.key === 'n')) {
+      e.preventDefault(); move(1);
+    } else if (e.key === 'ArrowUp' || e.key === 'k' || (e.ctrlKey && e.key === 'p')) {
+      e.preventDefault(); move(-1);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      onCommit(THEMES[index].id);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      onCancel();
+    }
   }, [move, onCommit, onCancel, index]);
+
+  useGlobalKeys(onKeyDown, true, true);
 
   useEffect(() => {
     const el = listRef.current?.children[index];

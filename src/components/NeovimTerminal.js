@@ -18,6 +18,7 @@ import ContactView from './terminal/views/ContactView';
 import PackageJsonView from './terminal/views/PackageJsonView';
 import HelpView from './terminal/views/HelpView';
 import { findFile } from './terminal/files';
+import { isTypingTarget } from './terminal/keyboard';
 import TStyles from './terminal/TStyles';
 import { isTheme, DEFAULT_THEME } from './terminal/themes';
 // Cascadia Code is what every TerminalStyles style names as its font. The
@@ -291,17 +292,26 @@ const NeovimTerminal = () => {
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Ctrl+P opens telescope from any phase (except loading)
+      // Ctrl+P opens telescope from any phase (except loading), but never on
+      // top of another overlay - stacking strands the one underneath.
       if (e.ctrlKey && e.key === 'p' && appPhase !== 'loading') {
         e.preventDefault();
-        setTelescopeOpen(true);
+        if (!telescopeOpen && !tstylesOpen && !terminalOpen) setTelescopeOpen(true);
         return;
       }
 
       // Ctrl+` toggles terminal panel
-      if (e.ctrlKey && e.key === '`' && appPhase === 'editor') {
+      if (e.ctrlKey && e.key === '`' && appPhase === 'editor' && !telescopeOpen && !tstylesOpen) {
         e.preventDefault();
         setTerminalOpen((prev) => !prev);
+        return;
+      }
+
+      // Telescope's own Escape is bound to its input, so it stops working as soon
+      // as focus leaves the field - and nothing traps focus inside the overlay.
+      if (e.key === 'Escape' && telescopeOpen) {
+        e.preventDefault();
+        setTelescopeOpen(false);
         return;
       }
 
@@ -317,6 +327,10 @@ const NeovimTerminal = () => {
       if (vimMode === 'INSERT') return;
       // Don't intercept when command mode is active (handled by StatusLine input)
       if (commandMode) return;
+      // A focused text field owns the keyboard, whatever the app thinks its mode is
+      if (isTypingTarget(e.target)) return;
+      // j/k/G are bare-key motions; leave Cmd/Ctrl/Alt chords to the browser
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
 
       const maxLine = Math.max(lineCount, 1);
 
@@ -518,7 +532,10 @@ const NeovimTerminal = () => {
       )}
 
       {appPhase === 'dashboard' && (
-        <Dashboard onSelectFile={handleDashboardSelect} />
+        <Dashboard
+          onSelectFile={handleDashboardSelect}
+          keyboardEnabled={!telescopeOpen && !tstylesOpen}
+        />
       )}
 
       {appPhase === 'editor' && (

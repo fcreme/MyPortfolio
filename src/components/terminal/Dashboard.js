@@ -1,5 +1,6 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { SpecialText } from '../ui/special-text';
+import { useGlobalKeys } from './keyboard';
 
 const ASCII_ART = [
   '███████╗███████╗██╗     ██╗██████╗ ███████╗',
@@ -33,7 +34,7 @@ const getTildeCount = () => {
   return 8;
 };
 
-const Dashboard = ({ onSelectFile }) => {
+const Dashboard = ({ onSelectFile, keyboardEnabled = true }) => {
   const TILDE_COUNT = getTildeCount();
   let d = 0;
   const next = (step = 0.05) => { d += step; return d; };
@@ -42,20 +43,17 @@ const Dashboard = ({ onSelectFile }) => {
     onSelectFile(file);
   }, [onSelectFile]);
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      // Ctrl+P belongs to Telescope, and Cmd+A / Cmd+C are select-all and copy.
-      if (e.ctrlKey || e.metaKey || e.altKey) return;
-      const action = ACTIONS.find((a) => a.key === e.key.toLowerCase());
-      if (action) {
-        e.preventDefault();
-        handleAction(action.file);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+  const handleKeyDown = useCallback((e) => {
+    // Ctrl+P belongs to Telescope, and Cmd+A / Cmd+C are select-all and copy.
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const action = ACTIONS.find((a) => a.key === e.key.toLowerCase());
+    if (action) {
+      e.preventDefault();
+      handleAction(action.file);
+    }
   }, [handleAction]);
+
+  useGlobalKeys(handleKeyDown, keyboardEnabled);
 
   return (
     <div className="dashboard-overlay">
