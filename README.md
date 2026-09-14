@@ -11,7 +11,8 @@ A developer portfolio built with React, styled as a fully interactive **Neovim t
 - **Neovim UI** — File tree, buffer tabs, status line, and line numbers that mimic a real Neovim session
 - **Telescope Integration** — Fuzzy finder overlay for quick navigation between sections
 - **Dashboard** — Start screen inspired by Neovim dashboard plugins
-- **Lazy Loading** — Components load on demand for fast initial paint
+- **Deferred backdrops** — Each style's artwork is a CSS variable, so a visitor only downloads the GIF for the style they actually switch to
+- **Boot screen** — A cosmetic `lazy.nvim` plugin-loading sequence, skipped outright for anyone who asks for reduced motion
 - **Smooth Animations** — Transitions powered by Motion
 - **Fully Responsive** — Optimized for desktop, tablet, and mobile
 - **Contact Form** — Functional email form via EmailJS
@@ -50,8 +51,8 @@ the property of their rights holders. Nothing here is claimed as original art.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
+git clone https://github.com/fcreme/MyPortfolio.git
+cd MyPortfolio
 
 # Install dependencies
 npm install
@@ -97,13 +98,11 @@ portfolio/
 │   │   │       ├── ProjectsView.js
 │   │   │       ├── ContactView.js
 │   │   │       ├── PackageJsonView.js
-│   │   │       ├── HelpView.js
-│   │   │       └── HologramView.js
+│   │   │       └── HelpView.js
 │   │   └── ui/
 │   │       ├── special-text.jsx   # Scramble-in text effect
 │   │       ├── link-preview.jsx   # Hover link previews
-│   │       ├── dither-shader.jsx  # WebGL dither effect
-│   │       └── HologramCube.jsx   # three.js hologram
+│   │       └── dither-shader.jsx  # WebGL dither effect
 │   ├── lib/
 │   │   └── utils.js
 │   ├── App.js
@@ -135,7 +134,7 @@ npm install --save-dev gh-pages
 Add to `package.json`:
 
 ```json
-"homepage": "https://your-username.github.io/portfolio",
+"homepage": "https://fcreme.github.io/MyPortfolio",
 "scripts": {
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
@@ -150,4 +149,9 @@ npm run deploy
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE). It covers the source code in this repository and
+nothing else.
+
+The backdrops in `src/assets/themes` are not covered and are not relicensed.
+They are other people's work, used here as decoration, and the rights stay with
+their artists and rights holders. See [Theme artwork](#theme-artwork) above.

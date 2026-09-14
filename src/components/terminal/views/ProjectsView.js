@@ -12,7 +12,7 @@ const ProjectsView = ({ onRunTstyles }) => {
       descLinkText: null,
       descLinkUrl: null,
       descLinkImg: null,
-      descAfter: 'PowerShell module on the PowerShell Gallery that themes your terminal live. Arrow through 16 bundled styles previewing each one in the current tab, Enter keeps it and Esc reverts exactly how it was. Sets color scheme, cursor, font, opacity and background in one command, and installs coding fonts from their official sources. Works on Windows Terminal, Terminal.app, iTerm2 and anything speaking OSC sequences, styling zsh and bash as well as PowerShell.',
+      descAfter: 'PowerShell module on the PowerShell Gallery that themes your terminal live. Arrow through 15 bundled styles previewing each one in the current tab, Enter keeps it and Esc reverts exactly how it was. Sets color scheme, cursor, font, opacity and background in one command, and installs coding fonts from their official sources. Works on Windows Terminal, Terminal.app, iTerm2 and anything speaking OSC sequences, styling zsh and bash as well as PowerShell.',
       technologies: ['PowerShell', 'Pester', 'ANSI / OSC', 'Windows Terminal', 'iTerm2'],
       tryCommand: ':tstyles',
       liveUrl: 'https://www.powershellgallery.com/packages/TerminalStyles',
