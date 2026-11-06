@@ -907,7 +907,7 @@
   font-family: var(--nvim-font, 'JetBrains Mono', 'Fira Code', 'Consolas', monospace);
   font-size: 14px;
   color: var(--nvim-fg);
-  transition: opacity 0.4s ease;
+  transition: opacity 0.15s ease;
 }
 
 .lazy-loader-fade {

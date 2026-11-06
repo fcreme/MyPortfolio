@@ -61,7 +61,7 @@ const Dashboard = ({ onSelectFile, keyboardEnabled = true }) => {
         <div className="dashboard-ascii">
           {ASCII_ART.map((line, i) => (
             <div key={i} className="dashboard-ascii-line">
-              <SpecialText speed={40} delay={next(0.04)} className="text-inherit">{line || ' '}</SpecialText>
+              <SpecialText speed={16} stride={4} delay={next(0.015)} className="text-inherit">{line || ' '}</SpecialText>
             </div>
           ))}
         </div>
@@ -77,7 +77,7 @@ const Dashboard = ({ onSelectFile, keyboardEnabled = true }) => {
               className="dashboard-action"
               onClick={() => handleAction(action.file)}
             >
-              <SpecialText speed={5} delay={next(0.06)} className="dashboard-action-key">[{action.key}]</SpecialText>
+              <SpecialText speed={5} delay={next(0.06)} className="dashboard-action-key">{`[${action.key}]`}</SpecialText>
               <SpecialText speed={8} delay={next(0.01)} className="dashboard-action-file">{action.label}</SpecialText>
               <SpecialText speed={5} delay={next(0.005)} className="dashboard-action-sep">—</SpecialText>
               <SpecialText speed={8} delay={next(0.005)} className="dashboard-action-desc">{action.desc}</SpecialText>

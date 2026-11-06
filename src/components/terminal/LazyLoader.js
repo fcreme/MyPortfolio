@@ -48,12 +48,12 @@ const LazyLoader = ({ onComplete }) => {
     if (loadingIndex >= PLUGINS.length) {
       const timer = setTimeout(() => {
         setDone(true);
-        setTimeout(onComplete, 400);
-      }, 300);
+        setTimeout(onComplete, 150);
+      }, 100);
       return () => clearTimeout(timer);
     }
 
-    const delay = 150 + Math.random() * 250;
+    const delay = 40 + Math.random() * 40;
     const timer = setTimeout(() => {
       setLoadedCount(loadingIndex + 1);
       setLoadingIndex((prev) => prev + 1);
@@ -71,10 +71,10 @@ const LazyLoader = ({ onComplete }) => {
         <div className="lazy-header">
           <span className="lazy-icon">💤</span>
           <span className="lazy-title">
-            <SpecialText speed={18} delay={0.1}>lazy.nvim</SpecialText>
+            <SpecialText speed={16} stride={2} delay={0}>lazy.nvim</SpecialText>
           </span>
           <span className="lazy-subtitle">
-            <SpecialText speed={15} delay={0.3}>{' — loading plugins...'}</SpecialText>
+            <SpecialText speed={16} stride={4} delay={0.05}>{' — loading plugins...'}</SpecialText>
           </span>
         </div>
 
@@ -101,7 +101,7 @@ const LazyLoader = ({ onComplete }) => {
                 <span className="lazy-plugin-icon">{icon}</span>
                 <span className="lazy-plugin-name">
                   {i <= loadedCount && loadingIndex > 0 ? (
-                    <SpecialText speed={14} delay={0}>{plugin.name}</SpecialText>
+                    <SpecialText speed={16} stride={4} delay={0}>{plugin.name}</SpecialText>
                   ) : (
                     plugin.name
                   )}
