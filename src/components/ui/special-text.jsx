@@ -31,9 +31,15 @@ const FILLER = "\u00A0";
 /** Same footprint as `text`, drawn blank. */
 const blankLike = (text) => text.replace(/[^\s\-\u2013\u2014?]/g, FILLER);
 
+/**
+ * A run takes 2 * length / stride ticks of `speed` ms. Raise `stride` (characters
+ * revealed per tick) for long strings: lowering `speed` instead re-renders every
+ * few ms, which stutters when many lines animate at once.
+ */
 export function SpecialText({
   children,
   speed = 20,
+  stride = 1,
   delay = 0,
   className = "",
   inView = false,
@@ -68,8 +74,8 @@ export function SpecialText({
   }
 
   const runPhase1 = () => {
-    const maxSteps = text.length;
-    const currentLength = Math.min((animationStep + 1) * 2, text.length);
+    const maxSteps = Math.ceil(text.length / stride);
+    const currentLength = Math.min((animationStep + 1) * 2 * stride, text.length);
 
     const chars = [];
     for (let i = 0; i < currentLength; i++) {
@@ -92,7 +98,7 @@ export function SpecialText({
   };
 
   const runPhase2 = () => {
-    const revealedCount = animationStep;
+    const revealedCount = animationStep * stride;
     const chars = [];
 
     for (let i = 0; i < text.length; i++) {
@@ -105,7 +111,7 @@ export function SpecialText({
 
     setDisplayText(chars.join(""));
 
-    if (animationStep < text.length - 1) {
+    if ((animationStep + 1) * stride < text.length) {
       setAnimationStep((prev) => prev + 1);
     } else {
       setDisplayText(text);

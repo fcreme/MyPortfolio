@@ -34,14 +34,14 @@ const SkillsView = () => {
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">[</SpecialText>
       </Line>
 
-      {/* Frontend */}
+      {/* AI & LLM */}
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-punctuation">{'  {'}</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-operator">: </SpecialText>
-        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Frontend"</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"AI & LLM"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">,</SpecialText>
       </Line>
       <Line n={l()}>
@@ -50,9 +50,9 @@ const SkillsView = () => {
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">[</SpecialText>
       </Line>
       {[
-        'React', 'JavaScript', 'TypeScript',
-        'HTML5/CSS3', 'Tailwind CSS', 'Next.js',
-        'Framer Motion', 'Shadcn/ui', 'Wagmi / RainbowKit', 'Liquid'
+        'MCP', 'Claude Code', 'LLM Integration',
+        'Multi-Provider LLMs', 'AI Agents', 'RAG Systems',
+        'Prompt Engineering', 'LangChain', 'LLM Evaluation'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <SpecialText speed={5} delay={next(0.02)} className="syn-string">{'      "'}</SpecialText>
@@ -83,7 +83,40 @@ const SkillsView = () => {
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">[</SpecialText>
       </Line>
       {[
-        'Node.js (NestJS)', 'Express', 'REST APIs', 'Socket.io', 'Google Apps Script'
+        'Python', 'Node.js (NestJS)', 'Express', 'REST APIs', 'Socket.io', 'Google Apps Script'
+      ].map((name, i) => (
+        <Line key={i} n={l()}>
+          <SpecialText speed={5} delay={next(0.02)} className="syn-string">{'      "'}</SpecialText>
+          <SpecialText speed={6} delay={next(0.005)} className="syn-string">{name}</SpecialText>
+          <SpecialText speed={5} delay={next(0.005)} className="syn-string">{'",'}</SpecialText>
+        </Line>
+      ))}
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-punctuation">{'    ]'}</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-punctuation">{'  },'}</SpecialText>
+      </Line>
+
+      {/* Frontend */}
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-punctuation">{'  {'}</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    title'}</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-operator">: </SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-string">"Frontend"</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">,</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-property">{'    skills'}</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-operator">: </SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">[</SpecialText>
+      </Line>
+      {[
+        'React', 'JavaScript', 'TypeScript',
+        'HTML5/CSS3', 'Tailwind CSS', 'Next.js',
+        'Framer Motion', 'Shadcn/ui', 'Wagmi / RainbowKit', 'Liquid'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <SpecialText speed={5} delay={next(0.02)} className="syn-string">{'      "'}</SpecialText>
@@ -177,7 +210,7 @@ const SkillsView = () => {
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">[</SpecialText>
       </Line>
       {[
-        'ECharts', 'Recharts', 'Jest / Vitest'
+        'ECharts', 'Recharts', 'Jest / Vitest', 'Playwright'
       ].map((name, i) => (
         <Line key={i} n={l()}>
           <SpecialText speed={5} delay={next(0.02)} className="syn-string">{'      "'}</SpecialText>
@@ -243,9 +276,9 @@ const SkillsView = () => {
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">[</SpecialText>
       </Line>
       {[
-        'Three.js', 'FTP / FileZilla', 'JSON Data Modeling', 'Database Design',
-        'WebSocket Integration', 'Screaming Architecture',
-        'Modular Architecture', 'n8n Automation', 'Orange Data Mining',
+        'n8n Automation', 'Orange Data Mining', 'JSON Data Modeling',
+        'Database Design', 'WebSocket Integration', 'Screaming Architecture',
+        'Modular Architecture', 'Three.js', 'FTP / FileZilla',
         'Responsive Design', 'Pixel-perfect UI', 'Performance Optimization',
         'CI/CD', 'Web3 / Blockchain', 'SSR / SSG'
       ].map((skill, i) => (

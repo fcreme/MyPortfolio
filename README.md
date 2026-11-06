@@ -1,6 +1,6 @@
 # Felipe Cremerius — Portfolio
 
-A developer portfolio built with React, styled as a fully interactive **Neovim terminal**. Features a file tree, tabbed buffers, a status line, Telescope fuzzy finder, and a dashboard — all rendered in the browser.
+The portfolio of an AI engineer, built with React and styled as a fully interactive **Neovim terminal**. Features a file tree, tabbed buffers, a status line, Telescope fuzzy finder, and a dashboard — all rendered in the browser.
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)

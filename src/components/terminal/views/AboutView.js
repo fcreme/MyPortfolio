@@ -57,19 +57,19 @@ const AboutView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>{"I'm Felipe Cremerius, a Full Stack Developer who builds end-to-end"}</SpecialText>
+        <SpecialText speed={8} delay={next()}>{"I'm Felipe Cremerius, an AI Engineer who builds LLM-powered products"}</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>solutions across the entire stack, from React frontends and Node.js</SpecialText>
+        <SpecialText speed={8} delay={next()}>end to end. At Reino Ceramicos I built a multi-provider AI chatbot</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>APIs to database architecture, DevOps pipelines, and backend services</SpecialText>
+        <SpecialText speed={8} delay={next()}>(Anthropic, Gemini) from scratch, with MCP connections, tool</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>with Express and NestJS. I collaborate with business stakeholders</SpecialText>
+        <SpecialText speed={8} delay={next()}>parameterization, and SAP HANA data, on a full-stack base of React,</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>to translate complex workflows into scalable, production-ready systems.</SpecialText>
+        <SpecialText speed={8} delay={next()}>Node.js, and NestJS.</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
@@ -79,20 +79,20 @@ const AboutView = () => {
         <SpecialText speed={8} delay={next()}>model-generated pull requests and grading multi-step reasoning.</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>I also work as a freelance developer, building responsive interfaces</SpecialText>
+        <SpecialText speed={8} delay={next()}>I also freelance, building AI automation workflows and React</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>and automating workflows.</SpecialText>
+        <SpecialText speed={8} delay={next()}>applications for clients.</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={8} delay={next()}>My approach focuses on clean architecture, performance optimization,</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>{"and reliable systems. I'm currently deepening my skills in systems"}</SpecialText>
+        <SpecialText speed={8} delay={next()}>{"and reliable systems. I'm currently deepening my skills in agent"}</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>programming, cloud infrastructure, testing strategies, and workflow</SpecialText>
+        <SpecialText speed={8} delay={next()}>orchestration, LLM system design, RAG pipelines, and workflow</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={8} delay={next()}>automation with n8n.</SpecialText>
@@ -135,8 +135,8 @@ const AboutView = () => {
         <SpecialText speed={5} delay={next()} className="syn-table-border">{'| '}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-key">Role</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'     | '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)} className="syn-table-value">Full Stack Developer</SpecialText>
-        <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'            |'}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)} className="syn-table-value">AI Engineer</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-table-border">{'                   |'}</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-table-border">{'| '}</SpecialText>
