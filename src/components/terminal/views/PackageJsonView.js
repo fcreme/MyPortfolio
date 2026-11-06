@@ -29,7 +29,7 @@ const PackageJsonView = () => {
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "description"'}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">: </SpecialText>
-        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">{"\"Full Stack Developer portfolio — neovim edition\""}</SpecialText>
+        <SpecialText speed={6} delay={next(0.01)} className="syn-json-string">{"\"AI Engineer portfolio — neovim edition\""}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">,</SpecialText>
       </Line>
       <Line n={l()}>
@@ -86,7 +86,7 @@ const PackageJsonView = () => {
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
         <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"portfolio"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
-        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"fullstack"</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"ai-engineer"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
         <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"neovim"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-brace">]</SpecialText>
@@ -164,15 +164,15 @@ const PackageJsonView = () => {
         <SpecialText speed={5} delay={next()} className="syn-json-key">{'  "stack"'}</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">: </SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-brace">[</SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"LLMs"</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
+        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"MCP"</SpecialText>
+        <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
         <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"React"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
         <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"TypeScript"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
-        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"Tailwind CSS"</SpecialText>
-        <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
         <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"Node.js"</SpecialText>
-        <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">, </SpecialText>
-        <SpecialText speed={5} delay={next(0.01)} className="syn-json-string">"Jest"</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-json-brace">]</SpecialText>
         <SpecialText speed={5} delay={next(0.005)} className="syn-punctuation">,</SpecialText>
       </Line>

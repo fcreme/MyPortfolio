@@ -18,23 +18,23 @@ const ReadmeView = ({ onNavigate }) => {
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
-        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Full Stack Developer</SpecialText>
+        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">AI Engineer</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>Full Stack Developer specialized in React, Node.js, and modern web</SpecialText>
+        <SpecialText speed={8} delay={next()}>AI Engineer building LLM-powered applications and agent workflows:</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>applications. Building end-to-end solutions from frontend interfaces</SpecialText>
+        <SpecialText speed={8} delay={next()}>multi-provider chatbots, MCP tool integrations, and automation, on</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>to backend APIs, collaborating with business stakeholders to translate</SpecialText>
+        <SpecialText speed={8} delay={next()}>a full-stack base of React, Node.js, and TypeScript. I also evaluate</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>workflows into scalable applications. Strong focus on performance,</SpecialText>
+        <SpecialText speed={8} delay={next()}>AI model output, reviewing generated code and grading reasoning,</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>clean architecture, and pixel-perfect UI.</SpecialText>
+        <SpecialText speed={8} delay={next()}>which shapes how I test what I ship.</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>

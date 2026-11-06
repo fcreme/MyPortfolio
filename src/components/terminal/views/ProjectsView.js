@@ -7,6 +7,28 @@ const ProjectsView = ({ onRunTstyles }) => {
   const [linkReady, setLinkReady] = useState({});
   const projects = [
     {
+      title: 'Multi-Provider AI Chatbot - Reino Ceramicos',
+      descBefore: '',
+      descLinkText: null,
+      descLinkUrl: null,
+      descLinkImg: null,
+      descAfter: 'Internal AI chatbot built from scratch: multi-provider (Anthropic, Gemini) with ReactFlow fallback, tool parameterization, MCP connections and SAP HANA views. Includes token usage limiting, a bot configuration UI and an editor for user-built flows. Internal company tool, so there is no public demo or source.',
+      technologies: ['Anthropic', 'Gemini', 'MCP', 'ReactFlow', 'SAP HANA'],
+      liveUrl: null,
+      githubUrl: null,
+    },
+    {
+      title: 'Repokit - Repo-Aware Developer Assistant',
+      descBefore: '',
+      descLinkText: null,
+      descLinkUrl: null,
+      descLinkImg: null,
+      descAfter: "Go CLI that indexes a codebase, detects its tech stack and patterns, tracks dependencies, scores project health and scaffolds new components from templates following the project's conventions.",
+      technologies: ['Go', 'Cobra', 'SQLite'],
+      liveUrl: null,
+      githubUrl: 'https://github.com/fcreme/CLI',
+    },
+    {
       title: 'TerminalStyles - Terminal Theme Switcher',
       descBefore: '',
       descLinkText: null,

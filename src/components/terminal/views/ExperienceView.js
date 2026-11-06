@@ -65,7 +65,7 @@ const ExperienceView = () => {
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
-        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Full Stack Developer</SpecialText>
+        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Full-Stack / AI Engineer</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={8} delay={next()} className="syn-bold">Reino Ceramicos</SpecialText>
@@ -74,18 +74,38 @@ const ExperienceView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>Built full business logic modules from scratch for enterprise analytics,</SpecialText>
+        <SpecialText speed={8} delay={next()}>Built a multi-provider AI chatbot from scratch, with MCP connections</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>processing and comparing operational data against SAP HANA to surface</SpecialText>
+        <SpecialText speed={8} delay={next()}>and SAP HANA views, plus enterprise analytics modules that turn</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>actionable metrics. Designed and implemented the complete backend and</SpecialText>
+        <SpecialText speed={8} delay={next()}>operational data into actionable metrics. Designed the complete backend</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>frontend architecture for internal tools used across business areas.</SpecialText>
+        <SpecialText speed={8} delay={next()}>and frontend architecture for internal tools used across business areas.</SpecialText>
       </Line>
       <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>AI Chatbot from scratch: multi-provider (Anthropic, Gemini) with ReactFlow</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'  '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>fallback, tool parameterization, MCP connections & SAP HANA views</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>Token usage limiting, bot configuration UI & user-built flow editor</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>Agent-based automation with MCP & Claude Code across Slack & internal tools</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>LLM-powered data analysis, automated reports & workflow suggestions</SpecialText>
+      </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
         <SpecialText speed={8} delay={next(0.01)}>Full business logic modules: data analysis & metrics vs SAP HANA</SpecialText>
@@ -102,18 +122,6 @@ const ExperienceView = () => {
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
         <SpecialText speed={8} delay={next(0.01)}>State management (Zustand, TanStack Query) & real-time features (Socket.io)</SpecialText>
       </Line>
-      <Line n={l()}>
-        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)}>AI Chatbot from scratch: multi-provider (Anthropic, Gemini) with ReactFlow</SpecialText>
-      </Line>
-      <Line n={l()}>
-        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'  '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)}>fallback, tool parameterization, MCP connections & SAP HANA views</SpecialText>
-      </Line>
-      <Line n={l()}>
-        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)}>Token usage limiting, bot configuration UI & user-built flow editor</SpecialText>
-      </Line>
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-hr">---</SpecialText>
@@ -121,7 +129,7 @@ const ExperienceView = () => {
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
-        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Freelance Web Developer</SpecialText>
+        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Freelance Full-Stack Developer & AI Automation</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={8} delay={next()} className="syn-bold">Freelance</SpecialText>
@@ -130,21 +138,29 @@ const ExperienceView = () => {
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>E-commerce development via Tienda Nube, modifying native platform</SpecialText>
+        <SpecialText speed={8} delay={next()}>Automation workflows integrating REST APIs, Google Apps Script, and n8n</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>code through FTP. Built React web applications for clients including</SpecialText>
+        <SpecialText speed={8} delay={next()}>across CRMs, email, and internal systems. React web applications for</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>personal brand pages with SEO optimization, server deployment and</SpecialText>
+        <SpecialText speed={8} delay={next()}>clients with AI-assisted features and LLM-powered content generation,</SpecialText>
       </Line>
       <Line n={l()}>
-        <SpecialText speed={8} delay={next()}>ongoing maintenance.</SpecialText>
+        <SpecialText speed={8} delay={next()}>plus e-commerce development, deployment, and ongoing maintenance.</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)}>E-commerce stores: Tienda Nube customization via FTP (FileZilla)</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>AI automation: n8n & API workflows across CRMs, email & internal systems</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>LLM-powered content generation & AI-assisted features for client apps</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>REST API integrations & Google Sheets automation (Apps Script)</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
@@ -152,11 +168,11 @@ const ExperienceView = () => {
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)}>SEO optimization, server deployment & ongoing maintenance</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>E-commerce stores: Tienda Nube customization via FTP (FileZilla)</SpecialText>
       </Line>
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-list-marker">{'- '}</SpecialText>
-        <SpecialText speed={8} delay={next(0.01)}>REST API integrations & Google Sheets automation (Apps Script)</SpecialText>
+        <SpecialText speed={8} delay={next(0.01)}>SEO optimization, server deployment & ongoing maintenance</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
@@ -166,6 +182,14 @@ const ExperienceView = () => {
       <Line n={l()}>
         <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'# '}</SpecialText>
         <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Education</SpecialText>
+      </Line>
+      <Empty n={l()} />
+      <Line n={l()}>
+        <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
+        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Data Mining</SpecialText>
+      </Line>
+      <Line n={l()}>
+        <SpecialText speed={8} delay={next()} className="syn-bold">CoderHouse</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>
@@ -182,14 +206,6 @@ const ExperienceView = () => {
       </Line>
       <Line n={l()}>
         <SpecialText speed={8} delay={next()} className="syn-bold">{'Universidad Tecnológica de Buenos Aires (UTN)'}</SpecialText>
-      </Line>
-      <Empty n={l()} />
-      <Line n={l()}>
-        <SpecialText speed={5} delay={next()} className="syn-heading-marker">{'## '}</SpecialText>
-        <SpecialText speed={10} delay={next(0.01)} className="syn-heading">Data Mining</SpecialText>
-      </Line>
-      <Line n={l()}>
-        <SpecialText speed={8} delay={next()} className="syn-bold">CoderHouse</SpecialText>
       </Line>
       <Empty n={l()} />
       <Line n={l()}>

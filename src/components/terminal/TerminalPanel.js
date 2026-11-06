@@ -62,9 +62,9 @@ const TerminalPanel = ({ onClose, theme }) => {
           info: [
             { label: null, value: 'felipe@portfolio', isTitle: true },
             { label: null, value: '-------------------', isSep: true },
-            { label: 'Role', value: 'Full Stack Developer' },
+            { label: 'Role', value: 'AI Engineer' },
             { label: 'Location', value: 'Worldwide' },
-            { label: 'Stack', value: 'React, Node.js, TypeScript' },
+            { label: 'Stack', value: 'LLMs, MCP, React, Node.js, TypeScript' },
             { label: 'Editor', value: 'Neovim (btw)' },
             { label: 'Theme', value: theme },
             { label: 'Shell', value: 'bash 5.2.0' },
@@ -90,8 +90,8 @@ const TerminalPanel = ({ onClose, theme }) => {
           outputLines = [{ type: 'error', content: 'cat: missing operand' }];
         } else {
           const fileMap = {
-            'readme.md': '# Felipe Cremerius\n## Full Stack Developer\nPortfolio built with React, styled as Neovim.',
-            'about.md': '# About Me\nFull Stack Developer working worldwide.\nPassionate about clean code and modern web tech.',
+            'readme.md': '# Felipe Cremerius\n## AI Engineer\nPortfolio built with React, styled as Neovim.',
+            'about.md': '# About Me\nAI Engineer working worldwide.\nBuilding LLM-powered applications and agent workflows.',
             'package.json': '{\n  "name": "felipe-portfolio",\n  "version": "1.0.0",\n  "dependencies": { "react": "^18.2.0" }\n}',
           };
           const key = args.toLowerCase();

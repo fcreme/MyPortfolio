@@ -67,7 +67,7 @@ const Dashboard = ({ onSelectFile, keyboardEnabled = true }) => {
         </div>
 
         <div className="dashboard-subtitle">
-          <SpecialText speed={12} delay={next(0.1)} className="text-inherit">Full Stack Developer</SpecialText>
+          <SpecialText speed={12} delay={next(0.1)} className="text-inherit">AI Engineer</SpecialText>
         </div>
 
         <div className="dashboard-actions">
